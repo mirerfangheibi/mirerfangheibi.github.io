@@ -4,15 +4,15 @@
 
 "Matwin":
   - firstname: ["Stan", "S.", "S. M.", "Stan Matwin"]
-    url: https://web.cs.dal.ca/~stan/
+    url: https://web.cs.dal.ca/~stan
 
 "Reihanian":
   - firstname: ["Ali", "A.", "A. R.", "Ali Reihanian"]
-    url: https://www.csauthors.net/ali-reihanian/
+    url: https://www.csauthors.net/ali-reihanian
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Feizi-Derakhshi": 
+  - firstname: ["Ali-Reza", "A."]
+    url: https://www.csauthors.net/ali-reza-feizi-derakhshi
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+  - firstname: ["Mohammad-Reza", "M."]
+    url: https://www.csauthors.net/mohammad-reza-feizi-derakhshi
