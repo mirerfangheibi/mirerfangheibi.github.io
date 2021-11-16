@@ -1,11 +1,17 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: teaching assistantship (TAs)
 description: Materials for courses you taught. Replace this text with your description.
 nav: true
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+### [CSCI 1108 — Introduction to Experimental Robotics](https://web.cs.dal.ca/~csci1108/202020/)
+* Dalhousie University
+* Head Teaching Assistant
+* Winter 2020
 
-Organize your courses by years, topics, or universities, however you like!
+### [CS Learning Center](https://www.dal.ca/faculty/computerscience/about/student_life/learningcentre.html)
+* Dalhousie University
+* Staff Teaching Assistant
+* Fall 2019 - Summer 2020
