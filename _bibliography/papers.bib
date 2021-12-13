@@ -1,5 +1,17 @@
 ---
 ---
+@thesis{gheibi2021AIITL,
+abbr={DAL},
+title={Helping Biologists Find Whales: AI-in-the-Loop Support for Environmental Dataset Creation},
+author={Gheibi, Mirerfan},
+year={2021},
+abstract={We develop a computer vision system to help biologists detect endangered whales. Given access to a limited dataset of aerial imagery (1544 images of mainly water), we implemented object detection and semantic segmentation models. For segmentation, we leverage the extreme data imbalance by introducing an elliptic annotation mechanism mitigating the need for tight annotations while still constrained by expert annotators' available time. Data scarcity made zero-false-negative rate infeasible, so we minimized false negatives while having few enough false positives that it could still help an expert annotator accelerate the annotation process itself. This would allow a bootstrapping dataset creation approach: collecting increasingly larger datasets in parallel with training increasingly accurate models. We evaluated performance for the downstream bootstrapping task with an AI-in-the-Loop experiment. Motivated by the expert user's workflow, this required developing a feature-based clustering visualization of the images. Our segmentation system admitted few false negatives and was more efficient than manually data collection alone. While the proposed approach cannot entirely solve the challenge of the extremely small dataset, it suggests that a slightly larger dataset (e.g. adding 100 whale images would double the relevant training set) may be sufficient to bootstrap the training and collection with effectively no false negatives.},
+selected={true},
+ bibtex_show={true},
+ html={http://hdl.handle.net/10222/81075},
+ publisher={Dalhousie University}
+ }
+
 
 @inproceedings{ghazizadeh2020cb,
   abbr={CAIAC},
