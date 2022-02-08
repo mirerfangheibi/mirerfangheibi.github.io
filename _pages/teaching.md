@@ -6,6 +6,11 @@ description:
 nav: true
 ---
 
+### CSCI 4155/6505 - Machine Learning
+* Dalhousie University
+* Teaching Assistant
+* Winter 2022
+
 ### [CSCI 1108 — Introduction to Experimental Robotics](https://web.cs.dal.ca/~csci1108/202020/)
 * Dalhousie University
 * Head Teaching Assistant
