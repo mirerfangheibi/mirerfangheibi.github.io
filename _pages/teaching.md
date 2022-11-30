@@ -6,7 +6,7 @@ description:
 nav: true
 ---
 
-### CSCI 4155/6505 - Machine Learning
+### [CSCI 4155/6505 - Machine Learning](https://academiccalendar.dal.ca/Catalog/ViewCatalog.aspx?pageid=viewcatalog&entitytype=CID&entitycode=CSCI+6505)
 * Dalhousie University
 * Teaching Assistant
 * Winter 2022
