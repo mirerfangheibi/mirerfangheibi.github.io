@@ -2,9 +2,9 @@
 layout: about
 title: about
 permalink: /
-description: Machine Learning Engineer at <a href="https://www.reeldata.ai">ReelData</a>.
+# description: Machine Learning Engineer at <a href="https://www.reeldata.ai">ReelData</a>.
 #  <br> Address. Contacts. Moto. Etc.
-# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Machine Learning Engineer at <a href="https://www.reeldata.ai">ReelData</a>.
 
 profile:
   align: right
@@ -15,7 +15,7 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-news: false  # includes a list of news items
+news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---

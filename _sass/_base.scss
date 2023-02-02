@@ -60,10 +60,23 @@ blockquote {
   text-align: center;
 }
 
-// Card
+// Media
 
+.media-not-found{
+  fill:var(--global-card-bg-color);
+  stroke:var(--global-text-color);
+  stroke-width:3
+}
+
+.media-not-found-text{
+  fill:var(--global-text-color);
+
+}
+
+// Card
 .card {
   background-color: var(--global-card-bg-color);
+  margin-bottom: 10px;
 
   img {
     width: 100%;
@@ -82,6 +95,15 @@ blockquote {
       align-items: center;
     }
   }
+  .list-group{
+    width: auto;
+    .list-group-item{
+      font-size: 0.875rem;
+      color: var(--global-text-color);
+      background-color: var(--global-card-bg-color);
+    }
+  }
+  
 }
 
 // Citation
@@ -603,6 +625,23 @@ footer.sticky-bottom {
       }
       div.abstract.hidden.open {
         border-color: var(--global-text-color);
+      }
+    }
+  }
+}
+
+.card{
+  .card-body {
+    a.btn {
+      color: var(--global-text-color);
+      border: 1px solid var(--global-text-color);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      &:hover {
+        color: var(--global-theme-color);
+        border-color: var(--global-theme-color);
       }
     }
   }

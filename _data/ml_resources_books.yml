@@ -1,0 +1,443 @@
+- title: Deep Learning
+  front_page: https://mit-press-us.imgix.net/covers/9780262035613.jpg
+  book_author: Ian Goodfellow, Yoshua Bengio and Aaron Courville
+  edition: null
+  publisher: MIT Press
+  print_year: 2016
+  book_url: https://www.deeplearningbook.org
+  description: "Deep learning is a form of machine learning that enables computers to learn from experience and understand the world in terms of a hierarchy of concepts. Because the computer gathers knowledge from experience, there is no need for a human computer operator to formally specify all the knowledge that the computer needs. The hierarchy of concepts allows the computer to learn complicated concepts by building them out of simpler ones; a graph of these hierarchies would be many layers deep. This book introduces a broad range of topics in deep learning.
+
+The text offers mathematical and conceptual background, covering relevant concepts in linear algebra, probability theory and information theory, numerical computation, and machine learning. It describes deep learning techniques used by practitioners in industry, including deep feedforward networks, regularization, optimization algorithms, convolutional networks, sequence modeling, and practical methodology; and it surveys such applications as natural language processing, speech recognition, computer vision, online recommendation systems, bioinformatics, and videogames. Finally, the book offers research perspectives, covering such theoretical topics as linear factor models, autoencoders, representation learning, structured probabilistic models, Monte Carlo methods, the partition function, approximate inference, and deep generative models.
+
+Deep Learning can be used by undergraduate or graduate students planning careers in either industry or research, and by software engineers who want to begin using deep learning in their products or platforms. A website offers supplementary material for both readers and instructors."
+
+- title: Dive into Deep Learning
+  front_page: https://d2l.ai/_images/front.png
+  book_author: Aston Zhang, Zachary C. Lipton, Mu Li and Alexander J. Smola
+  edition: null
+  publisher: null
+  print_year: 2021
+  book_url: https://d2l.ai
+
+- title: "High-Dimensional Data Analysis with Low-Dimensional Models: Principles, Computation, and Applications"
+  front_page: https://book-wright-ma.github.io/book-cover.jpg
+  book_author: John Wright and Yi Ma
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://book-wright-ma.github.io
+
+- title: Machine Learning print_yearning
+  front_page: null
+  book_author: Andrew Ng
+  edition: null
+  publisher: null
+  print_year: 2018
+  book_url: https://www.deeplearning.ai/programs
+
+- title: A Brief Introduction to Neural Networks
+  front_page: null
+  book_author: David Kriesel
+  edition: null
+  publisher: null
+  print_year: 2007
+  book_url: http://www.dkriesel.com/en/science/neural_networks
+
+- title: An Introduction to Statistical Learning
+  front_page: https://media.springernature.com/w306/springer-static/cover-hires/book/978-1-0716-1418-1
+  book_author: Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani
+  edition: 2
+  publisher: Springer
+  print_year: 2021
+  book_url: https://www.statlearning.com
+
+- title: Speech and Language Processing
+  front_page: null
+  book_author: Dan Jurafsky and James H. Martin
+  edition: 3
+  publisher: null
+  print_year: 2022
+  book_url: https://web.stanford.edu/~jurafsky/slp3
+
+- title: "Reinforcement Learning: An Introduction"
+  front_page: https://mit-press-us.imgix.net/covers/9780262039246.jpg
+  book_author: Richard S. Sutton and Andrew G. Barto
+  edition: 2
+  publisher: MIT Press
+  print_year: 2018
+  book_url: http://incompleteideas.net/book/the-book.html
+
+- title: "Probabilistic Machine Learning: An Introduction"
+  front_page: https://probml.github.io/pml-book/cover1.jpg
+  book_author: Kevin P. Murphy
+  edition: null
+  publisher: MIT Press
+  print_year: 2022
+  book_url: https://probml.github.io/pml-book/book1.html
+
+- title: "Statistical Learning with Sparsity: The Lasso and Generalizations"
+  front_page: https://hastie.su.domains/StatLearnSparsity/images/sls.jpg
+  book_author: Trevor Hastie, Robert Tibshirani and Martin Wainwright
+  edition: null
+  publisher: Routledge
+  print_year: 2015
+  book_url: https://hastie.su.domains/StatLearnSparsity
+
+- title: Statistical inference for data science
+  front_page: https://d2sofvawe08yqg.cloudfront.net/LittleInferenceBook/s_hero2x?1620441866
+  book_author: Brian Caffo
+  edition: null
+  publisher: leanpub
+  print_year: 2015
+  book_url: https://leanpub.com/LittleInferenceBook
+
+- title: "Computer Vision: Algorithms and Applications"
+  front_page: http://szeliski.org/Book/imgs/Szeliski2ndBookFrontCover.png
+  book_author: Richard Szeliski
+  edition: 2
+  publisher: Springer
+  print_year: 2021
+  book_url: http://szeliski.org/Book/
+
+- title: Information Theory, Inference, and Learning Algorithms
+  front_page: https://assets.cambridge.org/97805216/42989/cover/9780521642989.jpg
+  book_author: David MacKay
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2003
+  book_url: https://www.inference.org.uk/itprnn/book.pdf
+
+- title: Think Bayes
+  front_page: https://greenteapress.com/wp/wp-content/uploads/2021/04/think_bayes_2e_cover_medium.jpg
+  book_author: Allen B. Downey
+  edition: 2
+  publisher: O'REILLY
+  print_year: 2021
+  book_url: https://greenteapress.com/wp/think-bayes
+
+- title: Think Stats
+  front_page: http://greenteapress.com/thinkstats2/thinkstats2cover.jpg
+  book_author: Allen B. Downey
+  edition: 2
+  publisher: O'REILLY
+  print_year: 2014
+  book_url: https://greenteapress.com/wp/think-stats-2e/"
+
+- title: Machine Learning and Big Data
+  front_page: null
+  book_author: Kareem Alkaseer
+  edition: null
+  publisher: null
+  print_year: 2021
+
+  book_url: http://www.kareemalkaseer.com/books/ml/"
+- title: Python Data Science Handbook
+  front_page: https://github.com/jakevdp/PythonDataScienceHandbook/raw/master/notebooks/figures/PDSH-cover.png
+  book_author: Jake VanderPlas
+  edition: null
+  publisher: O'REILLY
+  print_year: 2016
+  book_url: https://github.com/jakevdp/PythonDataScienceHandbook
+
+- title: Neural Networks and Deep Learning
+  front_page: null
+  book_author: Michael Nielsen
+  edition: null
+  publisher: Determination Press
+  print_year: 2015
+  book_url: http://neuralnetworksanddeeplearning.com/"
+- title: "Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit"
+  front_page: https://learning.oreilly.com/library/cover/9780596803346/250w/
+  book_author: Steven Bird, Ewan Klein, and Edward Loper
+  edition: null
+  publisher: O'REILLY
+  print_year: 2009
+  book_url: https://www.nltk.org/book/"
+- title: Linear Algebra
+  front_page: https://hefferon.net/linearalgebra/cover.png
+  book_author: Jim Hefferon
+  edition: 4
+  publisher: leanpub
+  print_year: 2020
+  book_url: https://hefferon.net/linearalgebra/index.html"
+- title: Theory of Computation
+  front_page: https://hefferon.net/computation/cover.png
+  book_author: Jim Hefferon
+  edition: null
+  publisher: null
+  print_year: 2021
+  book_url: https://joshua.smcvt.edu/computation/book.pdf"
+- title: Convex Optimization
+  front_page: https://stanford.edu/~boyd/cvxbook/bv_cvxbook_cover.jpg
+  book_author: Stephen Boyd and Lieven Vandenberghe
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2009
+  book_url: https://stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+- title: Pattern Recognition and Machine Learning
+  front_page: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/06/Springer-Cover-Image-752x1024.jpg
+  book_author: Christopher Bishop
+  edition: null
+  publisher: Springer
+  print_year: 2006
+  book_url: https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
+
+- title: "Understanding Machine Learning: From Theory to Algorithms"
+  front_page: https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/images/UnderstandingMachineLearning.jpg
+  book_author: Shai Shalev-Shwartz and Shai Ben-David
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2014
+  book_url: https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/index.html"
+- title: Foundations of Machine Learning
+  front_page: http://www.cs.nyu.edu/~mohri/mlbook/10290_pptd.jpg
+  book_author: Mehryar Mohri, Afshin Rostamizadeh and Ameet Talwalkar
+  edition: 2
+  publisher: MIT Press
+  print_year: 2018
+  book_url: https://cs.nyu.edu/~mohri/mlbook"
+- title: Automated Machine Learning
+  front_page: https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-05318-5
+  book_author: Frank Hutter, Lars Kotthoff and Joaquin Vanschoren
+  edition: null
+  publisher: Springer
+  print_year: 2019
+  book_url: https://www.automl.org/book/"
+- title: Model-based Machine Learning
+  front_page: null
+  book_author: John Winn, Christopher M. Bishop, Thomas Diethe, John Guiver and Yordan Zaykov
+  edition: null
+  publisher: null
+  print_year: 2022
+  book_url: https://mbmlbook.com/"
+- title: Gaussian Processes for Machine Learning
+  front_page: http://www.gaussianprocess.org/gpml/rwcover.gif
+  book_author: Carl Edward Rasmussen and Christopher K. I. Williams
+  edition: null
+  publisher: MIT Press
+  print_year: 2006
+  book_url: http://www.gaussianprocess.org/gpml/"
+- title: Algorithmic Aspects of Machine Learning
+  front_page: null
+  book_author: Ankur Moitra
+  edition: null
+  publisher: null
+  print_year: 2014
+  book_url: http://people.csail.mit.edu/moitra/docs/bookex.pdf"
+- title: The Matrix Cookbook
+  front_page: null
+  book_author: Kaare Brandt Petersen and Michael Syskind Pedersen
+  edition: null
+  publisher: null
+  print_year: 2012
+  book_url: https://mit6874.github.io/assets/matrix-cookbook.pdf"
+- title: Adversarial Robustness - Theory and Practice
+  front_page: null
+  book_author: Zico Kolter and Aleksander Madry
+  edition: null
+  publisher: null
+  print_year: 2018
+  book_url: https://adversarial-ml-tutorial.org"
+- title: Learning Theory from First Principles
+  front_page: null
+  book_author: Francis Bach
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://www.di.ens.fr/~fbach/ltfp_book.pdf"
+- title: Introduction to Probability
+  front_page: https://images.routledge.com/common/jackets/crclarge/978113836/9781138369917.jpg
+  book_author: Joseph K. Blitzstein and Jessica Hwang
+  edition: 2
+  publisher: Routledge
+  print_year: 2019
+  book_url: http://probabilitybook.net/"
+- title: Bayesian Reasoning and Machine Learning
+  front_page: http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/jacket.gif
+  book_author: David Barber
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2020
+  book_url: http://www.cs.ucl.ac.uk/staff/d.barber/brml"
+- title: Introduction to Probability for Data Science
+  front_page: https://probability4datascience.com/pix/cover.png
+  book_author: Stanley H. Chan
+  edition: null
+  publisher: Michigan Publishing
+  print_year: 2021
+  book_url: https://probability4datascience.com"
+- title: Probabilistic Numerics
+  front_page: https://www.probabilistic-numerics.org/assets/img/textbooks/ProbabilisticNumercs_cover_small.png
+  book_author: Philipp Hennig, Michael A. Osborne, Hans Kersting
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://www.probabilistic-numerics.org/textbooks/"
+    
+- title: Physics-based Deep Learning Book
+  front_page: https://physicsbaseddeeplearning.org/_images/logo-xl.jpg
+  book_author: Nils Thuerey, Philipp Holl, Maximilian Mueller, Patrick Schnell, and Felix Trost and Kiwon Um
+  edition: 0.2
+  publisher: null
+  print_year: 2021
+  book_url: https://physicsbaseddeeplearning.org"
+    
+- title: Hands-On Data Visualization
+  front_page: https://handsondataviz.org/images/0-preface/cover-400wide.jpg
+  book_author: Jack Dougherty and Ilya Ilyankou
+  edition: null
+  publisher: O'REILLY
+  print_year: 2022
+  book_url: https://handsondataviz.org"
+    
+- title: Fairness and Machine Learning
+  front_page: null
+  book_author: Solon Barocas, Moritz Hardt, and Arvind Narayanan
+  edition: null
+  publisher: null
+  print_year: 2019
+  book_url: https://fairmlbook.org"
+    
+- title: Distributional Reinforcement Learning
+  front_page: null
+  book_author: Marc G. Bellemare and Will Dabney, and Mark Rowland
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://www.distributional-rl.org/"
+    
+- title: The Principles of Deep Learning Theory
+  front_page: https://deeplearningtheory.com/images/PDLT-cover.jpg
+  book_author: Daniel A. Roberts, Sho Yaida, and Boris Hanin
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://deeplearningtheory.com"
+    
+- title: Algorithms for Decision Making
+  front_page: https://mit-press-us.imgix.net/covers/9780262047012.jpg
+  book_author: Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray
+  edition: null
+  publisher: MIT Press
+  print_year: 2022
+  book_url: https://algorithmsbook.com"
+    
+- title: Bayes Rules!
+  front_page: https://www.bayesrulesbook.com/chapters/figs/index/book_cover.jpeg
+  book_author: Alicia A. Johnson, Miles Q. Ott, and Mine Dogucu
+  edition: null
+  publisher: CRC Press
+  print_year: 2021
+  book_url: https://www.bayesrulesbook.com
+
+- title: Large-Scale Convex Optimization
+  front_page: https://large-scale-book.mathopt.com/cvx_alg_book.jpg
+  book_author: Ernest K. Ryu, and Wotao Yin
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://large-scale-book.mathopt.com
+
+- title: Deep Learning on Graphs
+  front_page: https://web.njit.edu/~ym329/dlg_book/cover_english.png
+  book_author: Yao Ma, and Jiliang Tang
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2021
+  book_url: https://web.njit.edu/~ym329/dlg_book
+
+- title: Machine Learning - A First Course for Engineers and Scientists
+  front_page: http://smlbook.org/cover_small.png
+  book_author: Andreas Lindholm, Niklas Wahlström, Fredrik Lindsten, and Thomas B. Schön
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: http://smlbook.org
+
+- title: A Course in Machine Learning
+  front_page: http://ciml.info/cover-forweb.png
+  book_author: Hal Daumé III
+  edition: null
+  publisher: null
+  print_year: 2017
+  book_url: http://ciml.info
+
+- title: Data Science at the Command Line
+  front_page: https://datascienceatthecommandline.com/2e/images/cover-small.png
+  book_author: Jeroen Janssens
+  edition: 2
+  publisher: O'REILLY
+  print_year: 2021
+  book_url: https://datascienceatthecommandline.com/2e/index.html
+
+- title: Deep Learning Interviews
+  front_page: null
+  book_author: Shlomo Kashani, and Amir Ivry
+  edition: null
+  publisher: Interviews AI
+  print_year: 2021
+  book_url: https://arxiv.org/abs/2201.00650
+
+- title: Learning Statistical Models Through Simulation in R
+  front_page: null
+  book_author: Dale J Barr
+  edition: null
+  publisher: null
+  print_year: 2021
+  book_url: https://psyteachr.github.io/stat-models-v1/index.html
+
+- title: Introduction to Online Convex Optimization
+  front_page: https://mit-press-us.imgix.net/covers/9780262046985.jpg
+  book_author: Elad Hazan
+  edition: 2
+  publisher: MIT Press
+  print_year: 2022
+  book_url: https://sites.google.com/view/intro-oco/home
+  
+- title: "Reinforcement Learning: Theory and Algorithms"
+  front_page: null
+  book_author: Alekh Agarwal, Nan Jiang, Sham M. Kakade, and Wen Sun
+  edition: null
+  publisher: null
+  print_year: 2022
+  book_url: https://rltheorybook.github.io
+
+- title: "Probabilistic Machine Learning: An Introduction"
+  front_page: https://probml.github.io/pml-book/cover2.jpg
+  book_author: Kevin P. Murphy
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://probml.github.io/pml-book/book2.html
+
+- title: Understanding Deep Learning
+  front_page: null
+  book_author: Simon J.D. Prince
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://udlbook.github.io/udlbook/"
+
+- title: Mathematics for Machine Learning
+  front_page: https://mml-book.github.io/static/images/mml-book-cover.jpg
+  book_author: Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong.
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2020
+  book_url: https://mml-book.github.io/
+
+- title: Machine Learning
+  front_page: http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.gif
+  book_author: Tom Mitchell
+  edition: null
+  publisher: McGraw Hill
+  print_year: 1997
+  book_url: http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.html
+
+- title: "Computer Age Statistical Inference: Algorithms, Evidence and Data Science"
+  front_page: https://hastie.su.domains/CASI/images/jacket_wave_cropped.jpg
+  book_author: Bradley Efron, and Trevor Hastie
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2016
+  book_url: https://hastie.su.domains/CASI/
