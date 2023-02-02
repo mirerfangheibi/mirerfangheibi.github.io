@@ -402,7 +402,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   print_year: 2022
   book_url: https://rltheorybook.github.io
 
-- title: "Probabilistic Machine Learning: An Introduction"
+- title: "Probabilistic Machine Learning: Advanced Topics"
   front_page: https://probml.github.io/pml-book/cover2.jpg
   book_author: Kevin P. Murphy
   edition: null
