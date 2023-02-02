@@ -4,6 +4,7 @@ permalink: /teaching/
 title: teaching assistantship (TAs)
 description: 
 nav: true
+nav_order: 5
 ---
 
 ### [CSCI 4155/6505 - Machine Learning](https://academiccalendar.dal.ca/Catalog/ViewCatalog.aspx?pageid=viewcatalog&entitytype=CID&entitycode=CSCI+6505)
