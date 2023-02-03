@@ -49,10 +49,23 @@ nav_order: 6
           </div>
           </div>
         {% endif %}
+        {% if book.personal_notes%}
+          <div class="collapse" id="notes_collapse_{{forloop.index}}">
+            <div>
+            <p style="font-size: 0.875rem; text-align: 
+            justify; padding: 10px;">
+              <b>Personal Notes:</b> {{book.personal_notes}}
+            </p>
+          </div>
+          </div>
+        {% endif %}
         </ul>
         <div class="card-body">
-          {% if book.description%}
-          <a class="abstract btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#description_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="description_collapse_{{forloop.index}}">Description</a>
+          {% if book.description %}
+          <a class="btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#description_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="description_collapse_{{forloop.index}}">Description</a>
+          {% endif %}
+          {% if book.personal_notes %}
+          <a class="btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#notes_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="#notes_collapse_{{forloop.index}}">Personal Notes</a>
           {% endif %}
           <a href="{{book.book_url}}" class="btn btn-sm z-depth-0" role="button"> Book Website</a>
           {% if book.supp_material %}
