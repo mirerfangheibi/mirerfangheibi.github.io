@@ -1,14 +1,14 @@
 ---
 layout: page
 permalink: /ml_resources/
-title: ml resources 
+title: ml study resources 
 description: under construction!
 nav: true
 nav_order: 6
 ---
 <p> The following materials are of high quality and free resources that I found related to the Machine Learning field. I am moving my 
   Machine-Learning-Resources here.</p>
-<h2><i class="fa fa-book"> </i>Books</h2>
+<h2><i class="fa fa-book"></i>Books</h2>
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
@@ -39,9 +39,27 @@ nav_order: 6
           {% if book.publisher%}
           <li class="list-group-item"><b>Publisher:</b> {{book.publisher}}</li>
           {% endif %}
+          {% if book.description%}
+          <div class="collapse" id="description_collapse_{{forloop.index}}">
+            <div>
+            <p style="font-size: 0.875rem; text-align: 
+            justify; padding: 10px;">
+              <b>Desription:</b> {{book.description}}
+            </p>
+          </div>
+          </div>
+        {% endif %}
         </ul>
         <div class="card-body">
-          <a href="{{book.book_url}}" class="btn btn-sm z-depth-0" role="button"> <i class="bi bi-book"></i> Book Website</a>
+          {% if book.description%}
+          <a class="abstract btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#description_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="description_collapse_{{forloop.index}}">Description</a>
+          {% endif %}
+          <a href="{{book.book_url}}" class="btn btn-sm z-depth-0" role="button"> Book Website</a>
+          {% if book.supp_material %}
+          {% for material in book.supp_material %}
+          <a href="{{material}}" class="btn btn-sm z-depth-0" role="button">Supp. Material {{forloop.index}}</a>
+          {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>
@@ -49,3 +67,9 @@ nav_order: 6
     {% endfor %}
   </div>
 </div>
+<h2><i class="fab fa-youtube-square"></i>Courses</h2>
+<p>TBD</p>
+<h2><i class="ai ai-arxiv-square"></i>Papers</h2>
+<p>TBD</p>
+<h2><i class="fab fa-github-square"></i>Repositorites</h2>
+<p>TBD</p>

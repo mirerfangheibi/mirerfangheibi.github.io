@@ -1,3 +1,16 @@
+# - title: Template
+#   front_page: awesome_cover.jpg
+#   book_author: Alien
+#   edition: null
+#   publisher: Awesome Press
+#   print_year: 2050
+#   book_url: https://example.com
+#   description: "Blah"
+#   supp_material: ['list', 
+#                     'of']
+#                     'links']
+
+
 - title: Deep Learning
   front_page: https://mit-press-us.imgix.net/covers/9780262035613.jpg
   book_author: Ian Goodfellow, Yoshua Bengio and Aaron Courville
@@ -106,6 +119,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: Cambridge University Press
   print_year: 2003
   book_url: https://www.inference.org.uk/itprnn/book.pdf
+  
 
 - title: Think Bayes
   front_page: https://greenteapress.com/wp/wp-content/uploads/2021/04/think_bayes_2e_cover_medium.jpg
