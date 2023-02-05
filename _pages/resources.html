@@ -1,14 +1,14 @@
 ---
 layout: page
-permalink: /ml_resources/
-title: ml study resources 
+permalink: /ml_resources_resources/
+title: ml study resources
 description: under construction!
-nav: true
-nav_order: 6
+nav: false
+nav_order: 5
 ---
 <p> The following materials are of high quality and free resources that I found related to the Machine Learning field. I am moving my 
   Machine-Learning-Resources here.</p>
-<h2><i class="fa fa-book"></i>Books</h2>
+<h2><i class="fa fa-book"></i> Books</h2>
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
@@ -80,9 +80,17 @@ nav_order: 6
     {% endfor %}
   </div>
 </div>
-<h2><i class="fab fa-youtube-square"></i>Courses</h2>
+<h2><i class="fab fa-youtube-square"></i> Courses</h2>
 <p>TBD</p>
-<h2><i class="ai ai-arxiv-square"></i>Papers</h2>
-<p>TBD</p>
-<h2><i class="fab fa-github-square"></i>Repositorites</h2>
+<h2><i class="ai ai-arxiv-square"></i> Papers and</h2>
+<!-- <p>This part is more of a personal reading list</p>
+<ul class="list-group">
+{% assign spapers = site.data.ml_resources_papers | sort: "year" | reverse %}
+{% for paper in spapers %}
+<li>{{paper.author}}. <a href="{{paper.url}}"><b>{{paper.title}}</b></a>. <em>{{paper.year}}</em></li>
+{% endfor %}
+</ul> -->
+
+<h2><i class="fa fa-university"></i> Theses</h2>
+<h2><i class="fab fa-github-square"></i> Repositorites</h2>
 <p>TBD</p>

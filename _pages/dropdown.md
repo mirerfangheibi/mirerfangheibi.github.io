@@ -1,13 +1,11 @@
 ---
 layout: page
-title: submenus
+title: ml study resources
 nav: false
-# nav_order: 6
+nav_order: 6
 dropdown: true
 children: 
-    - title: publications
-      permalink: /publications/
-    - title: divider
-    - title: projects
-      permalink: /projects/
+    - title: books
+      permalink: /ml_resources_books/
+    # - title: divider
 ---
