@@ -34,7 +34,8 @@ nav_order: 4
         {% if book.front_page%}
         <img src="{{book.front_page}}" class="card-img-top" alt="{{book.title}}">
         {% else %}
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No Front Cover Available!" preserveAspectRatio="xMidYMid slice" focusable="false"><title>No Front Cover Available!</title>
+
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No Front Cover Available!" preserveAspectRatio=none focusable="false"><title>No Front Cover Available!</title>
           <rect class="media-not-found" width="100%" height="100%" rx="5" ry="5"></rect>
         <text class="media-not-found-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">No Front Cover Available!</text>
         </svg>
