@@ -20,4 +20,4 @@ nav_order: 2
 ### [CS Learning Center](https://www.dal.ca/faculty/computerscience/about/student_life/learningcentre.html)
 * Dalhousie University
 * Staff Teaching Assistant
-* Fall 2019 - Summer 2020
+* Fall 2019 until Summer 2020
