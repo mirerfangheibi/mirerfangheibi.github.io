@@ -1,0 +1,23 @@
+---
+layout: page
+---
+{{ content }}
+
+<h2 id="Books"><i class="fa fa-book"></i> Books</h2>
+<p>{{page.books_intro_paragraph}}</p>
+{% include books_grid.html %}
+<h2 id="Courses"><i class="fab fa-youtube-square"></i> Courses</h2>
+<p> {{page.courses_intro_paragraph}}</p>
+{% include courses_grid.html %}
+<!-- <h2><i class="ai ai-arxiv-square"></i> Papers and</h2> -->
+<!-- <p>This part is more of a personal reading list</p>
+<ul class="list-group">
+{% assign spapers = site.data.ml_resources_papers | sort: "year" | reverse %}
+{% for paper in spapers %}
+<li>{{paper.author}}. <a href="{{paper.url}}"><b>{{paper.title}}</b></a>. <em>{{paper.year}}</em></li>
+{% endfor %}
+</ul> -->
+
+<!-- <h2><i class="fa fa-university"></i> Theses</h2>
+<h2><i class="fab fa-github-square"></i> Repositorites</h2> -->
+<!-- <p>TBD</p> -->

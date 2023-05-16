@@ -1,0 +1,29 @@
+
+# TODO: fix the template
+# - title: Template
+#   front_page: awesome_cover.jpg
+#   book_author: Alien
+#   edition: null
+#   publisher: Awesome Press
+#   print_year: 2050
+#   book_url: https://example.com
+#   description: "Blah"
+#   personal_notes: "Blah"
+#   supp_material: ['list', 
+#                     'of']
+#                     'links']
+
+
+
+- title: Multi Modal Machine Learning
+  instructor: Louis-Philippe Morency, and Paul Liang
+  institute: Carnegie Mellon University
+  year: 2022
+  course_url: https://cmu-multicomp-lab.github.io/mmml-course/fall2022/
+  lecture_videos: https://www.youtube.com/playlist?list=PL-Fhd_vrvisNM7pbbevXKAbT_Xmub37fA
+  description: "This revised version of CMU Multimodal Machine Learning course presents the fundamental mathematical concepts in machine learning and deep learning relevant to the six main challenges in multimodal research: (1) representation, (2) alignment, (3) reasoning, (4) generation, (5) transference and (6) quantification. This revised course is based on the new taxonomy introduced in this survey paper: https://arxiv.org/abs/2209.03430"
+
+- title: "Neural Networks: Zero to Hero"
+  instructor: Andrej Karpathy
+  year: 2023
+  lecture_videos: https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
