@@ -16,7 +16,7 @@ courses_intro_paragraph: This section includes courses that cover a wide range o
 <p> 
   This page compiles a collection of high-quality and free resources on machine learning that I have curated from diverse sources. 
   It is my pleasure to share these resources with you, as they can offer valuable insights to anyone interested in this intriguing field. 
-  It is important to note that I am not the author of any of the content on this page; 
+  It is important to note that I am <b>NOT</b> the author of any of the content on this page; 
   however, I have ensured that each resource is relevant, reliable, and informative. 
   Whether you are a novice or an experienced data scientist, I hope you will discover valuable materials here. 
   The list originally started as a <a href="https://github.com/mirerfangheibi/Machine-Learning-Resources">GitHub repository</a>
