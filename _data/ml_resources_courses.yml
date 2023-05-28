@@ -27,3 +27,24 @@
   instructor: Andrej Karpathy
   year: 2023
   lecture_videos: https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
+
+- title: Advanced Latent Variable Modeling
+  instructor: Steven Andrew Culpepper
+  institute: University of Illinois Urbana-Champaign
+  year: 2023
+  lecture_videos: https://www.youtube.com/playlist?list=PL682UO4IMem9hGbgNG4Y6CBqFwrA_E9jN
+  course_url: https://publish.illinois.edu/sculpepper/teaching/advanced-psychometrics/
+
+- title: "CS W182 / 282A: Designing, Visualizing, and Understanding Deep Neural Networks"
+  instructor: Brandon Trabucco
+  institute: Robotic AI & Learning Lab at UC Berkeley
+  year: 2021
+  lecture_videos: https://www.youtube.com/playlist?list=PL_iWQOsE6TfVmKkQHucjPAoRtIJYt8a5A
+  course_url: https://cs182sp21.github.io/
+
+- title: "CS25: Transformers United"
+  instructor: Div Garg, Steven Feng, and Rylan Schaeffer
+  institute: Stanford
+  year: 2021
+  lecture_videos: https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM
+  course_url: https://web.stanford.edu/class/cs25/
