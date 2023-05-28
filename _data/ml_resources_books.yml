@@ -212,13 +212,6 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: MIT Press
   print_year: 2018
   book_url: https://cs.nyu.edu/~mohri/mlbook"
-- title: Automated Machine Learning
-  front_page: https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-05318-5
-  book_author: Frank Hutter, Lars Kotthoff and Joaquin Vanschoren
-  edition: null
-  publisher: Springer
-  print_year: 2019
-  book_url: https://www.automl.org/book/"
 - title: Model-based Machine Learning
   front_page: "https://mbmlbook.com/Images/frontcover.png"
   book_author: John Winn, Christopher M. Bishop, Thomas Diethe, John Guiver and Yordan Zaykov
