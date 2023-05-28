@@ -48,3 +48,10 @@
   year: 2021
   lecture_videos: https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM
   course_url: https://web.stanford.edu/class/cs25/
+
+- title: "CS 224W: Machine Learning with Graphs"
+  instructor: Jure Leskovec
+  institute: Stanford
+  year: 2021
+  lecture_videos: https://www.youtube.com/playlist?list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn
+  course_url: http://web.stanford.edu/class/cs224w/
