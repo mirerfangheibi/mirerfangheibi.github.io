@@ -521,3 +521,44 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: null
   print_year: 2020
   book_url: https://dafriedman97.github.io/mlbook/content/introduction.html
+
+- title: Explanatory Model Analysis
+  front_page: https://ema.drwhy.ai/figure/front4.png
+  author: Przemyslaw Biecek and Tomasz Burzykowski
+  edition: null
+  publisher: Chapman and Hall/CRC
+  print_year: 2021
+  book_url: https://pbiecek.github.io/ema/
+
+- title: Bandit Algorithms
+  front_page: https://sites.ualberta.ca/~szepesva/photos/bandit-book-cover.png
+  book_author: Tor Lattimore and Csaba Szepesvari
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2020
+  book_url: https://tor-lattimore.com/downloads/book/book.pdf
+  supp_material: ['https://youtu.be/xN11-epRuSU', 'https://youtu.be/NyyLr6F4bkI', 'https://youtu.be/yZqp2d4fn7k']
+
+- title: Algorithms for Reinforcement Learning
+  front_page: https://sites.ualberta.ca/~szepesva/photos/Algorithms%20for%20Reinforcement%20Learning.jpg
+  book_author: Csaba Szepesvari
+  edition: null
+  publisher: Morgan and Claypool
+  print_year: 2010
+  book_url: https://sites.ualberta.ca/~szepesva/RLBook.html
+
+- title: Algorithmic Aspects of Machine Learning
+  front_page: https://assets.cambridge.org/97813166/36008/cover/9781316636008.jpg
+  book_author: Ankur Moitra
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2018
+  book_url: http://people.csail.mit.edu/moitra/docs/bookexv2.pdf
+
+- title: Algebra, Topology, Differential Calculus, and Optimization Theory for Computer Science and Machine Learning
+  front_page: null
+  book_author: Jean Gallier and Jocelyn Quaintance
+  edition: null
+  publisher: null
+  print_year: 2022
+  book_url: https://www.cis.upenn.edu/~jean/gbooks/geomath.html
