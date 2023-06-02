@@ -52,6 +52,10 @@
             <a href="{{course.lecture_videos}}" class="btn btn-sm z-depth-0" role="button"> Lecture Videos</a>
             {% endif %}
 
+            {% if course.lecture_notes %}
+            <a href="{{course.lecture_notes}}" class="btn btn-sm z-depth-0" role="button"> Lecture Notes</a>
+            {% endif %}
+            {% if course.lecture_slides %}
             {% if course.supp_material %}
             {% for material in course.supp_material %}
             <a href="{{material}}" class="btn btn-sm z-depth-0" role="button">Supp. Material {{forloop.index}}</a>

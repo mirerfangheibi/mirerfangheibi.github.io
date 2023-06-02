@@ -69,3 +69,10 @@
   year: 2020
   lecture_videos: https://www.youtube.com/playlist?list=PLoazKTcS0RzZ1SUgeOgc6SWt51gfT80N0
   course_url: https://mlhc21mit.github.io/
+  supp_material: ["https://www.bradyneal.com/Introduction_to_Causal_Inference-Dec17_2020-Neal.pdf"]
+
+- title: "Stat 156 / 256: Causal Inference"
+  instructor: Prof. Peng Ding
+  institute: UC Berkeley
+  year: 2023
+  lecture_notes: https://arxiv.org/abs/2305.18793
