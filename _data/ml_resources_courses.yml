@@ -55,3 +55,17 @@
   year: 2021
   lecture_videos: https://www.youtube.com/playlist?list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn
   course_url: http://web.stanford.edu/class/cs224w/
+
+- title: "6.S897: Machine Learning For Healthcare"
+  instructor: Prof. Peter Szolovits, and Prof. David Sontag
+  institute: MIT
+  year: 2019
+  lecture_videos: https://www.youtube.com/playlist?list=PLUl4u3cNGP60B0PQXVQyGNdCyCTDU1Q5j
+  course_url: https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/video_galleries/lecture-videos/
+
+- title: "Introduction to Causal Inference"
+  instructor: Brady Neal
+  institute: null
+  year: 2020
+  lecture_videos: https://www.youtube.com/playlist?list=PLoazKTcS0RzZ1SUgeOgc6SWt51gfT80N0
+  course_url: https://mlhc21mit.github.io/
