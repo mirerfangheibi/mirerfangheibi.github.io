@@ -4,7 +4,7 @@ title: about
 permalink: /
 # description: Machine Learning Engineer at <a href="https://www.reeldata.ai">ReelData</a>.
 #  <br> Address. Contacts. Moto. Etc.
-subtitle: Data Scientist at <a href="https://www.reeldata.ai">ReelData</a>.
+subtitle: Data Scientist at <a href="https://www.reeldata.ai">ReelData AI</a>.
 
 profile:
   align: right

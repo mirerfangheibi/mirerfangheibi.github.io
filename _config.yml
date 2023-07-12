@@ -73,14 +73,14 @@ og_image: https://mirerfangheibi.github.io/assets/img/prof_pic.png # The site-wi
 github_username: mirerfangheibi
 gitlab_username: # your GitLab user name
 twitter_username: MirerfanG # your Twitter handle
-mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+mastodon_username: # sigmoid.social/@merfangh # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: mirerfangheibi # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: RTWcgYwAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID
-medium_username: # your Medium username
+medium_username: # m.erfan.gh # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
@@ -105,7 +105,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
-  The best way to reach out to me is via my email or my LinkedIn profile.
+  The best way to reach out to me is via my email or my <a href="https://www.linkedin.com/in/mirerfangheibi">LinkedIn</a> profile.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
