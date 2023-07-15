@@ -76,3 +76,8 @@
   institute: UC Berkeley
   year: 2023
   lecture_notes: https://arxiv.org/abs/2305.18793
+
+- title: "Statistical Rethinking: A Bayesian Course with Examples in R and Stan"
+  instructor: Richard McElreath
+  year: 2023
+  lecture_videos: https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus
