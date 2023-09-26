@@ -3,7 +3,7 @@ layout: post
 title: Morse code or a LinkedIn banner, that is the question!
 date: 2023-09-25 12:00:00-0000
 description: This is my first blog post on this website. So, the purpose of this post is to first trying out Jeykll and secondly,  to share a LinkedIn banner I made for myself.
-categories: personal educational
+categories: educational information-theory encoding linkedin 
 giscus_comments: false
 related_posts: true
 thumbnail: assets/img/blogposts/20230925/1679912762385.jpeg
@@ -11,8 +11,9 @@ toc:
   sidebar: left
 ---
 
+Hello and welcome to my very first blog post here! I'm thrilled to dip my toes into the world of writing with [Jekyll](https://jekyllrb.com/). I want this blog to be a blend of machine learning, science, and technology with a dash of personal experiences.
 
-This is my first blog post on this personal blog. I want to try out writing here with [Jekyll](https://jekyllrb.com/) while telling a personal story with a technology flavor. I do care about self-branding and I want to put my best foot forward as many other people do in the age of information technology. Here, I want to talk about the [LinkedIn](https://www.linkedin.com/in/mirerfangheibi) banner photo I have and how I created it. But before, I have to write about Morse code in case you are unfamiliar with it, although risking to state the obvious.
+So, what's on the agenda for today? Well, I'm going to take you on a journey through the creation of my [LinkedIn](https://www.linkedin.com/in/mirerfangheibi) banner photo, spiced up with some tech talk. But before we dive into that, let's have a quick chat about Morse code – just in case it's not something you're familiar with. Don't worry; I promise it'll be a breeze!
 
 ## Morse Code
 
