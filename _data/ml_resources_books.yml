@@ -525,7 +525,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
 
 - title: Bandit Algorithms
   front_page: https://sites.ualberta.ca/~szepesva/photos/bandit-book-cover.png
-  book_author: Tor Lattimore and Csaba Szepesvari
+  book_author: Tor Lattimore, and Csaba Szepesvari
   edition: null
   publisher: Cambridge University Press
   print_year: 2020
@@ -580,3 +580,12 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: Cambridge University Press
   print_year: 2023
   book_url: https://people.lids.mit.edu/yp/homepage/data/itbook-export.pdf
+
+- title: "Equivariant and Coordinate Independent Convolutional Networks: A Gauge Field Theory of Neural Networks"
+  front_page: https://maurice-weiler.gitlab.io/cnn_book/cover/front.webp
+  book_author: Maurice Weiler, Patrick Forré, Erik Verlinde, and Max Welling
+  edition: null
+  publisher: null
+  print_year: 2023
+  book_url: https://maurice-weiler.gitlab.io/#cnn_book
+  supp_material: ['https://maurice-weiler.gitlab.io/blog_post/cnn-book_1_equivariant_networks/']
