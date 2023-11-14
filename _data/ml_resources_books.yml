@@ -556,15 +556,15 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   print_year: 2022
   book_url: https://www.cis.upenn.edu/~jean/gbooks/geomath.html
 
-- title: Bayesian models of perception and action
-  front_page: "https://www.cns.nyu.edu/malab/static/files/titlepage_v3.png"
+- title: "Bayesian models of perception and action: An introduction"
+  front_page: "https://www.cns.nyu.edu/malab/static/files/cover.png"
   book_author: Wei Ji Ma, Konrad Paul Kording, and Daniel Goldreich
   edition: null
   publisher: The MIT Press
   print_year: 2023
   book_url: https://www.cns.nyu.edu/malab/bayesianbook.html
 
-- title: With Applications in RBayesian models of perception and action
+- title: "Telling Stories with Data: With Applications in R"
   front_page: "https://tellingstorieswithdata.com/figures/tellingstorieswithdatapainting.png"
   book_author: Rohan Alexander
   edition: null
