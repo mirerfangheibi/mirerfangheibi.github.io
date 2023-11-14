@@ -299,12 +299,12 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   print_year: 2022
   book_url: https://handsondataviz.org"
     
-- title: Fairness and Machine Learning
-  front_page: null
+- title: "Fairness and Machine Learning: Limitations and Opportunities"
+  front_page: https://fairmlbook.org/assets/book-cover.avif
   book_author: Solon Barocas, Moritz Hardt, and Arvind Narayanan
   edition: null
-  publisher: null
-  print_year: 2019
+  publisher: MIT Press
+  print_year: 2023
   book_url: https://fairmlbook.org"
     
 - title: Distributional Reinforcement Learning
@@ -589,3 +589,19 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   print_year: 2023
   book_url: https://maurice-weiler.gitlab.io/#cnn_book
   supp_material: ['https://maurice-weiler.gitlab.io/blog_post/cnn-book_1_equivariant_networks/']
+
+- title: "Automata Theory: An Algorithmic Approach"
+  front_page: https://mblondin.espaceweb.usherbrooke.ca/automata/images/cover.jpg
+  book_author: Javier Esparza, and Michael Blondin
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://mblondin.espaceweb.usherbrooke.ca/automata/
+
+- title: "Machine Learning for Data Streams with Practical Examples in MOA"
+  front_page: https://mit-press-us.imgix.net/covers/9780262037792.jpg
+  book_author: Albert Bifet, Ricard Gavaldà, Geoffrey Holmes, and Bernhard Pfahringer
+  edition: null
+  publisher: MIT Press
+  print_year: 2023
+  book_url: https://moa.cms.waikato.ac.nz/book/
