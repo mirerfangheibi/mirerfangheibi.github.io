@@ -43,7 +43,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   book_url: https://book-wright-ma.github.io
 
 - title: Machine Learning Yearning
-  front_page: null
+  front_page: https://wordpress.deeplearning.ai/wp-content/uploads/2022/10/1645724689.png
   book_author: Andrew Ng
   edition: null
   publisher: null
@@ -348,12 +348,12 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   book_url: https://large-scale-book.mathopt.com
 
 - title: Deep Learning on Graphs
-  front_page: https://web.njit.edu/~ym329/dlg_book/cover_english.png
+  front_page: https://yaoma24.github.io/dlg_book/cover_english.png
   book_author: Yao Ma, and Jiliang Tang
   edition: null
   publisher: Cambridge University Press
   print_year: 2021
-  book_url: https://web.njit.edu/~ym329/dlg_book
+  book_url: https://yaoma24.github.io/dlg_book/
 
 - title: Machine Learning - A First Course for Engineers and Scientists
   front_page: http://smlbook.org/cover_small.png
