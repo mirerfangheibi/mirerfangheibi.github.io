@@ -614,3 +614,11 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   print_year: 2023
   book_url: https://linear.axler.net/
   supp_material: ['https://linear.axler.net/LADRvideos.html']
+
+- title: "Random Matrix Methods for Machine Learning"
+  front_page: https://zhenyu-liao.github.io/img/RMT4ML_cover.jpg
+  book_author: Romain Couillet, and Zhenyu Liao
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://zhenyu-liao.github.io/book
