@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching assistantship (TAs)
+title: teaching (TAs)
 description: 
 nav: true
 nav_order: 2
