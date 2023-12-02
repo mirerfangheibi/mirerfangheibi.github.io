@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am moving my <a href="https://github.com/mirerfangheibi/Machine-Learning-Resources">Machine-Learning-Resources Repository</a> into this website (study resour. on the navigation bar)!
+I am moving my <a href="https://github.com/mirerfangheibi/Machine-Learning-Resources">Machine-Learning-Resources Repository</a> into this website (study resources on the navigation bar)!

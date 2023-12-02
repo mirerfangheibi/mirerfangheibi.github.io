@@ -1,7 +1,7 @@
 ---
 layout: resources
 permalink: /ml_resources/
-title: study resour.
+title: study resources
 description: this page is being updated actively with new resources for machine learning ...
 nav: true
 nav_order: 4
