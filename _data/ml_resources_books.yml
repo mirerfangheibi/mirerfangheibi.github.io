@@ -622,3 +622,11 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: Cambridge University Press
   print_year: 2022
   book_url: https://zhenyu-liao.github.io/book
+
+- title: "Introduction to Probability for Computing"
+  front_page: https://www.cs.cmu.edu/~harchol/Probability/pnc.jpg
+  book_author: Mor Harchol-Balter
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2023
+  book_url: https://www.cs.cmu.edu/~harchol/Probability/book.html
