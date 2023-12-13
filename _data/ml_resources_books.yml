@@ -630,3 +630,11 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: Cambridge University Press
   print_year: 2023
   book_url: https://www.cs.cmu.edu/~harchol/Probability/book.html
+
+- title: "Deep Learning: Foundations and Concepts"
+  front_page: https://www.bishopbook.com/assets/images/deep-learning-book-cover.jpg
+  book_author: Christopher M. Bishop, and Hugh Bishop
+  edition: null
+  publisher: Springer
+  print_year: 2024
+  book_url: https://www.bishopbook.com/
