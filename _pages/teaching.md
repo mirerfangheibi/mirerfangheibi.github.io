@@ -1,11 +1,17 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching (TAs)
+title: teaching
 description: 
 nav: true
 nav_order: 2
 ---
+
+### [WML101 - Introduction to Machine Learning](https://mgheibi-wavefin.github.io/wml101-fa24/)
+* Wave Financial Inc.
+* Instructor
+* Fall 2024
+
 
 ### [CSCI 4155/6505 - Machine Learning](https://academiccalendar.dal.ca/Catalog/ViewCatalog.aspx?pageid=viewcatalog&entitytype=CID&entitycode=CSCI+6505)
 * Dalhousie University
