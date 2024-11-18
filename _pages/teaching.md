@@ -9,7 +9,7 @@ nav_order: 2
 
 ### [WML101 - Introduction to Machine Learning](https://mgheibi-wavefin.github.io/wml101-fa24/)
 * Wave Financial Inc.
-* Instructor
+* Curriculum developer and Instructor 
 * Fall 2024
 
 
