@@ -646,3 +646,52 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: STEM Academic Press
   print_year: 2024
   book_url: https://arxiv.org/abs/2001.10488
+
+- title: "An introduction to Optimization on Smooth Manifolds"
+  front_page: https://www.nicolasboumal.net/images/BoumalIntroSmoothManifoldsCover.png
+  book_author: Nicolas Boumal
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2023
+  book_url: https://www.nicolasboumal.net/book/
+
+- title: "Mathematical Analysis of Machine Learning Algorithms"
+  front_page: https://assets.cambridge.org/97810090/98380/cover/9781009098380.jpg
+  book_author: Tong Zhang
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2023
+  book_url: https://tongzhang-ml.org/lt-book.html
+
+- title: "Bayesian Optimization Book"
+  front_page: https://bayesoptbook.com/assets/cover.png
+  book_author: Roman Garnett
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2023
+  book_url: https://bayesoptbook.com
+
+- title: "Optimization for Modern Data Analysis"
+  front_page: https://people.eecs.berkeley.edu/~brecht/opt4da.jpg
+  book_author: Benjamin Recht and Stephen J. Wright
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://people.eecs.berkeley.edu/~brecht/opt4ml_book/
+
+- title: "Patterns, Predictions, and Actions: A story about machine learning"
+  front_page: https://mlstory.org/assets/ppa-pup-cover.jpg
+  book_author: Moritz Hardt and Benjamin Recht
+  edition: null
+  publisher: Princeton University Press
+  print_year: 2022
+  book_url: https://mlstory.org/
+
+- title: "Machine learning with neural networks"
+  front_page: https://gu-statphys.org/images/cover.jpg
+  book_author: Bernhard Mehlig
+  edition: null
+  publisher: Cambridge University Press
+  print_year: 2022
+  book_url: https://gu-statphys.org/index.php/publications/neural-networks-book
+  supp_material: https://arxiv.org/abs/1901.05639
