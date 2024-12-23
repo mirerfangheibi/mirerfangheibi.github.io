@@ -235,6 +235,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+sitemap_include:
+  - url: "https://www.linkedin.com/in/mirerfangheibi/"
+    lastmod: 2024-12-23
+    changefreq: weekly
+    priority: 0.8
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
