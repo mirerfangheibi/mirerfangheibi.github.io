@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  {% for page in site.pages %}
+    {% unless page.sitemap == false %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+  
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% elsif post.date %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+
+  {% if site.sitemap_include %}
+    {% for external in site.sitemap_include %}
+    <url>
+      <loc>{{ external.url }}</loc>
+      <lastmod>{{ external.lastmod | date_to_xmlschema }}</lastmod>
+      <changefreq>{{ external.changefreq }}</changefreq>
+      <priority>{{ external.priority }}</priority>
+    </url>
+    {% endfor %}
+  {% endif %}
+</urlset>
