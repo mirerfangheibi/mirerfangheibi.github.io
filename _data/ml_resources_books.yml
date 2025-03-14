@@ -696,7 +696,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   book_url: https://gu-statphys.org/index.php/publications/neural-networks-book
   supp_material: https://arxiv.org/abs/1901.05639
 
-  - title: "Machine Learning in Production: From Models to Products"
+- title: "Machine Learning in Production: From Models to Products"
   front_page: https://mit-press-new-us.imgix.net/covers/9780262049726.jpg
   book_author: Christian Kästner
   edition: null
