@@ -712,3 +712,11 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: MIT Press
   print_year: 2024
   book_url: https://visionbook.mit.edu
+
+- title: "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches"
+  front_page: https://www.marl-book.com/marl-book-cover.jpg
+  book_author: Stefano V. Albrecht, Filippos Christianos, and Lukas Schäfer
+  edition: null
+  publisher: MIT Press
+  print_year: 2024
+  book_url: https://www.marl-book.com
