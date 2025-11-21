@@ -177,8 +177,8 @@
     margin-top: 0;
   }
 
-  /* Modal Styles */
-  .modal-content {
+  /* Modal Styles - Scoped to ID for specificity */
+  #descriptionModal .modal-content {
     border: none;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -188,30 +188,30 @@
     /* Force dark text */
   }
 
-  .modal-header {
+  #descriptionModal .modal-header {
     border-bottom: 1px solid #e9ecef;
     padding: 1rem 1.5rem;
   }
 
-  .modal-body {
+  #descriptionModal .modal-body {
     padding: 1.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
     color: #495057 !important;
   }
 
-  .modal-title {
+  #descriptionModal .modal-title {
     font-weight: 600;
     color: #212529 !important;
   }
 
-  .close {
+  #descriptionModal .close {
     color: #000 !important;
     /* Default close button color */
     opacity: 0.5;
   }
 
-  .close:hover {
+  #descriptionModal .close:hover {
     opacity: 0.75;
   }
 
@@ -294,26 +294,26 @@
     }
 
     /* Modal Dark Mode */
-    .modal-content {
+    #descriptionModal .modal-content {
       background-color: #343a40 !important;
       /* Force dark background */
       color: #e0e0e0 !important;
       /* Force light text */
     }
 
-    .modal-header {
+    #descriptionModal .modal-header {
       border-bottom-color: #495057;
     }
 
-    .modal-body {
+    #descriptionModal .modal-body {
       color: #adb5bd !important;
     }
 
-    .modal-title {
+    #descriptionModal .modal-title {
       color: #e0e0e0 !important;
     }
 
-    .close {
+    #descriptionModal .close {
       color: #e0e0e0 !important;
       text-shadow: none;
     }
