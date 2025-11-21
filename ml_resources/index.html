@@ -245,12 +245,12 @@ This page has been divided into the following sections: <a href="/ml_resources/#
   }
 
   .book-card:hover {
-    transform: translateY(-2px);
-    /* Minimal hover effect */
+    transform: translateY(-3px);
+    /* Just wiggle */
+    /* No background change in light mode to keep it minimal, or just white if transparent */
     background: #fff;
     border-color: #e9ecef;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    /* Lighter shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .book-cover-container {
@@ -338,21 +338,50 @@ This page has been divided into the following sections: <a href="/ml_resources/#
   /* Dropdown fixes */
   .dropdown-menu {
     z-index: 1050;
-    /* Ensure it's above other cards */
     font-size: 0.85rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
     margin-top: 0;
-    /* Fix flickering gap */
+  }
+
+  /* Modal Styles */
+  .modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #495057;
+  }
+
+  .modal-title {
+    font-weight: 600;
+    color: #212529;
   }
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
+    .book-card {
+      background: #343a40;
+      /* Main color as requested */
+      border-color: #495057;
+    }
+
     .book-card:hover {
       background: #343a40;
-      /* Lighter dark grey */
-      border-color: #495057;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      /* Keep same background */
+      border-color: #adb5bd;
+      /* Slightly lighter border on hover */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .book-title {
@@ -381,7 +410,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
     .book-search-input {
       background-color: transparent;
-      /* Match buttons */
       border-color: #495057;
       color: #e0e0e0;
     }
@@ -397,18 +425,20 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     }
 
     .btn-minimal:hover {
-      background: #343a40;
+      background: #495057;
+      /* Slightly lighter than card */
       color: #fff;
     }
 
     .book-tag-badge {
-      background-color: #343a40;
+      background-color: #2d2d2d;
+      /* Darker badge */
       color: #adb5bd;
       border-color: #495057;
     }
 
     .dropdown-menu {
-      background-color: #2d2d2d;
+      background-color: #343a40;
       border-color: #495057;
     }
 
@@ -417,7 +447,30 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     }
 
     .dropdown-item:hover {
+      background-color: #495057;
+    }
+
+    /* Modal Dark Mode */
+    .modal-content {
       background-color: #343a40;
+      color: #e0e0e0;
+    }
+
+    .modal-header {
+      border-bottom-color: #495057;
+    }
+
+    .modal-body {
+      color: #adb5bd;
+    }
+
+    .modal-title {
+      color: #e0e0e0;
+    }
+
+    .close {
+      color: #e0e0e0;
+      text-shadow: none;
     }
   }
 </style>
@@ -450,7 +503,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mlsysbook.ai/cover-hardcover-book.png" class="book-cover" alt="Machine Learning Systems: Principles and Practices of Engineering Artificially Intelligent Systems">
+          <img src="https://www.mlsysbook.ai/assets/images/covers/cover-hardcover-book.png" class="book-cover" alt="Machine Learning Systems: Principles and Practices of Engineering Artificially Intelligent Systems">
           
         </div>
 
@@ -493,8 +546,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -546,8 +597,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -599,8 +648,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -652,8 +699,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -705,8 +750,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -758,8 +801,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -811,8 +852,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -864,8 +903,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -917,8 +954,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -981,8 +1016,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
             </div>
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -991,7 +1024,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262037792.jpg" class="book-cover" alt="Machine Learning for Data Streams with Practical Examples in MOA">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262037792.jpg" class="book-cover" alt="Machine Learning for Data Streams with Practical Examples in MOA">
           
         </div>
 
@@ -1034,8 +1067,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1087,8 +1118,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1149,8 +1178,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
             </div>
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1205,8 +1232,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1258,8 +1283,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1311,8 +1334,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1362,8 +1383,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1372,7 +1391,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262048644.jpg" class="book-cover" alt="Understanding Deep Learning">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262048644.jpg" class="book-cover" alt="Understanding Deep Learning">
           
         </div>
 
@@ -1415,8 +1434,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1468,8 +1485,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1478,7 +1493,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262048019.jpg" class="book-cover" alt="Distributional Reinforcement Learning">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262048019.jpg" class="book-cover" alt="Distributional Reinforcement Learning">
           
         </div>
 
@@ -1519,8 +1534,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1572,8 +1585,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1623,8 +1634,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1687,8 +1696,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
             </div>
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1740,8 +1747,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1793,8 +1798,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1846,8 +1849,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1900,8 +1901,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -1953,8 +1952,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2007,8 +2004,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2017,7 +2012,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262046985.jpg" class="book-cover" alt="Introduction to Online Convex Optimization">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262046985.jpg" class="book-cover" alt="Introduction to Online Convex Optimization">
           
         </div>
 
@@ -2060,8 +2055,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2113,8 +2106,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2166,8 +2157,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2176,7 +2165,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262047012.jpg" class="book-cover" alt="Algorithms for Decision Making">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262047012.jpg" class="book-cover" alt="Algorithms for Decision Making">
           
         </div>
 
@@ -2219,8 +2208,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2272,8 +2259,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2323,8 +2308,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2376,8 +2359,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2425,8 +2406,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2478,8 +2457,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2530,8 +2507,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2583,8 +2558,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2632,8 +2605,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2686,8 +2657,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2740,8 +2709,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2796,8 +2763,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2849,8 +2814,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2902,8 +2865,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -2955,8 +2916,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3006,8 +2965,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3059,8 +3016,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3108,8 +3063,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3154,8 +3107,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3207,8 +3158,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3258,8 +3207,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3311,8 +3258,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3362,8 +3307,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3430,8 +3373,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
             </div>
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3481,8 +3422,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3534,8 +3473,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3587,8 +3524,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3638,8 +3573,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3691,8 +3624,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3744,8 +3675,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3797,8 +3726,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3851,8 +3778,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3902,8 +3827,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -3912,7 +3835,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262039246.jpg" class="book-cover" alt="Reinforcement Learning: An Introduction">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262039246.jpg" class="book-cover" alt="Reinforcement Learning: An Introduction">
           
         </div>
 
@@ -3953,8 +3876,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4002,8 +3923,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4055,8 +3974,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4104,8 +4021,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4157,8 +4072,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4210,8 +4123,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4220,7 +4131,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mit-press-us.imgix.net/covers/9780262035613.jpg" class="book-cover" alt="Deep Learning">
+          <img src="https://mit-press-new-us.imgix.net/covers/9780262035613.jpg" class="book-cover" alt="Deep Learning">
           
         </div>
 
@@ -4256,9 +4167,9 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           <div class="mt-auto book-actions">
             
-            <a class="btn btn-minimal btn-sm" data-toggle="collapse" href="#desc_72" role="button" aria-expanded="false">
+            <button class="btn btn-minimal btn-sm" onclick="showDescription('Deep Learning', 'Deep learning is a form of machine learning that enables computers to learn from experience and understand the world in terms of a hierarchy of concepts. Because the computer gathers knowledge from experience, there is no need for a human computer operator to formally specify all the knowledge that the computer needs. The hierarchy of concepts allows the computer to learn complicated concepts by building them out of simpler ones; a graph of these hierarchies would be many layers deep. This book introduces a broad range of topics in deep learning. The text offers mathematical and conceptual background, covering relevant concepts in linear algebra, probability theory and information theory, numerical computation, and machine learning. It describes deep learning techniques used by practitioners in industry, including deep feedforward networks, regularization, optimization algorithms, convolutional networks, sequence modeling, and practical methodology; and it surveys such applications as natural language processing, speech recognition, computer vision, online recommendation systems, bioinformatics, and videogames. Finally, the book offers research perspectives, covering such theoretical topics as linear factor models, autoencoders, representation learning, structured probabilistic models, Monte Carlo methods, the partition function, approximate inference, and deep generative models. Deep Learning can be used by undergraduate or graduate students planning careers in either industry or research, and by software engineers who want to begin using deep learning in their products or platforms. A website offers supplementary material for both readers and instructors.')">
               Desc
-            </a>
+            </button>
             
 
             <a href="https://www.deeplearningbook.org" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
@@ -4267,14 +4178,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
-          <div class="collapse mt-2" id="desc_72">
-            <div class="small text-muted border-top pt-2">
-              Deep learning is a form of machine learning that enables computers to learn from experience and understand the world in terms of a hierarchy of concepts. Because the computer gathers knowledge from experience, there is no need for a human computer operator to formally specify all the knowledge that the computer needs. The hierarchy of concepts allows the computer to learn complicated concepts by building them out of simpler ones; a graph of these hierarchies would be many layers deep. This book introduces a broad range of topics in deep learning. The text offers mathematical and conceptual background, covering relevant concepts in linear algebra, probability theory and information theory, numerical computation, and machine learning. It describes deep learning techniques used by practitioners in industry, including deep feedforward networks, regularization, optimization algorithms, convolutional networks, sequence modeling, and practical methodology; and it surveys such applications as natural language processing, speech recognition, computer vision, online recommendation systems, bioinformatics, and videogames. Finally, the book offers research perspectives, covering such theoretical topics as linear factor models, autoencoders, representation learning, structured probabilistic models, Monte Carlo methods, the partition function, approximate inference, and deep generative models. Deep Learning can be used by undergraduate or graduate students planning careers in either industry or research, and by software engineers who want to begin using deep learning in their products or platforms. A website offers supplementary material for both readers and instructors.
-            </div>
-          </div>
-          
         </div>
       </div>
     </div>
@@ -4326,8 +4229,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4380,8 +4281,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4425,8 +4324,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4470,8 +4367,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4523,8 +4418,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4575,8 +4468,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4628,8 +4519,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4681,8 +4570,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4735,8 +4622,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4788,8 +4673,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4839,8 +4722,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4890,8 +4771,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4942,8 +4821,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -4995,8 +4872,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -5046,8 +4921,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -5099,8 +4972,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -5152,8 +5023,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
           </div>
-
-          
         </div>
       </div>
     </div>
@@ -5164,6 +5033,23 @@ This page has been divided into the following sections: <a href="/ml_resources/#
   <div id="noResults" class="text-center py-5" style="display: none;">
     <h4 class="text-muted">No books found.</h4>
     <button class="btn btn-minimal mt-2" onclick="resetSearch()">Clear Search</button>
+  </div>
+</div>
+
+<!-- Description Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="descriptionModalLabel">Book Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" id="descriptionModalBody">
+        <!-- Content will be injected here -->
+      </div>
+    </div>
   </div>
 </div>
 
@@ -5244,6 +5130,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       filterTags.forEach(t => t.classList.remove('active'));
       filterTags[0].classList.add('active');
       filterBooks();
+    }
+
+    // Modal Logic
+    window.showDescription = function (title, description) {
+      document.getElementById('descriptionModalLabel').innerText = title;
+      document.getElementById('descriptionModalBody').innerText = description;
+      $('#descriptionModal').modal('show');
     }
   });
 </script>
