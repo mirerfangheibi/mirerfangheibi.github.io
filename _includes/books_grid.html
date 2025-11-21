@@ -1,71 +1,387 @@
-<div class="container text-center">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
-      {% for book in sbooks %}
-      <div class="col">
-        <div class="card">
-          {% if book.front_page%}
-          <img src="{{book.front_page}}" class="card-img-top" alt="{{book.title}}">
-          {% else %}
-          <svg class="bd-placeholder-img card-img-top" width="0" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No Front Cover Available!" preserveAspectRatio="xMidYMid slice" focusable="false"><title>No Front Cover Available!</title>
-            <rect class="media-not-found" width="100%" height="100%" rx="5" ry="5"></rect>
-            <text class="media-not-found-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Front Cover Available!</text>
-          </svg>
-          {% endif %}
-          <div class="card-body shadow-sm">
-            <h5 class="card-title">{{book.title}}</h5>
-          </div>
-          <ul class="list-group">
-            {% if book.book_author%}
-            <li class="list-group-item"><b>Author(s):</b> {{book.book_author}}</li>
-            {% endif %}
-            {% if book.edition%}
-            <li class="list-group-item"><b>Edition:</b> {{book.edition}}</li>
-            {% endif %}
-            {% if book.print_year%}
-            <li class="list-group-item"><b>Year:</b> {{book.print_year}}</li>
-            {% endif %}
-            {% if book.publisher%}
-            <li class="list-group-item"><b>Publisher:</b> {{book.publisher}}</li>
-            {% endif %}
-            {% if book.description%}
-            <div class="collapse" id="description_collapse_{{forloop.index}}">
-              <div>
-              <p style="font-size: 0.875rem; text-align: 
-              justify; padding: 10px;">
-                <b>Desription:</b> {{book.description}}
-              </p>
-            </div>
-            </div>
-          {% endif %}
-          {% if book.personal_notes%}
-            <div class="collapse" id="notes_collapse_{{forloop.index}}">
-              <div>
-              <p style="font-size: 0.875rem; text-align: 
-              justify; padding: 10px;">
-                <b>Personal Notes:</b> {{book.personal_notes}}
-              </p>
-            </div>
-            </div>
-          {% endif %}
-          </ul>
-          <div class="card-body">
-            {% if book.description %}
-            <a class="btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#description_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="description_collapse_{{forloop.index}}">Description</a>
-            {% endif %}
-            {% if book.personal_notes %}
-            <a class="btn btn-sm z-depth-0" role="button" data-toggle="collapse" href="#notes_collapse_{{forloop.index}}" aria-expanded="false" aria-controls="#notes_collapse_{{forloop.index}}">Personal Notes</a>
-            {% endif %}
-            <a href="{{book.book_url}}" class="btn btn-sm z-depth-0" role="button"> Book Website</a>
-            {% if book.supp_material %}
-            {% for material in book.supp_material %}
-            <a href="{{material}}" class="btn btn-sm z-depth-0" role="button">Supp. Material {{forloop.index}}</a>
-            {% endfor %}
-            {% endif %}
-          </div>
-        </div>
-      </div>
-  
-      {% endfor %}
+<style>
+  .book-search-container {
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+  }
+
+  .book-search-input {
+    padding-left: 40px;
+    border-radius: 50px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .book-search-input:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+  }
+
+  .filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .filter-tag {
+    border-radius: 50px;
+    padding: 0.375rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    user-select: none;
+  }
+
+  .filter-tag:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+  }
+
+  .filter-tag.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+  }
+
+  .book-card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .book-cover-container {
+    position: relative;
+    padding-top: 10px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .book-cover {
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .book-card:hover .book-cover {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .book-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .book-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-tags {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .book-tag-badge {
+    font-size: 0.7rem;
+    padding: 0.2em 0.6em;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    color: #495057;
+    margin-right: 4px;
+    display: inline-block;
+  }
+
+  .book-actions .btn {
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-transform: none;
+    font-weight: 500;
+  }
+
+  /* Dark mode support if applicable, using generic media query or body class if known */
+  @media (prefers-color-scheme: dark) {
+    .book-card {
+      background: #2d2d2d;
+      color: #e0e0e0;
+    }
+
+    .book-cover-container {
+      background: #3d3d3d;
+    }
+
+    .book-title {
+      color: #fff;
+    }
+
+    .book-meta {
+      color: #adb5bd;
+    }
+
+    .filter-tag {
+      background-color: #343a40;
+      border-color: #495057;
+      color: #e0e0e0;
+    }
+
+    .filter-tag:hover {
+      background-color: #495057;
+    }
+
+    .filter-tag.active {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+    }
+
+    .book-search-input {
+      background-color: #2d2d2d;
+      border-color: #495057;
+      color: #fff;
+    }
+  }
+</style>
+
+<div class="container">
+  <!-- Search and Filter Section -->
+  <div class="book-search-container">
+    <div class="search-input-wrapper">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="bookSearchInput" class="form-control book-search-input"
+        placeholder="Search books by title, author, or keywords...">
+    </div>
+
+    <div class="filter-tags" id="filterTags">
+      <button class="filter-tag" data-filter="all">All</button>
+      <button class="filter-tag" data-filter="Deep Learning">Deep Learning</button>
+      <button class="filter-tag" data-filter="Machine Learning">Machine Learning</button>
+      <button class="filter-tag" data-filter="Math">Math</button>
+      <button class="filter-tag" data-filter="NLP">NLP</button>
+      <button class="filter-tag" data-filter="Computer Vision">Computer Vision</button>
+      <button class="filter-tag" data-filter="Reinforcement Learning">Reinforcement Learning</button>
+      <button class="filter-tag" data-filter="Statistics">Statistics</button>
     </div>
   </div>
+
+  <!-- Books Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="booksGrid">
+    {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
+    {% for book in sbooks %}
+    <div class="col book-item" data-title="{{ book.title | downcase }}" data-author="{{ book.book_author | downcase }}"
+      data-tags="{{ book.tags | join: ',' | downcase }}">
+      <div class="card book-card shadow-sm h-100">
+        <div class="book-cover-container">
+          {% if book.front_page %}
+          <img src="{{book.front_page}}" class="book-cover" alt="{{book.title}}">
+          {% else %}
+          <svg class="bd-placeholder-img book-cover" width="100%" height="250" xmlns="http://www.w3.org/2000/svg"
+            role="img" aria-label="No Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="#eee"></rect>
+            <text x="50%" y="50%" fill="#aaa" dy=".3em" text-anchor="middle">No Cover</text>
+          </svg>
+          {% endif %}
+        </div>
+
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title book-title">{{book.title}}</h5>
+
+          {% if book.book_author %}
+          <div class="book-meta">
+            <i class="fas fa-user-edit me-1"></i> {{book.book_author}}
+          </div>
+          {% endif %}
+
+          <div class="book-meta">
+            {% if book.print_year %}
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> {{book.print_year}}</span>
+            {% endif %}
+            {% if book.publisher %}
+            <span><i class="fas fa-building me-1"></i> {{book.publisher}}</span>
+            {% endif %}
+          </div>
+
+          {% if book.tags %}
+          <div class="book-tags">
+            {% for tag in book.tags %}
+            <span class="book-tag-badge">{{tag}}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="mt-auto book-actions">
+            {% if book.description %}
+            <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#desc_{{forloop.index}}"
+              role="button" aria-expanded="false">
+              Description
+            </a>
+            {% endif %}
+
+            <a href="{{book.book_url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt me-1"></i> Website
+            </a>
+
+            {% if book.supp_material %}
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown"
+                aria-expanded="false">
+                Materials
+              </button>
+              <ul class="dropdown-menu">
+                {% for material in book.supp_material %}
+                <li><a class="dropdown-item" href="{{material}}" target="_blank">Material {{forloop.index}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+
+          {% if book.description %}
+          <div class="collapse mt-3" id="desc_{{forloop.index}}">
+            <div class="card card-body bg-light small">
+              {{book.description}}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- No Results Message -->
+  <div id="noResults" class="text-center py-5" style="display: none;">
+    <h4 class="text-muted">No books found matching your search.</h4>
+    <button class="btn btn-outline-primary mt-2" onclick="resetSearch()">Clear Search</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('bookSearchInput');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const bookItems = document.querySelectorAll('.book-item');
+    const noResults = document.getElementById('noResults');
+
+    let currentSearch = '';
+    let currentTag = 'all';
+
+    // Initialize
+    filterTags[0].classList.add('active'); // 'All' tag
+
+    // Search Input Listener
+    searchInput.addEventListener('input', function (e) {
+      currentSearch = e.target.value.toLowerCase();
+      filterBooks();
+    });
+
+    // Tag Click Listener
+    filterTags.forEach(tag => {
+      tag.addEventListener('click', function () {
+        // Update active state
+        filterTags.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        const tagValue = this.getAttribute('data-filter');
+
+        if (tagValue === 'all') {
+          currentTag = 'all';
+          // Optional: Clear search when clicking All? 
+          // For now, let's keep search text independent or clear it?
+          // User said "tags to choose for the search bar".
+          // Let's make clicking a tag POPULATE the search bar for immediate utility
+          // since tags in YAML are missing.
+          searchInput.value = '';
+          currentSearch = '';
+        } else {
+          currentTag = tagValue;
+          // Populate search bar to ensure we find titles matching the tag
+          // even if data-tags is empty.
+          searchInput.value = tagValue;
+          currentSearch = tagValue.toLowerCase();
+        }
+
+        filterBooks();
+      });
+    });
+
+    function filterBooks() {
+      let visibleCount = 0;
+
+      bookItems.forEach(item => {
+        const title = item.getAttribute('data-title') || '';
+        const author = item.getAttribute('data-author') || '';
+        const tags = item.getAttribute('data-tags') || '';
+
+        // Search Logic: Match title, author, OR tags
+        // Since we populate search input on tag click, this covers both cases.
+        const matchSearch = currentSearch === '' ||
+          title.includes(currentSearch) ||
+          author.includes(currentSearch) ||
+          tags.includes(currentSearch);
+
+        if (matchSearch) {
+          item.style.display = '';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Show/Hide No Results
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Expose reset function
+    window.resetSearch = function () {
+      searchInput.value = '';
+      currentSearch = '';
+      currentTag = 'all';
+      filterTags.forEach(t => t.classList.remove('active'));
+      filterTags[0].classList.add('active');
+      filterBooks();
+    }
+  });
+</script>
