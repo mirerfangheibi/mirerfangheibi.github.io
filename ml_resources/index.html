@@ -233,20 +233,20 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     border-color: #495057;
   }
 
-  .book-card {
+  /* Increased specificity to override defaults without !important */
+  #booksGrid .book-card {
     height: 100%;
     border: 1px solid transparent;
     /* Minimal border */
     border-radius: 8px;
-    background: #fff !important;
-    /* Force white background for light theme */
+    background: #fff;
+    /* Explicit white for light theme */
     transition: transform 0.2s ease;
     overflow: visible;
   }
 
-  .book-card:hover {
+  #booksGrid .book-card:hover {
     transform: translateY(-3px);
-    /* Just wiggle */
     background: #fff;
     border-color: #e9ecef;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -270,7 +270,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     transition: filter 0.3s ease;
   }
 
-  .book-card:hover .book-cover {
+  #booksGrid .book-card:hover .book-cover {
     filter: grayscale(0%);
   }
 
@@ -369,17 +369,15 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
-    .book-card {
-      background: #343a40 !important;
-      /* Main color as requested, forced to override light theme */
+    #booksGrid .book-card {
+      background: #343a40;
+      /* Main color */
       border-color: #495057;
     }
 
-    .book-card:hover {
+    #booksGrid .book-card:hover {
       background: #343a40;
-      /* Keep same background */
       border-color: #adb5bd;
-      /* Slightly lighter border on hover */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -425,13 +423,11 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
     .btn-minimal:hover {
       background: #495057;
-      /* Slightly lighter than card */
       color: #fff;
     }
 
     .book-tag-badge {
       background-color: #2d2d2d;
-      /* Darker badge */
       color: #adb5bd;
       border-color: #495057;
     }
@@ -1074,7 +1070,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://mblondin.espaceweb.usherbrooke.ca/automata/images/cover.jpg" class="book-cover" alt="Automata Theory: An Algorithmic Approach">
+          <img src="https://michaelblondin.com/images/automata.jpg" class="book-cover" alt="Automata Theory: An Algorithmic Approach">
           
         </div>
 
@@ -1111,7 +1107,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
           <div class="mt-auto book-actions">
             
 
-            <a href="https://mblondin.espaceweb.usherbrooke.ca/automata/" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
+            <a href="https://michaelblondin.com/automata/" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
               Web
             </a>
 
@@ -4475,7 +4471,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/images/UnderstandingMachineLearning.jpg" class="book-cover" alt="Understanding Machine Learning: From Theory to Algorithms">
+          <img src="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/images/UnderstandingMachineLearning.jpg" class="book-cover" alt="Understanding Machine Learning: From Theory to Algorithms">
           
         </div>
 
@@ -4512,7 +4508,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
           <div class="mt-auto book-actions">
             
 
-            <a href="https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/index.html" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
               Web
             </a>
 
