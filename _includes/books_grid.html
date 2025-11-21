@@ -78,12 +78,12 @@
   }
 
   .book-card:hover {
-    transform: translateY(-2px);
-    /* Minimal hover effect */
+    transform: translateY(-3px);
+    /* Just wiggle */
+    /* No background change in light mode to keep it minimal, or just white if transparent */
     background: #fff;
     border-color: #e9ecef;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    /* Lighter shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .book-cover-container {
@@ -171,21 +171,50 @@
   /* Dropdown fixes */
   .dropdown-menu {
     z-index: 1050;
-    /* Ensure it's above other cards */
     font-size: 0.85rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
     margin-top: 0;
-    /* Fix flickering gap */
+  }
+
+  /* Modal Styles */
+  .modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #495057;
+  }
+
+  .modal-title {
+    font-weight: 600;
+    color: #212529;
   }
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
+    .book-card {
+      background: #343a40;
+      /* Main color as requested */
+      border-color: #495057;
+    }
+
     .book-card:hover {
       background: #343a40;
-      /* Lighter dark grey */
-      border-color: #495057;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      /* Keep same background */
+      border-color: #adb5bd;
+      /* Slightly lighter border on hover */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .book-title {
@@ -214,7 +243,6 @@
 
     .book-search-input {
       background-color: transparent;
-      /* Match buttons */
       border-color: #495057;
       color: #e0e0e0;
     }
@@ -230,18 +258,20 @@
     }
 
     .btn-minimal:hover {
-      background: #343a40;
+      background: #495057;
+      /* Slightly lighter than card */
       color: #fff;
     }
 
     .book-tag-badge {
-      background-color: #343a40;
+      background-color: #2d2d2d;
+      /* Darker badge */
       color: #adb5bd;
       border-color: #495057;
     }
 
     .dropdown-menu {
-      background-color: #2d2d2d;
+      background-color: #343a40;
       border-color: #495057;
     }
 
@@ -250,7 +280,30 @@
     }
 
     .dropdown-item:hover {
+      background-color: #495057;
+    }
+
+    /* Modal Dark Mode */
+    .modal-content {
       background-color: #343a40;
+      color: #e0e0e0;
+    }
+
+    .modal-header {
+      border-bottom-color: #495057;
+    }
+
+    .modal-body {
+      color: #adb5bd;
+    }
+
+    .modal-title {
+      color: #e0e0e0;
+    }
+
+    .close {
+      color: #e0e0e0;
+      text-shadow: none;
     }
   }
 </style>
@@ -322,10 +375,10 @@
 
           <div class="mt-auto book-actions">
             {% if book.description %}
-            <a class="btn btn-minimal btn-sm" data-toggle="collapse" href="#desc_{{forloop.index}}" role="button"
-              aria-expanded="false">
+            <button class="btn btn-minimal btn-sm"
+              onclick="showDescription('{{book.title | escape}}', '{{book.description | escape}}')">
               Desc
-            </a>
+            </button>
             {% endif %}
 
             <a href="{{book.book_url}}" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
@@ -346,14 +399,6 @@
             </div>
             {% endif %}
           </div>
-
-          {% if book.description %}
-          <div class="collapse mt-2" id="desc_{{forloop.index}}">
-            <div class="small text-muted border-top pt-2">
-              {{book.description}}
-            </div>
-          </div>
-          {% endif %}
         </div>
       </div>
     </div>
@@ -364,6 +409,24 @@
   <div id="noResults" class="text-center py-5" style="display: none;">
     <h4 class="text-muted">No books found.</h4>
     <button class="btn btn-minimal mt-2" onclick="resetSearch()">Clear Search</button>
+  </div>
+</div>
+
+<!-- Description Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="descriptionModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="descriptionModalLabel">Book Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="descriptionModalBody">
+        <!-- Content will be injected here -->
+      </div>
+    </div>
   </div>
 </div>
 
@@ -444,6 +507,13 @@
       filterTags.forEach(t => t.classList.remove('active'));
       filterTags[0].classList.add('active');
       filterBooks();
+    }
+
+    // Modal Logic
+    window.showDescription = function (title, description) {
+      document.getElementById('descriptionModalLabel').innerText = title;
+      document.getElementById('descriptionModalBody').innerText = description;
+      $('#descriptionModal').modal('show');
     }
   });
 </script>
