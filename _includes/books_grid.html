@@ -71,8 +71,8 @@
     border: 1px solid transparent;
     /* Minimal border */
     border-radius: 8px;
-    background: transparent;
-    /* Minimal background */
+    background: #fff;
+    /* White background for light theme */
     transition: transform 0.2s ease;
     overflow: visible;
   }
@@ -80,7 +80,6 @@
   .book-card:hover {
     transform: translateY(-3px);
     /* Just wiggle */
-    /* No background change in light mode to keep it minimal, or just white if transparent */
     background: #fff;
     border-color: #e9ecef;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
