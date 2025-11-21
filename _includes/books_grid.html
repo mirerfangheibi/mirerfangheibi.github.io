@@ -127,6 +127,11 @@
     margin-bottom: 0.5rem;
   }
 
+  .author-meta {
+    color: var(--global-theme-color) !important;
+    font-weight: 500;
+  }
+
   .book-tags {
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
@@ -365,7 +370,7 @@
           <h5 class="card-title book-title">{{book.title}}</h5>
 
           {% if book.book_author %}
-          <div class="book-meta">
+          <div class="book-meta author-meta">
             <i class="fas fa-user-edit me-1"></i> {{book.book_author}}
           </div>
           {% endif %}
