@@ -333,6 +333,31 @@
     color: #e0e0e0 !important;
     text-shadow: none;
   }
+
+  /* Materials List Styles */
+  .materials-list a {
+    color: var(--global-theme-color);
+  }
+
+  .materials-list a:hover {
+    text-decoration: underline !important;
+  }
+
+  .btn-minimal.active {
+    background-color: #e9ecef;
+    color: #212529;
+    border-color: #ced4da;
+  }
+
+  html[data-theme='dark'] .btn-minimal.active {
+    background-color: #495057;
+    color: #fff;
+    border-color: #adb5bd;
+  }
+
+  html[data-theme='dark'] .materials-list {
+    border-top-color: #495057 !important;
+  }
 </style>
 
 <div class="container">
@@ -413,19 +438,27 @@
             </a>
 
             {% if book.supp_material %}
-            <div class="btn-group">
-              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown"
-                aria-expanded="false" data-boundary="viewport">
-                Mat
-              </button>
-              <ul class="dropdown-menu">
-                {% for material in book.supp_material %}
-                <li><a class="dropdown-item" href="{{material}}" target="_blank">Material {{forloop.index}}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
+            <button class="btn btn-minimal btn-sm" onclick="toggleMaterials(this)">
+              Mat
+            </button>
             {% endif %}
           </div>
+
+          {% if book.supp_material %}
+          <div class="materials-list"
+            style="display: none; margin-top: 10px; border-top: 1px solid #e9ecef; padding-top: 10px;">
+            <small class="text-muted d-block mb-2">Supplementary Materials:</small>
+            <ul class="list-unstyled mb-0">
+              {% for material in book.supp_material %}
+              <li class="mb-1">
+                <a href="{{material}}" target="_blank" class="text-decoration-none" style="font-size: 0.85rem;">
+                  <i class="fas fa-external-link-alt me-1" style="font-size: 0.7rem;"></i> Material {{forloop.index}}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -541,6 +574,20 @@
       document.getElementById('descriptionModalLabel').innerText = title;
       document.getElementById('descriptionModalBody').innerText = description;
       $('#descriptionModal').modal('show');
+    }
+
+    // Toggle Materials Logic
+    window.toggleMaterials = function (btn) {
+      const cardBody = btn.closest('.card-body');
+      const materialsList = cardBody.querySelector('.materials-list');
+
+      if (materialsList.style.display === 'none') {
+        materialsList.style.display = 'block';
+        btn.classList.add('active');
+      } else {
+        materialsList.style.display = 'none';
+        btn.classList.remove('active');
+      }
     }
   });
 </script>
