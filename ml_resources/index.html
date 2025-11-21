@@ -349,10 +349,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     border: none;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    /* Explicit white for light theme */
-    color: #212529;
-    /* Explicit dark text */
+    background-color: #ffffff !important;
+    /* Force White for light theme */
+    color: #212529 !important;
+    /* Force dark text */
   }
 
   .modal-header {
@@ -364,16 +364,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     padding: 1.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #495057;
+    color: #495057 !important;
   }
 
   .modal-title {
     font-weight: 600;
-    color: #212529;
+    color: #212529 !important;
   }
 
   .close {
-    color: #000;
+    color: #000 !important;
     /* Default close button color */
     opacity: 0.5;
   }
@@ -462,8 +462,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
     /* Modal Dark Mode */
     .modal-content {
-      background-color: #343a40;
-      color: #e0e0e0;
+      background-color: #343a40 !important;
+      /* Force dark background */
+      color: #e0e0e0 !important;
+      /* Force light text */
     }
 
     .modal-header {
@@ -471,15 +473,15 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     }
 
     .modal-body {
-      color: #adb5bd;
+      color: #adb5bd !important;
     }
 
     .modal-title {
-      color: #e0e0e0;
+      color: #e0e0e0 !important;
     }
 
     .close {
-      color: #e0e0e0;
+      color: #e0e0e0 !important;
       text-shadow: none;
     }
   }
