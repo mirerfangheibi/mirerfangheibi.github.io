@@ -55,17 +55,6 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Machine Learning
     - Statistics
 
-- title: Machine Learning Yearning
-  front_page: https://wordpress.deeplearning.ai/wp-content/uploads/2022/10/1645724689.png
-  book_author: Andrew Ng
-  edition: null
-  publisher: null
-  print_year: 2018
-  book_url: https://www.deeplearning.ai/programs
-  tags:
-    - Machine Learning
-    - Engineering
-
 - title: A Brief Introduction to Neural Networks
   front_page: null
   book_author: David Kriesel
@@ -364,7 +353,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Probability
     - Statistics
 - title: Bayesian Reasoning and Machine Learning
-  front_page: http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/jacket.gif
+  front_page: null
   book_author: David Barber
   edition: null
   publisher: Cambridge University Press
@@ -516,7 +505,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Science
 
 - title: A Course in Machine Learning
-  front_page: http://ciml.info/cover-forweb.png
+  front_page: null
   book_author: Hal Daumé III
   edition: null
   publisher: null
