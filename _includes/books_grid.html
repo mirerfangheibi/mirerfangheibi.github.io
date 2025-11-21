@@ -66,22 +66,22 @@
     border-color: #495057;
   }
 
-  /* Increased specificity and forced colors to resolve clashes */
+  /* Increased specificity and forced transparency as requested */
   #booksGrid .book-card {
     height: 100%;
     border: 1px solid transparent;
     /* Minimal border */
     border-radius: 8px;
-    background-color: #ffffff !important;
-    /* Force White for light theme */
+    background-color: transparent !important;
+    /* Force Transparent for light theme */
     transition: transform 0.2s ease;
     overflow: visible;
   }
 
   #booksGrid .book-card:hover {
     transform: translateY(-3px);
-    background-color: #ffffff !important;
-    /* Keep White on hover */
+    background-color: transparent !important;
+    /* Keep Transparent on hover */
     border-color: #e9ecef;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
@@ -204,13 +204,13 @@
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
     #booksGrid .book-card {
-      background-color: #343a40 !important;
-      /* Restore awesome dark theme */
+      background-color: transparent !important;
+      /* Force Transparent for dark theme */
       border-color: #495057;
     }
 
     #booksGrid .book-card:hover {
-      background-color: #343a40 !important;
+      background-color: transparent !important;
       border-color: #adb5bd;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
