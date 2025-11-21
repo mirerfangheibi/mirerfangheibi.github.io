@@ -338,11 +338,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     font-weight: 600;
     padding: 0 0.3rem;
     /* Reduced horizontal padding */
-    /* Use horizontal padding only, height handles vertical */
     height: 22px;
     /* Explicit height */
-    line-height: 20px;
-    /* Height - 2px border */
+    line-height: 1;
+    /* Let flexbox handle centering */
     display: inline-flex;
     /* Use flexbox for centering */
     align-items: center;
@@ -353,14 +352,18 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     /* Remove default button styling */
     -webkit-appearance: none;
     font-family: inherit;
+    text-decoration: none !important;
+    /* Ensure no underlines */
+    margin: 0 4px 4px 0;
+    /* Explicit margins */
   }
 
   .btn-minimal {
     color: var(--global-text-color);
     background: transparent;
     border: 1px solid var(--global-text-color) !important;
-    padding: 0.1rem 0.4rem;
-    /* Further reduced padding */
+    padding: 0;
+    /* Remove padding here, handled by .book-actions .btn */
   }
 
   .btn-minimal:hover {
