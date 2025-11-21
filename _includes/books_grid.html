@@ -16,21 +16,23 @@
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #6c757d;
+    color: #adb5bd;
     pointer-events: none;
   }
 
   .book-search-input {
     padding-left: 40px;
     border-radius: 50px;
-    border: 1px solid #dee2e6;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    background: #f8f9fa;
+    box-shadow: none;
+    transition: all 0.2s ease;
   }
 
   .book-search-input:focus {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-color: #007bff;
+    background: #fff;
+    border-color: #ced4da;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
   }
 
   .filter-tags {
@@ -42,116 +44,153 @@
 
   .filter-tag {
     border-radius: 50px;
-    padding: 0.375rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    background-color: #f8f9fa;
+    background-color: transparent;
     border: 1px solid #dee2e6;
-    color: #495057;
+    color: #6c757d;
     user-select: none;
   }
 
   .filter-tag:hover {
-    background-color: #e9ecef;
-    transform: translateY(-1px);
+    background-color: #f8f9fa;
+    color: #495057;
+    border-color: #ced4da;
   }
 
   .filter-tag.active {
-    background-color: #007bff;
+    background-color: #495057;
     color: white;
-    border-color: #007bff;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+    border-color: #495057;
   }
 
   .book-card {
     height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #fff;
+    border: 1px solid transparent;
+    /* Minimal border */
+    border-radius: 8px;
+    background: transparent;
+    /* Minimal background */
+    transition: transform 0.2s ease;
+    /* Removed overflow: hidden to allow dropdowns to pop out if needed,
+       but we need it for border-radius on images.
+       Instead, we'll use position: static for the card-body or handle dropdowns carefully. */
+    overflow: visible;
   }
 
   .book-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-2px);
+    /* Minimal hover effect */
+    background: #fff;
+    border-color: #e9ecef;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .book-cover-container {
     position: relative;
     padding-top: 10px;
-    background: #f8f9fa;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px 8px 0 0;
     overflow: hidden;
+    /* Keep image contained */
   }
 
   .book-cover {
-    height: 250px;
+    height: 220px;
+    /* Slightly smaller */
     object-fit: contain;
-    transition: transform 0.3s ease;
+    filter: grayscale(10%);
+    transition: filter 0.3s ease;
   }
 
   .book-card:hover .book-cover {
-    transform: scale(1.05);
+    filter: grayscale(0%);
   }
 
   .card-body {
-    padding: 1.25rem;
+    padding: 1rem;
+    background: transparent;
   }
 
   .book-title {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: #212529;
   }
 
   .book-meta {
-    font-size: 0.85rem;
-    color: #6c757d;
+    font-size: 0.8rem;
+    color: #868e96;
     margin-bottom: 0.5rem;
   }
 
   .book-tags {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    height: 24px;
+    /* Fixed height to prevent jumping */
+    overflow: hidden;
   }
 
   .book-tag-badge {
-    font-size: 0.7rem;
-    padding: 0.2em 0.6em;
-    border-radius: 10px;
-    background-color: #e9ecef;
+    font-size: 0.65rem;
+    padding: 0.15em 0.5em;
+    border-radius: 4px;
+    background-color: #f1f3f5;
     color: #495057;
     margin-right: 4px;
     display: inline-block;
+    border: 1px solid #e9ecef;
   }
 
   .book-actions .btn {
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-transform: none;
-    font-weight: 500;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
   }
 
-  /* Dark mode support if applicable, using generic media query or body class if known */
-  @media (prefers-color-scheme: dark) {
-    .book-card {
-      background: #2d2d2d;
-      color: #e0e0e0;
-    }
+  .btn-minimal {
+    color: #495057;
+    background: transparent;
+    border: 1px solid #dee2e6;
+  }
 
-    .book-cover-container {
-      background: #3d3d3d;
+  .btn-minimal:hover {
+    background: #f8f9fa;
+    color: #212529;
+    border-color: #ced4da;
+  }
+
+  /* Dropdown fixes */
+  .dropdown-menu {
+    z-index: 1050;
+    /* Ensure it's above other cards */
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .book-card:hover {
+      background: #2d2d2d;
+      border-color: #495057;
     }
 
     .book-title {
-      color: #fff;
+      color: #e0e0e0;
     }
 
     .book-meta {
@@ -159,24 +198,58 @@
     }
 
     .filter-tag {
-      background-color: #343a40;
       border-color: #495057;
-      color: #e0e0e0;
+      color: #adb5bd;
     }
 
     .filter-tag:hover {
-      background-color: #495057;
+      background-color: #343a40;
+      color: #e0e0e0;
     }
 
     .filter-tag.active {
-      background-color: #0d6efd;
-      border-color: #0d6efd;
+      background-color: #e0e0e0;
+      color: #212529;
+      border-color: #e0e0e0;
     }
 
     .book-search-input {
       background-color: #2d2d2d;
       border-color: #495057;
       color: #fff;
+    }
+
+    .book-search-input:focus {
+      background-color: #343a40;
+    }
+
+    .btn-minimal {
+      color: #adb5bd;
+      border-color: #495057;
+    }
+
+    .btn-minimal:hover {
+      background: #343a40;
+      color: #fff;
+    }
+
+    .book-tag-badge {
+      background-color: #343a40;
+      color: #adb5bd;
+      border-color: #495057;
+    }
+
+    .dropdown-menu {
+      background-color: #2d2d2d;
+      border-color: #495057;
+    }
+
+    .dropdown-item {
+      color: #e0e0e0;
+    }
+
+    .dropdown-item:hover {
+      background-color: #343a40;
     }
   }
 </style>
@@ -186,8 +259,7 @@
   <div class="book-search-container">
     <div class="search-input-wrapper">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" id="bookSearchInput" class="form-control book-search-input"
-        placeholder="Search books by title, author, or keywords...">
+      <input type="text" id="bookSearchInput" class="form-control book-search-input" placeholder="Search books...">
     </div>
 
     <div class="filter-tags" id="filterTags">
@@ -203,20 +275,20 @@
   </div>
 
   <!-- Books Grid -->
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="booksGrid">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5" id="booksGrid">
     {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
     {% for book in sbooks %}
     <div class="col book-item" data-title="{{ book.title | downcase }}" data-author="{{ book.book_author | downcase }}"
       data-tags="{{ book.tags | join: ',' | downcase }}">
-      <div class="card book-card shadow-sm h-100">
+      <div class="card book-card h-100">
         <div class="book-cover-container">
           {% if book.front_page %}
           <img src="{{book.front_page}}" class="book-cover" alt="{{book.title}}">
           {% else %}
-          <svg class="bd-placeholder-img book-cover" width="100%" height="250" xmlns="http://www.w3.org/2000/svg"
+          <svg class="bd-placeholder-img book-cover" width="100%" height="220" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="No Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#eee"></rect>
-            <text x="50%" y="50%" fill="#aaa" dy=".3em" text-anchor="middle">No Cover</text>
+            <rect width="100%" height="100%" fill="transparent"></rect>
+            <text x="50%" y="50%" fill="#dee2e6" dy=".3em" text-anchor="middle">No Cover</text>
           </svg>
           {% endif %}
         </div>
@@ -226,44 +298,44 @@
 
           {% if book.book_author %}
           <div class="book-meta">
-            <i class="fas fa-user-edit me-1"></i> {{book.book_author}}
+            {{book.book_author}}
           </div>
           {% endif %}
 
           <div class="book-meta">
             {% if book.print_year %}
-            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> {{book.print_year}}</span>
+            <span class="me-3">{{book.print_year}}</span>
             {% endif %}
             {% if book.publisher %}
-            <span><i class="fas fa-building me-1"></i> {{book.publisher}}</span>
+            <span>{{book.publisher}}</span>
             {% endif %}
           </div>
 
-          {% if book.tags %}
           <div class="book-tags">
-            {% for tag in book.tags %}
+            {% if book.tags %}
+            {% for tag in book.tags limit:3 %}
             <span class="book-tag-badge">{{tag}}</span>
             {% endfor %}
+            {% endif %}
           </div>
-          {% endif %}
 
           <div class="mt-auto book-actions">
             {% if book.description %}
-            <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#desc_{{forloop.index}}"
-              role="button" aria-expanded="false">
-              Description
+            <a class="btn btn-minimal btn-sm" data-toggle="collapse" href="#desc_{{forloop.index}}" role="button"
+              aria-expanded="false">
+              Desc
             </a>
             {% endif %}
 
-            <a href="{{book.book_url}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt me-1"></i> Website
+            <a href="{{book.book_url}}" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
+              Web
             </a>
 
             {% if book.supp_material %}
             <div class="btn-group">
-              <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown"
+              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown"
                 aria-expanded="false">
-                Materials
+                Mat
               </button>
               <ul class="dropdown-menu">
                 {% for material in book.supp_material %}
@@ -275,8 +347,8 @@
           </div>
 
           {% if book.description %}
-          <div class="collapse mt-3" id="desc_{{forloop.index}}">
-            <div class="card card-body bg-light small">
+          <div class="collapse mt-2" id="desc_{{forloop.index}}">
+            <div class="small text-muted border-top pt-2">
               {{book.description}}
             </div>
           </div>
@@ -289,8 +361,8 @@
 
   <!-- No Results Message -->
   <div id="noResults" class="text-center py-5" style="display: none;">
-    <h4 class="text-muted">No books found matching your search.</h4>
-    <button class="btn btn-outline-primary mt-2" onclick="resetSearch()">Clear Search</button>
+    <h4 class="text-muted">No books found.</h4>
+    <button class="btn btn-minimal mt-2" onclick="resetSearch()">Clear Search</button>
   </div>
 </div>
 
@@ -324,17 +396,10 @@
 
         if (tagValue === 'all') {
           currentTag = 'all';
-          // Optional: Clear search when clicking All? 
-          // For now, let's keep search text independent or clear it?
-          // User said "tags to choose for the search bar".
-          // Let's make clicking a tag POPULATE the search bar for immediate utility
-          // since tags in YAML are missing.
           searchInput.value = '';
           currentSearch = '';
         } else {
           currentTag = tagValue;
-          // Populate search bar to ensure we find titles matching the tag
-          // even if data-tags is empty.
           searchInput.value = tagValue;
           currentSearch = tagValue.toLowerCase();
         }
@@ -351,8 +416,6 @@
         const author = item.getAttribute('data-author') || '';
         const tags = item.getAttribute('data-tags') || '';
 
-        // Search Logic: Match title, author, OR tags
-        // Since we populate search input on tag click, this covers both cases.
         const matchSearch = currentSearch === '' ||
           title.includes(currentSearch) ||
           author.includes(currentSearch) ||
@@ -366,7 +429,6 @@
         }
       });
 
-      // Show/Hide No Results
       if (visibleCount === 0) {
         noResults.style.display = 'block';
       } else {
@@ -374,7 +436,6 @@
       }
     }
 
-    // Expose reset function
     window.resetSearch = function () {
       searchInput.value = '';
       currentSearch = '';
