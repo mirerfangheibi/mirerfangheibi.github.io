@@ -66,20 +66,20 @@
     border-color: #495057;
   }
 
-  .book-card {
+  /* Increased specificity to override defaults without !important */
+  #booksGrid .book-card {
     height: 100%;
     border: 1px solid transparent;
     /* Minimal border */
     border-radius: 8px;
-    background: #fff !important;
-    /* Force white background for light theme */
+    background: #fff;
+    /* Explicit white for light theme */
     transition: transform 0.2s ease;
     overflow: visible;
   }
 
-  .book-card:hover {
+  #booksGrid .book-card:hover {
     transform: translateY(-3px);
-    /* Just wiggle */
     background: #fff;
     border-color: #e9ecef;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -103,7 +103,7 @@
     transition: filter 0.3s ease;
   }
 
-  .book-card:hover .book-cover {
+  #booksGrid .book-card:hover .book-cover {
     filter: grayscale(0%);
   }
 
@@ -202,17 +202,15 @@
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
-    .book-card {
-      background: #343a40 !important;
-      /* Main color as requested, forced to override light theme */
+    #booksGrid .book-card {
+      background: #343a40;
+      /* Main color */
       border-color: #495057;
     }
 
-    .book-card:hover {
+    #booksGrid .book-card:hover {
       background: #343a40;
-      /* Keep same background */
       border-color: #adb5bd;
-      /* Slightly lighter border on hover */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -258,13 +256,11 @@
 
     .btn-minimal:hover {
       background: #495057;
-      /* Slightly lighter than card */
       color: #fff;
     }
 
     .book-tag-badge {
       background-color: #2d2d2d;
-      /* Darker badge */
       color: #adb5bd;
       border-color: #495057;
     }
