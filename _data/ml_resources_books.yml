@@ -16,7 +16,7 @@
 
 
 - title: Deep Learning
-  front_page: https://mit-press-us.imgix.net/covers/9780262035613.jpg
+  front_page: https://mit-press-new-us.imgix.net/covers/9780262035613.jpg
   book_author: Ian Goodfellow, Yoshua Bengio and Aaron Courville
   edition: null
   publisher: MIT Press
@@ -101,7 +101,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Machine Learning
 
 - title: "Reinforcement Learning: An Introduction"
-  front_page: https://mit-press-us.imgix.net/covers/9780262039246.jpg
+  front_page: https://mit-press-new-us.imgix.net/covers/9780262039246.jpg
   book_author: Richard S. Sutton and Andrew G. Barto
   edition: 2
   publisher: MIT Press
@@ -433,7 +433,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Ethics
     
 - title: Distributional Reinforcement Learning
-  front_page: "https://mit-press-us.imgix.net/covers/9780262048019.jpg"
+  front_page: "https://mit-press-new-us.imgix.net/covers/9780262048019.jpg"
   book_author: Marc G. Bellemare and Will Dabney, and Mark Rowland
   edition: null
   publisher: MIT Press
@@ -456,7 +456,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Math
     
 - title: Algorithms for Decision Making
-  front_page: https://mit-press-us.imgix.net/covers/9780262047012.jpg
+  front_page: https://mit-press-new-us.imgix.net/covers/9780262047012.jpg
   book_author: Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray
   edition: null
   publisher: MIT Press
@@ -563,7 +563,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Simulation
 
 - title: Introduction to Online Convex Optimization
-  front_page: https://mit-press-us.imgix.net/covers/9780262046985.jpg
+  front_page: https://mit-press-new-us.imgix.net/covers/9780262046985.jpg
   book_author: Elad Hazan
   edition: 2
   publisher: MIT Press
@@ -599,7 +599,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Advanced
 
 - title: Understanding Deep Learning
-  front_page: "https://mit-press-us.imgix.net/covers/9780262048644.jpg"
+  front_page: "https://mit-press-new-us.imgix.net/covers/9780262048644.jpg"
   book_author: Simon J.D. Prince
   edition: null
   publisher: MIT Press
@@ -866,7 +866,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Theory
 
 - title: "Machine Learning for Data Streams with Practical Examples in MOA"
-  front_page: https://mit-press-us.imgix.net/covers/9780262037792.jpg
+  front_page: https://mit-press-new-us.imgix.net/covers/9780262037792.jpg
   book_author: Albert Bifet, Ricard Gavaldà, Geoffrey Holmes, and Bernhard Pfahringer
   edition: null
   publisher: MIT Press
@@ -1049,7 +1049,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - AI
 
   title: "Machine Learning Systems: Principles and Practices of Engineering Artificially Intelligent Systems"
-  front_page: https://mlsysbook.ai/cover-hardcover-book.png
+  front_page: https://www.mlsysbook.ai/assets/images/covers/cover-hardcover-book.png
   book_author: Vijay Janapa Reddi
   edition: null
   publisher: MIT Press
