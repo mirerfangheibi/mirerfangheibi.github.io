@@ -239,15 +239,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     border: 1px solid transparent;
     /* Minimal border */
     border-radius: 8px;
-    background: #fff;
-    /* Explicit white for light theme */
+    background: #f8f9fa;
+    /* Light grey for light theme (matches tag hover) */
     transition: transform 0.2s ease;
     overflow: visible;
   }
 
   #booksGrid .book-card:hover {
     transform: translateY(-3px);
-    background: #fff;
+    background: #f8f9fa;
+    /* Keep same background */
     border-color: #e9ecef;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
@@ -370,13 +371,14 @@ This page has been divided into the following sections: <a href="/ml_resources/#
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
     #booksGrid .book-card {
-      background: #343a40;
+      background: #2d2d2d;
       /* Main color */
       border-color: #495057;
     }
 
     #booksGrid .book-card:hover {
-      background: #343a40;
+      background: #2d2d2d;
+      /* Keep same background */
       border-color: #adb5bd;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
