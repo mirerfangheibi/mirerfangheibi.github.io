@@ -162,20 +162,23 @@
 
   .book-actions .btn {
     border-radius: 4px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    /* Reduced font size */
     margin-right: 4px;
     margin-bottom: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.6rem;
+    /* Reduced padding */
   }
 
   .btn-minimal {
     color: var(--global-text-color);
     background: transparent;
     border: 1px solid var(--global-text-color) !important;
-    padding: 0.25rem 1rem;
+    padding: 0.2rem 0.6rem;
+    /* Reduced padding */
   }
 
   .btn-minimal:hover {
@@ -424,12 +427,12 @@
             {% if book.description %}
             <button class="btn btn-minimal btn-sm"
               onclick="showDescription('{{book.title | escape}}', '{{book.description | escape}}')">
-              Desc
+              Desc.
             </button>
             {% endif %}
 
             <a href="{{book.book_url}}" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
-              Website
+              Link
             </a>
 
             {% if book.supp_material %}
