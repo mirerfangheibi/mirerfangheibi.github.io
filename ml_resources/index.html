@@ -336,7 +336,8 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
-    padding: 0 0.3rem;
+    padding: 0 0.3rem !important;
+    /* Force consistent padding */
     /* Reduced horizontal padding */
     height: 22px;
     /* Explicit height */
@@ -358,8 +359,8 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     color: var(--global-text-color);
     background: transparent;
     border: 1px solid var(--global-text-color) !important;
-    padding: 0.1rem 0.4rem;
-    /* Further reduced padding */
+    padding: 0 0.3rem !important;
+    /* Match .book-actions .btn */
   }
 
   .btn-minimal:hover {
