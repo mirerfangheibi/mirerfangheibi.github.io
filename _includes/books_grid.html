@@ -22,8 +22,8 @@
 
   .book-search-input {
     padding-left: 40px;
-    border-radius: 8px;
-    /* Matched to book card rounding */
+    border-radius: 4px;
+    /* Matched to courses grid */
     border: 1px solid #e9ecef;
     background: #f8f9fa;
     box-shadow: none;
@@ -45,8 +45,8 @@
   }
 
   .filter-tag {
-    border-radius: 8px;
-    /* Matched to book card rounding */
+    border-radius: 4px;
+    /* Matched to courses grid */
     padding: 0.25rem 0.8rem;
     font-size: 0.85rem;
     cursor: pointer;
@@ -73,7 +73,8 @@
   #booksGrid .book-card {
     height: 100%;
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 4px;
+    /* Matched to courses grid */
     background-color: transparent !important;
     /* Transparent as requested */
     transition: transform 0.2s ease;
@@ -94,7 +95,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px 8px 0 0;
+    border-radius: 4px 4px 0 0;
+    /* Matched to courses grid */
     overflow: hidden;
   }
 
@@ -170,15 +172,16 @@
   }
 
   .btn-minimal {
-    color: #495057;
+    color: var(--global-text-color);
     background: transparent;
-    border: 1px solid #dee2e6 !important;
+    border: 1px solid var(--global-text-color) !important;
+    padding: 0.25rem 1rem;
   }
 
   .btn-minimal:hover {
-    background: #f8f9fa;
-    color: #212529;
-    border-color: #ced4da;
+    background: transparent;
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color) !important;
   }
 
   /* Dropdown fixes */
@@ -282,15 +285,7 @@
     border-color: #adb5bd;
   }
 
-  html[data-theme='dark'] .btn-minimal {
-    color: #adb5bd;
-    border-color: #495057 !important;
-  }
 
-  html[data-theme='dark'] .btn-minimal:hover {
-    background: #495057;
-    color: #fff;
-  }
 
   html[data-theme='dark'] .book-tag-badge {
     background-color: #2d2d2d;
