@@ -241,9 +241,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     background: transparent;
     /* Minimal background */
     transition: transform 0.2s ease;
-    /* Removed overflow: hidden to allow dropdowns to pop out if needed,
-       but we need it for border-radius on images.
-       Instead, we'll use position: static for the card-body or handle dropdowns carefully. */
     overflow: visible;
   }
 
@@ -252,7 +249,8 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     /* Minimal hover effect */
     background: #fff;
     border-color: #e9ecef;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    /* Lighter shadow */
   }
 
   .book-cover-container {
@@ -264,12 +262,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     justify-content: center;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    /* Keep image contained */
   }
 
   .book-cover {
     height: 220px;
-    /* Slightly smaller */
     object-fit: contain;
     filter: grayscale(10%);
     transition: filter 0.3s ease;
@@ -302,7 +298,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
     height: 24px;
-    /* Fixed height to prevent jumping */
     overflow: hidden;
   }
 
@@ -347,13 +342,17 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     font-size: 0.85rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
+    margin-top: 0;
+    /* Fix flickering gap */
   }
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
     .book-card:hover {
-      background: #2d2d2d;
+      background: #343a40;
+      /* Lighter dark grey */
       border-color: #495057;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .book-title {
@@ -381,13 +380,15 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     }
 
     .book-search-input {
-      background-color: #2d2d2d;
+      background-color: transparent;
+      /* Match buttons */
       border-color: #495057;
-      color: #fff;
+      color: #e0e0e0;
     }
 
     .book-search-input:focus {
       background-color: #343a40;
+      border-color: #adb5bd;
     }
 
     .btn-minimal {
@@ -445,7 +446,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5" id="booksGrid">
     
     
-    <div class="col book-item" data-title="machine learning systems: principles and practices of engineering artificially intelligent systems" data-author="vijay janapa reddi" data-tags="machine learning,systems,engineering">
+    <div class="col book-item mb-4" data-title="machine learning systems: principles and practices of engineering artificially intelligent systems" data-author="vijay janapa reddi" data-tags="machine learning,systems,engineering">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -458,16 +459,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Vijay Janapa Reddi
+            <i class="fas fa-user-edit me-1"></i> Vijay Janapa Reddi
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2026</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2026</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -498,7 +499,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning in production: from models to products" data-author="christian kästner" data-tags="machine learning,production,engineering">
+    <div class="col book-item mb-4" data-title="machine learning in production: from models to products" data-author="christian kästner" data-tags="machine learning,production,engineering">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -511,16 +512,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Christian Kästner
+            <i class="fas fa-user-edit me-1"></i> Christian Kästner
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2025</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2025</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -551,7 +552,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="foundations of computer vision" data-author="antonio torralba, phillip isola, and william freeman" data-tags="computer vision,foundations,deep learning">
+    <div class="col book-item mb-4" data-title="foundations of computer vision" data-author="antonio torralba, phillip isola, and william freeman" data-tags="computer vision,foundations,deep learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -564,16 +565,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Antonio Torralba, Phillip Isola, and William Freeman
+            <i class="fas fa-user-edit me-1"></i> Antonio Torralba, Phillip Isola, and William Freeman
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2024</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2024</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -604,7 +605,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="statistical consequences of fat tails: real world preasymptotics, epistemology, and applications" data-author="nassim nicholas taleb" data-tags="statistics,fat tails,risk">
+    <div class="col book-item mb-4" data-title="statistical consequences of fat tails: real world preasymptotics, epistemology, and applications" data-author="nassim nicholas taleb" data-tags="statistics,fat tails,risk">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -617,16 +618,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Nassim Nicholas Taleb
+            <i class="fas fa-user-edit me-1"></i> Nassim Nicholas Taleb
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2024</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2024</span>
             
             
-            <span>STEM Academic Press</span>
+            <span><i class="fas fa-building me-1"></i> STEM Academic Press</span>
             
           </div>
 
@@ -657,7 +658,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="deep learning: foundations and concepts" data-author="christopher m. bishop, and hugh bishop" data-tags="deep learning,foundations,concepts">
+    <div class="col book-item mb-4" data-title="deep learning: foundations and concepts" data-author="christopher m. bishop, and hugh bishop" data-tags="deep learning,foundations,concepts">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -670,16 +671,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Christopher M. Bishop, and Hugh Bishop
+            <i class="fas fa-user-edit me-1"></i> Christopher M. Bishop, and Hugh Bishop
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2024</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2024</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -710,7 +711,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="bayesian optimization book" data-author="roman garnett" data-tags="bayesian,optimization,machine learning">
+    <div class="col book-item mb-4" data-title="bayesian optimization book" data-author="roman garnett" data-tags="bayesian,optimization,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -723,16 +724,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Roman Garnett
+            <i class="fas fa-user-edit me-1"></i> Roman Garnett
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -763,7 +764,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="mathematical analysis of machine learning algorithms" data-author="tong zhang" data-tags="machine learning,analysis,math">
+    <div class="col book-item mb-4" data-title="mathematical analysis of machine learning algorithms" data-author="tong zhang" data-tags="machine learning,analysis,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -776,16 +777,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Tong Zhang
+            <i class="fas fa-user-edit me-1"></i> Tong Zhang
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -816,7 +817,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="an introduction to optimization on smooth manifolds" data-author="nicolas boumal" data-tags="optimization,manifolds,math">
+    <div class="col book-item mb-4" data-title="an introduction to optimization on smooth manifolds" data-author="nicolas boumal" data-tags="optimization,manifolds,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -829,16 +830,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Nicolas Boumal
+            <i class="fas fa-user-edit me-1"></i> Nicolas Boumal
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -869,7 +870,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="introduction to probability for computing" data-author="mor harchol-balter" data-tags="probability,computing,math">
+    <div class="col book-item mb-4" data-title="introduction to probability for computing" data-author="mor harchol-balter" data-tags="probability,computing,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -882,16 +883,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Mor Harchol-Balter
+            <i class="fas fa-user-edit me-1"></i> Mor Harchol-Balter
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -922,7 +923,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="linear algebra done right" data-author="sheldon axler" data-tags="linear algebra,math,reference">
+    <div class="col book-item mb-4" data-title="linear algebra done right" data-author="sheldon axler" data-tags="linear algebra,math,reference">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -935,16 +936,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Sheldon Axler
+            <i class="fas fa-user-edit me-1"></i> Sheldon Axler
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -969,7 +970,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
             <div class="btn-group">
-              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-boundary="viewport">
                 Mat
               </button>
               <ul class="dropdown-menu">
@@ -986,7 +987,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning for data streams with practical examples in moa" data-author="albert bifet, ricard gavaldà, geoffrey holmes, and bernhard pfahringer" data-tags="machine learning,data streams,moa">
+    <div class="col book-item mb-4" data-title="machine learning for data streams with practical examples in moa" data-author="albert bifet, ricard gavaldà, geoffrey holmes, and bernhard pfahringer" data-tags="machine learning,data streams,moa">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -999,16 +1000,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Albert Bifet, Ricard Gavaldà, Geoffrey Holmes, and Bernhard Pfahringer
+            <i class="fas fa-user-edit me-1"></i> Albert Bifet, Ricard Gavaldà, Geoffrey Holmes, and Bernhard Pfahringer
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1039,7 +1040,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="automata theory: an algorithmic approach" data-author="javier esparza, and michael blondin" data-tags="automata,algorithms,theory">
+    <div class="col book-item mb-4" data-title="automata theory: an algorithmic approach" data-author="javier esparza, and michael blondin" data-tags="automata,algorithms,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1052,16 +1053,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Javier Esparza, and Michael Blondin
+            <i class="fas fa-user-edit me-1"></i> Javier Esparza, and Michael Blondin
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1092,7 +1093,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="equivariant and coordinate independent convolutional networks: a gauge field theory of neural networks" data-author="maurice weiler, patrick forré, erik verlinde, and max welling" data-tags="deep learning,cnns,theory">
+    <div class="col book-item mb-4" data-title="equivariant and coordinate independent convolutional networks: a gauge field theory of neural networks" data-author="maurice weiler, patrick forré, erik verlinde, and max welling" data-tags="deep learning,cnns,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1105,13 +1106,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Maurice Weiler, Patrick Forré, Erik Verlinde, and Max Welling
+            <i class="fas fa-user-edit me-1"></i> Maurice Weiler, Patrick Forré, Erik Verlinde, and Max Welling
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
           </div>
@@ -1137,7 +1138,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
             <div class="btn-group">
-              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-boundary="viewport">
                 Mat
               </button>
               <ul class="dropdown-menu">
@@ -1154,7 +1155,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="information theory: from coding to learning" data-author="yury polyanskiy" data-tags="information theory,learning,coding">
+    <div class="col book-item mb-4" data-title="information theory: from coding to learning" data-author="yury polyanskiy" data-tags="information theory,learning,coding">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1170,16 +1171,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Yury Polyanskiy
+            <i class="fas fa-user-edit me-1"></i> Yury Polyanskiy
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -1210,7 +1211,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="telling stories with data: with applications in r" data-author="rohan alexander" data-tags="data science,storytelling,r">
+    <div class="col book-item mb-4" data-title="telling stories with data: with applications in r" data-author="rohan alexander" data-tags="data science,storytelling,r">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1223,16 +1224,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Rohan Alexander
+            <i class="fas fa-user-edit me-1"></i> Rohan Alexander
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>Chapman and Hall/CRC</span>
+            <span><i class="fas fa-building me-1"></i> Chapman and Hall/CRC</span>
             
           </div>
 
@@ -1263,7 +1264,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="bayesian models of perception and action: an introduction" data-author="wei ji ma, konrad paul kording, and daniel goldreich" data-tags="bayesian,perception,neuroscience">
+    <div class="col book-item mb-4" data-title="bayesian models of perception and action: an introduction" data-author="wei ji ma, konrad paul kording, and daniel goldreich" data-tags="bayesian,perception,neuroscience">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1276,16 +1277,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Wei Ji Ma, Konrad Paul Kording, and Daniel Goldreich
+            <i class="fas fa-user-edit me-1"></i> Wei Ji Ma, Konrad Paul Kording, and Daniel Goldreich
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>The MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> The MIT Press</span>
             
           </div>
 
@@ -1316,7 +1317,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="the little book of deep learning" data-author="françois fleuret" data-tags="deep learning,concise,intro">
+    <div class="col book-item mb-4" data-title="the little book of deep learning" data-author="françois fleuret" data-tags="deep learning,concise,intro">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1329,13 +1330,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            François Fleuret
+            <i class="fas fa-user-edit me-1"></i> François Fleuret
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
           </div>
@@ -1367,7 +1368,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="understanding deep learning" data-author="simon j.d. prince" data-tags="deep learning,understanding,concepts">
+    <div class="col book-item mb-4" data-title="understanding deep learning" data-author="simon j.d. prince" data-tags="deep learning,understanding,concepts">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1380,16 +1381,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Simon J.D. Prince
+            <i class="fas fa-user-edit me-1"></i> Simon J.D. Prince
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1420,7 +1421,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="probabilistic machine learning: advanced topics" data-author="kevin p. murphy" data-tags="machine learning,probabilistic,advanced">
+    <div class="col book-item mb-4" data-title="probabilistic machine learning: advanced topics" data-author="kevin p. murphy" data-tags="machine learning,probabilistic,advanced">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1433,16 +1434,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Kevin P. Murphy
+            <i class="fas fa-user-edit me-1"></i> Kevin P. Murphy
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1473,7 +1474,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="distributional reinforcement learning" data-author="marc g. bellemare and will dabney, and mark rowland" data-tags="reinforcement learning,machine learning">
+    <div class="col book-item mb-4" data-title="distributional reinforcement learning" data-author="marc g. bellemare and will dabney, and mark rowland" data-tags="reinforcement learning,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1486,16 +1487,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Marc G. Bellemare and Will Dabney, and Mark Rowland
+            <i class="fas fa-user-edit me-1"></i> Marc G. Bellemare and Will Dabney, and Mark Rowland
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1524,7 +1525,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="fairness and machine learning: limitations and opportunities" data-author="solon barocas, moritz hardt, and arvind narayanan" data-tags="machine learning,fairness,ethics">
+    <div class="col book-item mb-4" data-title="fairness and machine learning: limitations and opportunities" data-author="solon barocas, moritz hardt, and arvind narayanan" data-tags="machine learning,fairness,ethics">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1537,16 +1538,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Solon Barocas, Moritz Hardt, and Arvind Narayanan
+            <i class="fas fa-user-edit me-1"></i> Solon Barocas, Moritz Hardt, and Arvind Narayanan
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1577,7 +1578,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="learning theory from first principles" data-author="francis bach" data-tags="machine learning,theory">
+    <div class="col book-item mb-4" data-title="learning theory from first principles" data-author="francis bach" data-tags="machine learning,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1590,16 +1591,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Francis Bach
+            <i class="fas fa-user-edit me-1"></i> Francis Bach
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2023</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2023</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -1628,7 +1629,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning with neural networks" data-author="bernhard mehlig" data-tags="machine learning,neural networks,physics">
+    <div class="col book-item mb-4" data-title="machine learning with neural networks" data-author="bernhard mehlig" data-tags="machine learning,neural networks,physics">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1641,16 +1642,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Bernhard Mehlig
+            <i class="fas fa-user-edit me-1"></i> Bernhard Mehlig
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -1675,7 +1676,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
             <div class="btn-group">
-              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-boundary="viewport">
                 Mat
               </button>
               <ul class="dropdown-menu">
@@ -1692,7 +1693,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="patterns, predictions, and actions: a story about machine learning" data-author="moritz hardt and benjamin recht" data-tags="machine learning,patterns,predictions">
+    <div class="col book-item mb-4" data-title="patterns, predictions, and actions: a story about machine learning" data-author="moritz hardt and benjamin recht" data-tags="machine learning,patterns,predictions">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1705,16 +1706,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Moritz Hardt and Benjamin Recht
+            <i class="fas fa-user-edit me-1"></i> Moritz Hardt and Benjamin Recht
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Princeton University Press</span>
+            <span><i class="fas fa-building me-1"></i> Princeton University Press</span>
             
           </div>
 
@@ -1745,7 +1746,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="optimization for modern data analysis" data-author="benjamin recht and stephen j. wright" data-tags="optimization,data analysis,machine learning">
+    <div class="col book-item mb-4" data-title="optimization for modern data analysis" data-author="benjamin recht and stephen j. wright" data-tags="optimization,data analysis,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1758,16 +1759,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Benjamin Recht and Stephen J. Wright
+            <i class="fas fa-user-edit me-1"></i> Benjamin Recht and Stephen J. Wright
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -1798,7 +1799,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="random matrix methods for machine learning" data-author="romain couillet, and zhenyu liao" data-tags="random matrix,machine learning,math">
+    <div class="col book-item mb-4" data-title="random matrix methods for machine learning" data-author="romain couillet, and zhenyu liao" data-tags="random matrix,machine learning,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1811,16 +1812,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Romain Couillet, and Zhenyu Liao
+            <i class="fas fa-user-edit me-1"></i> Romain Couillet, and Zhenyu Liao
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -1851,7 +1852,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="algebra, topology, differential calculus, and optimization theory for computer science and machine learning" data-author="jean gallier and jocelyn quaintance" data-tags="math,optimization,calculus">
+    <div class="col book-item mb-4" data-title="algebra, topology, differential calculus, and optimization theory for computer science and machine learning" data-author="jean gallier and jocelyn quaintance" data-tags="math,optimization,calculus">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1867,13 +1868,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jean Gallier and Jocelyn Quaintance
+            <i class="fas fa-user-edit me-1"></i> Jean Gallier and Jocelyn Quaintance
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
           </div>
@@ -1905,7 +1906,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="graph neural networks: foundations, frontiers, and applicationsg" data-author="lingfei wu, peng cui, jian pei, and `liang zhao" data-tags="graph neural networks,deep learning,graphs">
+    <div class="col book-item mb-4" data-title="graph neural networks: foundations, frontiers, and applicationsg" data-author="lingfei wu, peng cui, jian pei, and `liang zhao" data-tags="graph neural networks,deep learning,graphs">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1918,16 +1919,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Lingfei Wu, Peng Cui, Jian Pei, and `Liang Zhao
+            <i class="fas fa-user-edit me-1"></i> Lingfei Wu, Peng Cui, Jian Pei, and `Liang Zhao
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -1958,7 +1959,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="reinforcement learning: theory and algorithms" data-author="alekh agarwal, nan jiang, sham m. kakade, and wen sun" data-tags="reinforcement learning,theory,algorithms">
+    <div class="col book-item mb-4" data-title="reinforcement learning: theory and algorithms" data-author="alekh agarwal, nan jiang, sham m. kakade, and wen sun" data-tags="reinforcement learning,theory,algorithms">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -1974,13 +1975,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Alekh Agarwal, Nan Jiang, Sham M. Kakade, and Wen Sun
+            <i class="fas fa-user-edit me-1"></i> Alekh Agarwal, Nan Jiang, Sham M. Kakade, and Wen Sun
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
           </div>
@@ -2012,7 +2013,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="introduction to online convex optimization" data-author="elad hazan" data-tags="optimization,convex optimization,online learning">
+    <div class="col book-item mb-4" data-title="introduction to online convex optimization" data-author="elad hazan" data-tags="optimization,convex optimization,online learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2025,16 +2026,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Elad Hazan
+            <i class="fas fa-user-edit me-1"></i> Elad Hazan
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -2065,7 +2066,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning - a first course for engineers and scientists" data-author="andreas lindholm, niklas wahlström, fredrik lindsten, and thomas b. schön" data-tags="machine learning,engineering,science">
+    <div class="col book-item mb-4" data-title="machine learning - a first course for engineers and scientists" data-author="andreas lindholm, niklas wahlström, fredrik lindsten, and thomas b. schön" data-tags="machine learning,engineering,science">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2078,16 +2079,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Andreas Lindholm, Niklas Wahlström, Fredrik Lindsten, and Thomas B. Schön
+            <i class="fas fa-user-edit me-1"></i> Andreas Lindholm, Niklas Wahlström, Fredrik Lindsten, and Thomas B. Schön
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2118,7 +2119,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="large-scale convex optimization" data-author="ernest k. ryu, and wotao yin" data-tags="optimization,math,convex optimization">
+    <div class="col book-item mb-4" data-title="large-scale convex optimization" data-author="ernest k. ryu, and wotao yin" data-tags="optimization,math,convex optimization">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2131,16 +2132,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Ernest K. Ryu, and Wotao Yin
+            <i class="fas fa-user-edit me-1"></i> Ernest K. Ryu, and Wotao Yin
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2171,7 +2172,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="algorithms for decision making" data-author="mykel j. kochenderfer, tim a. wheeler, and kyle h. wray" data-tags="algorithms,decision making,optimization">
+    <div class="col book-item mb-4" data-title="algorithms for decision making" data-author="mykel j. kochenderfer, tim a. wheeler, and kyle h. wray" data-tags="algorithms,decision making,optimization">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2184,16 +2185,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray
+            <i class="fas fa-user-edit me-1"></i> Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -2224,7 +2225,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="the principles of deep learning theory" data-author="daniel a. roberts, sho yaida, and boris hanin" data-tags="deep learning,theory,math">
+    <div class="col book-item mb-4" data-title="the principles of deep learning theory" data-author="daniel a. roberts, sho yaida, and boris hanin" data-tags="deep learning,theory,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2237,16 +2238,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Daniel A. Roberts, Sho Yaida, and Boris Hanin
+            <i class="fas fa-user-edit me-1"></i> Daniel A. Roberts, Sho Yaida, and Boris Hanin
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2277,7 +2278,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="hands-on data visualization" data-author="jack dougherty and ilya ilyankou" data-tags="data visualization,data science">
+    <div class="col book-item mb-4" data-title="hands-on data visualization" data-author="jack dougherty and ilya ilyankou" data-tags="data visualization,data science">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2290,16 +2291,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jack Dougherty and Ilya Ilyankou
+            <i class="fas fa-user-edit me-1"></i> Jack Dougherty and Ilya Ilyankou
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -2328,7 +2329,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="probabilistic numerics" data-author="philipp hennig, michael a. osborne, hans kersting" data-tags="math,probabilistic numerics,machine learning">
+    <div class="col book-item mb-4" data-title="probabilistic numerics" data-author="philipp hennig, michael a. osborne, hans kersting" data-tags="math,probabilistic numerics,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2341,16 +2342,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Philipp Hennig, Michael A. Osborne, Hans Kersting
+            <i class="fas fa-user-edit me-1"></i> Philipp Hennig, Michael A. Osborne, Hans Kersting
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2381,7 +2382,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="model-based machine learning" data-author="john winn, christopher m. bishop, thomas diethe, john guiver and yordan zaykov" data-tags="machine learning,modeling">
+    <div class="col book-item mb-4" data-title="model-based machine learning" data-author="john winn, christopher m. bishop, thomas diethe, john guiver and yordan zaykov" data-tags="machine learning,modeling">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2394,13 +2395,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            John Winn, Christopher M. Bishop, Thomas Diethe, John Guiver and Yordan Zaykov
+            <i class="fas fa-user-edit me-1"></i> John Winn, Christopher M. Bishop, Thomas Diethe, John Guiver and Yordan Zaykov
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
           </div>
@@ -2430,7 +2431,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="probabilistic machine learning: an introduction" data-author="kevin p. murphy" data-tags="machine learning,statistics,math">
+    <div class="col book-item mb-4" data-title="probabilistic machine learning: an introduction" data-author="kevin p. murphy" data-tags="machine learning,statistics,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2443,16 +2444,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Kevin P. Murphy
+            <i class="fas fa-user-edit me-1"></i> Kevin P. Murphy
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -2483,7 +2484,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="speech and language processing" data-author="dan jurafsky and james h. martin" data-tags="nlp,machine learning">
+    <div class="col book-item mb-4" data-title="speech and language processing" data-author="dan jurafsky and james h. martin" data-tags="nlp,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2499,13 +2500,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Dan Jurafsky and James H. Martin
+            <i class="fas fa-user-edit me-1"></i> Dan Jurafsky and James H. Martin
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
           </div>
@@ -2535,7 +2536,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="high-dimensional data analysis with low-dimensional models: principles, computation, and applications" data-author="john wright and yi ma" data-tags="math,machine learning,statistics">
+    <div class="col book-item mb-4" data-title="high-dimensional data analysis with low-dimensional models: principles, computation, and applications" data-author="john wright and yi ma" data-tags="math,machine learning,statistics">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2548,16 +2549,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            John Wright and Yi Ma
+            <i class="fas fa-user-edit me-1"></i> John Wright and Yi Ma
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2022</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2022</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2588,7 +2589,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="explanatory model analysis" data-author="" data-tags="model analysis,explainability,data science">
+    <div class="col book-item mb-4" data-title="explanatory model analysis" data-author="" data-tags="model analysis,explainability,data science">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2603,10 +2604,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Chapman and Hall/CRC</span>
+            <span><i class="fas fa-building me-1"></i> Chapman and Hall/CRC</span>
             
           </div>
 
@@ -2637,7 +2638,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning interviews" data-author="chip huyen" data-tags="machine learning,interviews,career">
+    <div class="col book-item mb-4" data-title="machine learning interviews" data-author="chip huyen" data-tags="machine learning,interviews,career">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2653,13 +2654,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Chip Huyen
+            <i class="fas fa-user-edit me-1"></i> Chip Huyen
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -2691,7 +2692,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="learning statistical models through simulation in r" data-author="dale j barr" data-tags="statistics,r,simulation">
+    <div class="col book-item mb-4" data-title="learning statistical models through simulation in r" data-author="dale j barr" data-tags="statistics,r,simulation">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2707,13 +2708,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Dale J Barr
+            <i class="fas fa-user-edit me-1"></i> Dale J Barr
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -2745,7 +2746,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="deep learning interviews" data-author="shlomo kashani, and amir ivry" data-tags="deep learning,interviews,career">
+    <div class="col book-item mb-4" data-title="deep learning interviews" data-author="shlomo kashani, and amir ivry" data-tags="deep learning,interviews,career">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2761,16 +2762,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Shlomo Kashani, and Amir Ivry
+            <i class="fas fa-user-edit me-1"></i> Shlomo Kashani, and Amir Ivry
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Interviews AI</span>
+            <span><i class="fas fa-building me-1"></i> Interviews AI</span>
             
           </div>
 
@@ -2801,7 +2802,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="data science at the command line" data-author="jeroen janssens" data-tags="data science,command line,tools">
+    <div class="col book-item mb-4" data-title="data science at the command line" data-author="jeroen janssens" data-tags="data science,command line,tools">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2814,16 +2815,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jeroen Janssens
+            <i class="fas fa-user-edit me-1"></i> Jeroen Janssens
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -2854,7 +2855,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="deep learning on graphs" data-author="yao ma, and jiliang tang" data-tags="deep learning,graphs,machine learning">
+    <div class="col book-item mb-4" data-title="deep learning on graphs" data-author="yao ma, and jiliang tang" data-tags="deep learning,graphs,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2867,16 +2868,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Yao Ma, and Jiliang Tang
+            <i class="fas fa-user-edit me-1"></i> Yao Ma, and Jiliang Tang
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -2907,7 +2908,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="bayes rules!" data-author="alicia a. johnson, miles q. ott, and mine dogucu" data-tags="bayesian,statistics,math">
+    <div class="col book-item mb-4" data-title="bayes rules!" data-author="alicia a. johnson, miles q. ott, and mine dogucu" data-tags="bayesian,statistics,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2920,16 +2921,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Alicia A. Johnson, Miles Q. Ott, and Mine Dogucu
+            <i class="fas fa-user-edit me-1"></i> Alicia A. Johnson, Miles Q. Ott, and Mine Dogucu
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>CRC Press</span>
+            <span><i class="fas fa-building me-1"></i> CRC Press</span>
             
           </div>
 
@@ -2960,7 +2961,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="physics-based deep learning book" data-author="nils thuerey, philipp holl, maximilian mueller, patrick schnell, and felix trost and kiwon um" data-tags="deep learning,physics,science">
+    <div class="col book-item mb-4" data-title="physics-based deep learning book" data-author="nils thuerey, philipp holl, maximilian mueller, patrick schnell, and felix trost and kiwon um" data-tags="deep learning,physics,science">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -2973,13 +2974,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Nils Thuerey, Philipp Holl, Maximilian Mueller, Patrick Schnell, and Felix Trost and Kiwon Um
+            <i class="fas fa-user-edit me-1"></i> Nils Thuerey, Philipp Holl, Maximilian Mueller, Patrick Schnell, and Felix Trost and Kiwon Um
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -3011,7 +3012,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="introduction to probability for data science" data-author="stanley h. chan" data-tags="data science,probability,math">
+    <div class="col book-item mb-4" data-title="introduction to probability for data science" data-author="stanley h. chan" data-tags="data science,probability,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3024,16 +3025,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Stanley H. Chan
+            <i class="fas fa-user-edit me-1"></i> Stanley H. Chan
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Michigan Publishing</span>
+            <span><i class="fas fa-building me-1"></i> Michigan Publishing</span>
             
           </div>
 
@@ -3064,7 +3065,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="theory of computation" data-author="jim hefferon" data-tags="computer science,theory">
+    <div class="col book-item mb-4" data-title="theory of computation" data-author="jim hefferon" data-tags="computer science,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3077,13 +3078,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jim Hefferon
+            <i class="fas fa-user-edit me-1"></i> Jim Hefferon
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -3113,7 +3114,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning and big data" data-author="kareem alkaseer" data-tags="">
+    <div class="col book-item mb-4" data-title="machine learning and big data" data-author="kareem alkaseer" data-tags="">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3129,13 +3130,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Kareem Alkaseer
+            <i class="fas fa-user-edit me-1"></i> Kareem Alkaseer
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -3159,7 +3160,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="think bayes" data-author="allen b. downey" data-tags="statistics,math,python">
+    <div class="col book-item mb-4" data-title="think bayes" data-author="allen b. downey" data-tags="statistics,math,python">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3172,16 +3173,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Allen B. Downey
+            <i class="fas fa-user-edit me-1"></i> Allen B. Downey
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -3212,7 +3213,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="computer vision: algorithms and applications" data-author="richard szeliski" data-tags="computer vision,machine learning">
+    <div class="col book-item mb-4" data-title="computer vision: algorithms and applications" data-author="richard szeliski" data-tags="computer vision,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3225,16 +3226,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Richard Szeliski
+            <i class="fas fa-user-edit me-1"></i> Richard Szeliski
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -3263,7 +3264,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="an introduction to statistical learning" data-author="gareth james, daniela witten, trevor hastie and robert tibshirani" data-tags="statistics,machine learning,math">
+    <div class="col book-item mb-4" data-title="an introduction to statistical learning" data-author="gareth james, daniela witten, trevor hastie and robert tibshirani" data-tags="statistics,machine learning,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3276,16 +3277,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani
+            <i class="fas fa-user-edit me-1"></i> Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -3316,7 +3317,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="dive into deep learning" data-author="aston zhang, zachary c. lipton, mu li and alexander j. smola" data-tags="deep learning,machine learning,computer vision,nlp">
+    <div class="col book-item mb-4" data-title="dive into deep learning" data-author="aston zhang, zachary c. lipton, mu li and alexander j. smola" data-tags="deep learning,machine learning,computer vision,nlp">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3329,13 +3330,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Aston Zhang, Zachary C. Lipton, Mu Li and Alexander J. Smola
+            <i class="fas fa-user-edit me-1"></i> Aston Zhang, Zachary C. Lipton, Mu Li and Alexander J. Smola
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2021</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2021</span>
             
             
           </div>
@@ -3367,7 +3368,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="bandit algorithms" data-author="tor lattimore, and csaba szepesvari" data-tags="bandits,algorithms,reinforcement learning">
+    <div class="col book-item mb-4" data-title="bandit algorithms" data-author="tor lattimore, and csaba szepesvari" data-tags="bandits,algorithms,reinforcement learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3380,16 +3381,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Tor Lattimore, and Csaba Szepesvari
+            <i class="fas fa-user-edit me-1"></i> Tor Lattimore, and Csaba Szepesvari
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2020</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2020</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -3414,7 +3415,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
             
             <div class="btn-group">
-              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-boundary="viewport">
                 Mat
               </button>
               <ul class="dropdown-menu">
@@ -3435,7 +3436,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title=" machine learning from scratch" data-author="daniel friedman" data-tags="machine learning,scratch,implementation">
+    <div class="col book-item mb-4" data-title=" machine learning from scratch" data-author="daniel friedman" data-tags="machine learning,scratch,implementation">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3448,13 +3449,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Daniel Friedman
+            <i class="fas fa-user-edit me-1"></i> Daniel Friedman
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2020</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2020</span>
             
             
           </div>
@@ -3486,7 +3487,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="mathematics for machine learning" data-author="marc peter deisenroth, a. aldo faisal, and cheng soon ong." data-tags="math,machine learning,reference">
+    <div class="col book-item mb-4" data-title="mathematics for machine learning" data-author="marc peter deisenroth, a. aldo faisal, and cheng soon ong." data-tags="math,machine learning,reference">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3499,16 +3500,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong.
+            <i class="fas fa-user-edit me-1"></i> Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong.
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2020</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2020</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -3539,7 +3540,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="bayesian reasoning and machine learning" data-author="david barber" data-tags="machine learning,bayesian,reasoning">
+    <div class="col book-item mb-4" data-title="bayesian reasoning and machine learning" data-author="david barber" data-tags="machine learning,bayesian,reasoning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3552,16 +3553,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            David Barber
+            <i class="fas fa-user-edit me-1"></i> David Barber
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2020</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2020</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -3592,7 +3593,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="linear algebra" data-author="jim hefferon" data-tags="math,linear algebra">
+    <div class="col book-item mb-4" data-title="linear algebra" data-author="jim hefferon" data-tags="math,linear algebra">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3605,16 +3606,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jim Hefferon
+            <i class="fas fa-user-edit me-1"></i> Jim Hefferon
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2020</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2020</span>
             
             
-            <span>leanpub</span>
+            <span><i class="fas fa-building me-1"></i> leanpub</span>
             
           </div>
 
@@ -3643,7 +3644,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="automated machine learning: methods, systems, challenges" data-author="frank hutter, lars kotthoff, and joaquin vanschoren" data-tags="automl,machine learning,systems">
+    <div class="col book-item mb-4" data-title="automated machine learning: methods, systems, challenges" data-author="frank hutter, lars kotthoff, and joaquin vanschoren" data-tags="automl,machine learning,systems">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3656,16 +3657,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Frank Hutter, Lars Kotthoff, and Joaquin Vanschoren
+            <i class="fas fa-user-edit me-1"></i> Frank Hutter, Lars Kotthoff, and Joaquin Vanschoren
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2019</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2019</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -3696,7 +3697,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="introduction to probability" data-author="joseph k. blitzstein and jessica hwang" data-tags="math,probability,statistics">
+    <div class="col book-item mb-4" data-title="introduction to probability" data-author="joseph k. blitzstein and jessica hwang" data-tags="math,probability,statistics">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3709,16 +3710,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Joseph K. Blitzstein and Jessica Hwang
+            <i class="fas fa-user-edit me-1"></i> Joseph K. Blitzstein and Jessica Hwang
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2019</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2019</span>
             
             
-            <span>Routledge</span>
+            <span><i class="fas fa-building me-1"></i> Routledge</span>
             
           </div>
 
@@ -3749,7 +3750,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="algorithmic aspects of machine learning" data-author="ankur moitra" data-tags="machine learning,algorithms,theory">
+    <div class="col book-item mb-4" data-title="algorithmic aspects of machine learning" data-author="ankur moitra" data-tags="machine learning,algorithms,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3762,16 +3763,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Ankur Moitra
+            <i class="fas fa-user-edit me-1"></i> Ankur Moitra
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2018</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -3802,7 +3803,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="adversarial robustness - theory and practice" data-author="zico kolter and aleksander madry" data-tags="machine learning,adversarial robustness,security">
+    <div class="col book-item mb-4" data-title="adversarial robustness - theory and practice" data-author="zico kolter and aleksander madry" data-tags="machine learning,adversarial robustness,security">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3818,13 +3819,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Zico Kolter and Aleksander Madry
+            <i class="fas fa-user-edit me-1"></i> Zico Kolter and Aleksander Madry
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2018</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
             
             
           </div>
@@ -3856,7 +3857,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="foundations of machine learning" data-author="mehryar mohri, afshin rostamizadeh and ameet talwalkar" data-tags="machine learning,theory">
+    <div class="col book-item mb-4" data-title="foundations of machine learning" data-author="mehryar mohri, afshin rostamizadeh and ameet talwalkar" data-tags="machine learning,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3869,16 +3870,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Mehryar Mohri, Afshin Rostamizadeh and Ameet Talwalkar
+            <i class="fas fa-user-edit me-1"></i> Mehryar Mohri, Afshin Rostamizadeh and Ameet Talwalkar
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2018</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -3907,7 +3908,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="reinforcement learning: an introduction" data-author="richard s. sutton and andrew g. barto" data-tags="reinforcement learning,machine learning">
+    <div class="col book-item mb-4" data-title="reinforcement learning: an introduction" data-author="richard s. sutton and andrew g. barto" data-tags="reinforcement learning,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3920,16 +3921,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Richard S. Sutton and Andrew G. Barto
+            <i class="fas fa-user-edit me-1"></i> Richard S. Sutton and Andrew G. Barto
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2018</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -3958,7 +3959,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning yearning" data-author="andrew ng" data-tags="machine learning,engineering">
+    <div class="col book-item mb-4" data-title="machine learning yearning" data-author="andrew ng" data-tags="machine learning,engineering">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -3971,13 +3972,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Andrew Ng
+            <i class="fas fa-user-edit me-1"></i> Andrew Ng
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2018</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
             
             
           </div>
@@ -4007,7 +4008,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="elements of statistical learning" data-author="trevor hastie, robert tibshirani, and jerome friedman" data-tags="statistics,machine learning,classic">
+    <div class="col book-item mb-4" data-title="elements of statistical learning" data-author="trevor hastie, robert tibshirani, and jerome friedman" data-tags="statistics,machine learning,classic">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4020,16 +4021,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Trevor Hastie, Robert Tibshirani, and Jerome Friedman
+            <i class="fas fa-user-edit me-1"></i> Trevor Hastie, Robert Tibshirani, and Jerome Friedman
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2017</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2017</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -4060,7 +4061,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="a course in machine learning" data-author="hal daumé iii" data-tags="machine learning,course">
+    <div class="col book-item mb-4" data-title="a course in machine learning" data-author="hal daumé iii" data-tags="machine learning,course">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4073,13 +4074,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Hal Daumé III
+            <i class="fas fa-user-edit me-1"></i> Hal Daumé III
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2017</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2017</span>
             
             
           </div>
@@ -4109,7 +4110,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="computer age statistical inference: algorithms, evidence and data science" data-author="bradley efron, and trevor hastie" data-tags="statistics,inference,data science">
+    <div class="col book-item mb-4" data-title="computer age statistical inference: algorithms, evidence and data science" data-author="bradley efron, and trevor hastie" data-tags="statistics,inference,data science">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4122,16 +4123,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Bradley Efron, and Trevor Hastie
+            <i class="fas fa-user-edit me-1"></i> Bradley Efron, and Trevor Hastie
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2016</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2016</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -4162,7 +4163,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="python data science handbook" data-author="jake vanderplas" data-tags="data science,python,machine learning">
+    <div class="col book-item mb-4" data-title="python data science handbook" data-author="jake vanderplas" data-tags="data science,python,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4175,16 +4176,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Jake VanderPlas
+            <i class="fas fa-user-edit me-1"></i> Jake VanderPlas
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2016</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2016</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -4215,7 +4216,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="deep learning" data-author="ian goodfellow, yoshua bengio and aaron courville" data-tags="deep learning,machine learning,math">
+    <div class="col book-item mb-4" data-title="deep learning" data-author="ian goodfellow, yoshua bengio and aaron courville" data-tags="deep learning,machine learning,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4228,16 +4229,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Ian Goodfellow, Yoshua Bengio and Aaron Courville
+            <i class="fas fa-user-edit me-1"></i> Ian Goodfellow, Yoshua Bengio and Aaron Courville
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2016</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2016</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -4278,7 +4279,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="numerical algorithms: methods for computer vision, machine learning, and graphics" data-author="justin solomon" data-tags="numerical algorithms,computer vision,graphics">
+    <div class="col book-item mb-4" data-title="numerical algorithms: methods for computer vision, machine learning, and graphics" data-author="justin solomon" data-tags="numerical algorithms,computer vision,graphics">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4291,16 +4292,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Justin Solomon
+            <i class="fas fa-user-edit me-1"></i> Justin Solomon
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2015</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2015</span>
             
             
-            <span>CRC Press</span>
+            <span><i class="fas fa-building me-1"></i> CRC Press</span>
             
           </div>
 
@@ -4331,7 +4332,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="neural networks and deep learning" data-author="michael nielsen" data-tags="neural networks,deep learning">
+    <div class="col book-item mb-4" data-title="neural networks and deep learning" data-author="michael nielsen" data-tags="neural networks,deep learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4347,16 +4348,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Michael Nielsen
+            <i class="fas fa-user-edit me-1"></i> Michael Nielsen
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2015</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2015</span>
             
             
-            <span>Determination Press</span>
+            <span><i class="fas fa-building me-1"></i> Determination Press</span>
             
           </div>
 
@@ -4385,7 +4386,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="statistical inference for data science" data-author="brian caffo" data-tags="">
+    <div class="col book-item mb-4" data-title="statistical inference for data science" data-author="brian caffo" data-tags="">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4398,16 +4399,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Brian Caffo
+            <i class="fas fa-user-edit me-1"></i> Brian Caffo
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2015</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2015</span>
             
             
-            <span>leanpub</span>
+            <span><i class="fas fa-building me-1"></i> leanpub</span>
             
           </div>
 
@@ -4430,7 +4431,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="statistical learning with sparsity: the lasso and generalizations" data-author="trevor hastie, robert tibshirani and martin wainwright" data-tags="">
+    <div class="col book-item mb-4" data-title="statistical learning with sparsity: the lasso and generalizations" data-author="trevor hastie, robert tibshirani and martin wainwright" data-tags="">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4443,16 +4444,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Trevor Hastie, Robert Tibshirani and Martin Wainwright
+            <i class="fas fa-user-edit me-1"></i> Trevor Hastie, Robert Tibshirani and Martin Wainwright
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2015</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2015</span>
             
             
-            <span>Routledge</span>
+            <span><i class="fas fa-building me-1"></i> Routledge</span>
             
           </div>
 
@@ -4475,7 +4476,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="neural network design" data-author="martin hagan, howard demuth, mark beale, and orlando de jesus" data-tags="neural networks,design,engineering">
+    <div class="col book-item mb-4" data-title="neural network design" data-author="martin hagan, howard demuth, mark beale, and orlando de jesus" data-tags="neural networks,design,engineering">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4488,16 +4489,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Martin Hagan, Howard Demuth, Mark Beale, and Orlando De Jesus
+            <i class="fas fa-user-edit me-1"></i> Martin Hagan, Howard Demuth, Mark Beale, and Orlando De Jesus
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2014</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2014</span>
             
             
-            <span>Martin Hagan</span>
+            <span><i class="fas fa-building me-1"></i> Martin Hagan</span>
             
           </div>
 
@@ -4528,7 +4529,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="algorithmic aspects of machine learning" data-author="ankur moitra" data-tags="machine learning,algorithms">
+    <div class="col book-item mb-4" data-title="algorithmic aspects of machine learning" data-author="ankur moitra" data-tags="machine learning,algorithms">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4544,13 +4545,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Ankur Moitra
+            <i class="fas fa-user-edit me-1"></i> Ankur Moitra
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2014</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2014</span>
             
             
           </div>
@@ -4580,7 +4581,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="understanding machine learning: from theory to algorithms" data-author="shai shalev-shwartz and shai ben-david" data-tags="machine learning,theory,algorithms">
+    <div class="col book-item mb-4" data-title="understanding machine learning: from theory to algorithms" data-author="shai shalev-shwartz and shai ben-david" data-tags="machine learning,theory,algorithms">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4593,16 +4594,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Shai Shalev-Shwartz and Shai Ben-David
+            <i class="fas fa-user-edit me-1"></i> Shai Shalev-Shwartz and Shai Ben-David
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2014</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2014</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -4633,7 +4634,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="think stats" data-author="allen b. downey" data-tags="statistics,math,python">
+    <div class="col book-item mb-4" data-title="think stats" data-author="allen b. downey" data-tags="statistics,math,python">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4646,16 +4647,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Allen B. Downey
+            <i class="fas fa-user-edit me-1"></i> Allen B. Downey
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2014</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2014</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -4686,7 +4687,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="the matrix cookbook" data-author="kaare brandt petersen and michael syskind pedersen" data-tags="math,matrix,reference">
+    <div class="col book-item mb-4" data-title="the matrix cookbook" data-author="kaare brandt petersen and michael syskind pedersen" data-tags="math,matrix,reference">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4702,13 +4703,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Kaare Brandt Petersen and Michael Syskind Pedersen
+            <i class="fas fa-user-edit me-1"></i> Kaare Brandt Petersen and Michael Syskind Pedersen
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2012</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2012</span>
             
             
           </div>
@@ -4740,7 +4741,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="algorithms for reinforcement learning" data-author="csaba szepesvari" data-tags="reinforcement learning,algorithms,theory">
+    <div class="col book-item mb-4" data-title="algorithms for reinforcement learning" data-author="csaba szepesvari" data-tags="reinforcement learning,algorithms,theory">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4753,16 +4754,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Csaba Szepesvari
+            <i class="fas fa-user-edit me-1"></i> Csaba Szepesvari
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2010</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2010</span>
             
             
-            <span>Morgan and Claypool</span>
+            <span><i class="fas fa-building me-1"></i> Morgan and Claypool</span>
             
           </div>
 
@@ -4793,7 +4794,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="convex optimization" data-author="stephen boyd and lieven vandenberghe" data-tags="math,optimization">
+    <div class="col book-item mb-4" data-title="convex optimization" data-author="stephen boyd and lieven vandenberghe" data-tags="math,optimization">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4806,16 +4807,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Stephen Boyd and Lieven Vandenberghe
+            <i class="fas fa-user-edit me-1"></i> Stephen Boyd and Lieven Vandenberghe
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2009</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2009</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -4844,7 +4845,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="natural language processing with python: analyzing text with the natural language toolkit" data-author="steven bird, ewan klein, and edward loper" data-tags="nlp,python">
+    <div class="col book-item mb-4" data-title="natural language processing with python: analyzing text with the natural language toolkit" data-author="steven bird, ewan klein, and edward loper" data-tags="nlp,python">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4857,16 +4858,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Steven Bird, Ewan Klein, and Edward Loper
+            <i class="fas fa-user-edit me-1"></i> Steven Bird, Ewan Klein, and Edward Loper
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2009</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2009</span>
             
             
-            <span>O'REILLY</span>
+            <span><i class="fas fa-building me-1"></i> O'REILLY</span>
             
           </div>
 
@@ -4895,7 +4896,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="a brief introduction to neural networks" data-author="david kriesel" data-tags="neural networks,machine learning">
+    <div class="col book-item mb-4" data-title="a brief introduction to neural networks" data-author="david kriesel" data-tags="neural networks,machine learning">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4911,13 +4912,13 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            David Kriesel
+            <i class="fas fa-user-edit me-1"></i> David Kriesel
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2007</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2007</span>
             
             
           </div>
@@ -4947,7 +4948,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="gaussian processes for machine learning" data-author="carl edward rasmussen and christopher k. i. williams" data-tags="machine learning,gaussian processes,math">
+    <div class="col book-item mb-4" data-title="gaussian processes for machine learning" data-author="carl edward rasmussen and christopher k. i. williams" data-tags="machine learning,gaussian processes,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -4960,16 +4961,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Carl Edward Rasmussen and Christopher K. I. Williams
+            <i class="fas fa-user-edit me-1"></i> Carl Edward Rasmussen and Christopher K. I. Williams
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2006</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2006</span>
             
             
-            <span>MIT Press</span>
+            <span><i class="fas fa-building me-1"></i> MIT Press</span>
             
           </div>
 
@@ -5000,7 +5001,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="pattern recognition and machine learning" data-author="christopher bishop" data-tags="machine learning,pattern recognition">
+    <div class="col book-item mb-4" data-title="pattern recognition and machine learning" data-author="christopher bishop" data-tags="machine learning,pattern recognition">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -5013,16 +5014,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Christopher Bishop
+            <i class="fas fa-user-edit me-1"></i> Christopher Bishop
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2006</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2006</span>
             
             
-            <span>Springer</span>
+            <span><i class="fas fa-building me-1"></i> Springer</span>
             
           </div>
 
@@ -5051,7 +5052,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="information theory, inference, and learning algorithms" data-author="david mackay" data-tags="information theory,machine learning,math">
+    <div class="col book-item mb-4" data-title="information theory, inference, and learning algorithms" data-author="david mackay" data-tags="information theory,machine learning,math">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -5064,16 +5065,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            David MacKay
+            <i class="fas fa-user-edit me-1"></i> David MacKay
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">2003</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2003</span>
             
             
-            <span>Cambridge University Press</span>
+            <span><i class="fas fa-building me-1"></i> Cambridge University Press</span>
             
           </div>
 
@@ -5104,7 +5105,7 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item" data-title="machine learning" data-author="tom mitchell" data-tags="machine learning,classic,textbooks">
+    <div class="col book-item mb-4" data-title="machine learning" data-author="tom mitchell" data-tags="machine learning,classic,textbooks">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
@@ -5117,16 +5118,16 @@ This page has been divided into the following sections: <a href="/ml_resources/#
 
           
           <div class="book-meta">
-            Tom Mitchell
+            <i class="fas fa-user-edit me-1"></i> Tom Mitchell
           </div>
           
 
           <div class="book-meta">
             
-            <span class="me-3">1997</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 1997</span>
             
             
-            <span>McGraw Hill</span>
+            <span><i class="fas fa-building me-1"></i> McGraw Hill</span>
             
           </div>
 
