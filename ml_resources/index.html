@@ -344,8 +344,8 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     margin-top: 0;
   }
 
-  /* Modal Styles */
-  .modal-content {
+  /* Modal Styles - Scoped to ID for specificity */
+  #descriptionModal .modal-content {
     border: none;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -355,30 +355,30 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     /* Force dark text */
   }
 
-  .modal-header {
+  #descriptionModal .modal-header {
     border-bottom: 1px solid #e9ecef;
     padding: 1rem 1.5rem;
   }
 
-  .modal-body {
+  #descriptionModal .modal-body {
     padding: 1.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
     color: #495057 !important;
   }
 
-  .modal-title {
+  #descriptionModal .modal-title {
     font-weight: 600;
     color: #212529 !important;
   }
 
-  .close {
+  #descriptionModal .close {
     color: #000 !important;
     /* Default close button color */
     opacity: 0.5;
   }
 
-  .close:hover {
+  #descriptionModal .close:hover {
     opacity: 0.75;
   }
 
@@ -461,26 +461,26 @@ This page has been divided into the following sections: <a href="/ml_resources/#
     }
 
     /* Modal Dark Mode */
-    .modal-content {
+    #descriptionModal .modal-content {
       background-color: #343a40 !important;
       /* Force dark background */
       color: #e0e0e0 !important;
       /* Force light text */
     }
 
-    .modal-header {
+    #descriptionModal .modal-header {
       border-bottom-color: #495057;
     }
 
-    .modal-body {
+    #descriptionModal .modal-body {
       color: #adb5bd !important;
     }
 
-    .modal-title {
+    #descriptionModal .modal-title {
       color: #e0e0e0 !important;
     }
 
-    .close {
+    #descriptionModal .close {
       color: #e0e0e0 !important;
       text-shadow: none;
     }
@@ -3493,7 +3493,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/jacket.gif" class="book-cover" alt="Bayesian Reasoning and Machine Learning">
+          <svg class="bd-placeholder-img book-cover" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No Cover" preserveaspectratio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="transparent"></rect>
+            <text x="50%" y="50%" fill="#dee2e6" dy=".3em" text-anchor="middle">No Cover</text>
+          </svg>
           
         </div>
 
@@ -3892,53 +3895,6 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       </div>
     </div>
     
-    <div class="col book-item mb-4" data-title="machine learning yearning" data-author="andrew ng" data-tags="machine learning,engineering">
-      <div class="card book-card h-100">
-        <div class="book-cover-container">
-          
-          <img src="https://wordpress.deeplearning.ai/wp-content/uploads/2022/10/1645724689.png" class="book-cover" alt="Machine Learning Yearning">
-          
-        </div>
-
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title book-title">Machine Learning Yearning</h5>
-
-          
-          <div class="book-meta">
-            <i class="fas fa-user-edit me-1"></i> Andrew Ng
-          </div>
-          
-
-          <div class="book-meta">
-            
-            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> 2018</span>
-            
-            
-          </div>
-
-          <div class="book-tags">
-            
-            
-            <span class="book-tag-badge">Machine Learning</span>
-            
-            <span class="book-tag-badge">Engineering</span>
-            
-            
-          </div>
-
-          <div class="mt-auto book-actions">
-            
-
-            <a href="https://www.deeplearning.ai/programs" class="btn btn-minimal btn-sm" target="_blank" rel="noopener noreferrer">
-              Web
-            </a>
-
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <div class="col book-item mb-4" data-title="elements of statistical learning" data-author="trevor hastie, robert tibshirani, and jerome friedman" data-tags="statistics,machine learning,classic">
       <div class="card book-card h-100">
         <div class="book-cover-container">
@@ -3994,7 +3950,10 @@ This page has been divided into the following sections: <a href="/ml_resources/#
       <div class="card book-card h-100">
         <div class="book-cover-container">
           
-          <img src="http://ciml.info/cover-forweb.png" class="book-cover" alt="A Course in Machine Learning">
+          <svg class="bd-placeholder-img book-cover" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No Cover" preserveaspectratio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="transparent"></rect>
+            <text x="50%" y="50%" fill="#dee2e6" dy=".3em" text-anchor="middle">No Cover</text>
+          </svg>
           
         </div>
 
