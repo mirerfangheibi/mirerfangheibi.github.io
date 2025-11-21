@@ -269,12 +269,12 @@ Deep Learning can be used by undergraduate or graduate students planning careers
     - Pattern Recognition
 
 - title: "Understanding Machine Learning: From Theory to Algorithms"
-  front_page: https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/images/UnderstandingMachineLearning.jpg
+  front_page: https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/images/UnderstandingMachineLearning.jpg
   book_author: Shai Shalev-Shwartz and Shai Ben-David
   edition: null
   publisher: Cambridge University Press
   print_year: 2014
-  book_url: https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/index.html"
+  book_url: https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html"
   tags:
     - Machine Learning
     - Theory
@@ -854,12 +854,12 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   supp_material: ['https://maurice-weiler.gitlab.io/blog_post/cnn-book_1_equivariant_networks/']
 
 - title: "Automata Theory: An Algorithmic Approach"
-  front_page: https://mblondin.espaceweb.usherbrooke.ca/automata/images/cover.jpg
+  front_page: https://michaelblondin.com/images/automata.jpg
   book_author: Javier Esparza, and Michael Blondin
   edition: null
   publisher: MIT Press
   print_year: 2023
-  book_url: https://mblondin.espaceweb.usherbrooke.ca/automata/
+  book_url: https://michaelblondin.com/automata/
   tags:
     - Automata
     - Algorithms
