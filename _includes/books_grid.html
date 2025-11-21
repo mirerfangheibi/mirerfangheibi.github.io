@@ -74,9 +74,6 @@
     background: transparent;
     /* Minimal background */
     transition: transform 0.2s ease;
-    /* Removed overflow: hidden to allow dropdowns to pop out if needed,
-       but we need it for border-radius on images.
-       Instead, we'll use position: static for the card-body or handle dropdowns carefully. */
     overflow: visible;
   }
 
@@ -85,7 +82,8 @@
     /* Minimal hover effect */
     background: #fff;
     border-color: #e9ecef;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    /* Lighter shadow */
   }
 
   .book-cover-container {
@@ -97,12 +95,10 @@
     justify-content: center;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    /* Keep image contained */
   }
 
   .book-cover {
     height: 220px;
-    /* Slightly smaller */
     object-fit: contain;
     filter: grayscale(10%);
     transition: filter 0.3s ease;
@@ -135,7 +131,6 @@
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
     height: 24px;
-    /* Fixed height to prevent jumping */
     overflow: hidden;
   }
 
@@ -180,13 +175,17 @@
     font-size: 0.85rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
+    margin-top: 0;
+    /* Fix flickering gap */
   }
 
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
     .book-card:hover {
-      background: #2d2d2d;
+      background: #343a40;
+      /* Lighter dark grey */
       border-color: #495057;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .book-title {
@@ -214,13 +213,15 @@
     }
 
     .book-search-input {
-      background-color: #2d2d2d;
+      background-color: transparent;
+      /* Match buttons */
       border-color: #495057;
-      color: #fff;
+      color: #e0e0e0;
     }
 
     .book-search-input:focus {
       background-color: #343a40;
+      border-color: #adb5bd;
     }
 
     .btn-minimal {
@@ -278,8 +279,8 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5" id="booksGrid">
     {% assign sbooks = site.data.ml_resources_books | sort: "print_year" | reverse %}
     {% for book in sbooks %}
-    <div class="col book-item" data-title="{{ book.title | downcase }}" data-author="{{ book.book_author | downcase }}"
-      data-tags="{{ book.tags | join: ',' | downcase }}">
+    <div class="col book-item mb-4" data-title="{{ book.title | downcase }}"
+      data-author="{{ book.book_author | downcase }}" data-tags="{{ book.tags | join: ',' | downcase }}">
       <div class="card book-card h-100">
         <div class="book-cover-container">
           {% if book.front_page %}
@@ -298,16 +299,16 @@
 
           {% if book.book_author %}
           <div class="book-meta">
-            {{book.book_author}}
+            <i class="fas fa-user-edit me-1"></i> {{book.book_author}}
           </div>
           {% endif %}
 
           <div class="book-meta">
             {% if book.print_year %}
-            <span class="me-3">{{book.print_year}}</span>
+            <span class="me-3"><i class="far fa-calendar-alt me-1"></i> {{book.print_year}}</span>
             {% endif %}
             {% if book.publisher %}
-            <span>{{book.publisher}}</span>
+            <span><i class="fas fa-building me-1"></i> {{book.publisher}}</span>
             {% endif %}
           </div>
 
@@ -334,7 +335,7 @@
             {% if book.supp_material %}
             <div class="btn-group">
               <button type="button" class="btn btn-minimal btn-sm dropdown-toggle" data-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false" data-boundary="viewport">
                 Mat
               </button>
               <ul class="dropdown-menu">
