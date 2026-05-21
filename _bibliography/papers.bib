@@ -1,5 +1,20 @@
 ---
 ---
+@misc{gheibi2026targetdifferentbasinshard,
+abbr={EIML},
+title={Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions}, 
+author={Mirerfan Gheibi and Gashin Ghazizadeh},
+year={2026},
+eprint={2605.20642},
+archivePrefix={arXiv},
+primaryClass={cs.LG},
+url={https://arxiv.org/abs/2605.20642}, 
+selected={true},
+bibtex_show={true},
+abstract={When annotators disagree, that disagreement can reflect epistemic uncertainty rather than simple label noise. We study hard-label delivery as an alternative to the usual choices of collapsing votes to a single label or training directly on the empirical soft-label distribution. We focus on two primary hard-label methods: multipass, which cycles through observed votes while keeping the dataset size fixed, and stochastic label sampling (SLS), which samples one label per example at the start of each epoch. On CIFAR-10H, we find that when only a small number of annotations per example is available, hard-label delivery improves over soft-label training, with larger improvements where the sparse empirical target is farther from the full annotator distribution. When full annotator distributions are available, both hard-label methods match soft-label training. We use deterministic control as an ablation of multipass and shuffled SLS as a control that breaks the example-to-distribution match. We also show that SLS and soft-label cross-entropy optimize the same expected objective. Hard-label delivery also converges to flatter basins, with supporting descriptive evidence from OOD detection on SVHN and CIFAR-100. Overall, these results suggest that multipass is a strong practical default when raw vote counts are available, while SLS offers a lightweight alternative that remains competitive when only a few votes per example are available and matches soft-label training when full annotator distributions are available.}
+}
+
+
 @mastersthesis{gheibi2021AIITL,
 abbr={DAL},
 title={Helping Biologists Find Whales: AI-in-the-Loop Support for Environmental Dataset Creation},
