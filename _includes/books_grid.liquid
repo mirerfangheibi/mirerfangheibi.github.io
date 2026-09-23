@@ -17,7 +17,7 @@
 <div class="res-grid" id="booksGrid">
   {% assign books = site.data.ml_resources_books | sort: 'print_year' | reverse %}
   {% for book in books %}
-    {% capture search_text %}{{ book.title }} {{ book.book_author }} {{ book.tags | join: ' ' }}{% endcapture %}
+    {% capture search_text %}{{ book.title }} {{ book.book_author }} {{ book.tags | join: ' ' }} {{ book.description }}{% endcapture %}
     <div
       class="res-book"
       data-text="{{ search_text | downcase | escape }}"
@@ -90,12 +90,15 @@
     const dialog = document.getElementById('bookDialog');
     let activeTag = '';
 
-    // A book is shown if it has the selected tag (exact match) and contains the search text.
+    // A book is shown if it has the selected tag (exact match) and contains every search word
+    // (in title, author, tags or description).
     function filterBooks() {
-      const query = search.value.trim().toLowerCase();
+      const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
       let visible = 0;
       books.forEach((book) => {
-        const show = (!activeTag || book.dataset.tags.includes(`|${activeTag}|`)) && book.dataset.text.includes(query);
+        const show =
+          (!activeTag || book.dataset.tags.includes(`|${activeTag}|`)) &&
+          words.every((word) => book.dataset.text.includes(word));
         book.hidden = !show;
         if (show) visible++;
       });

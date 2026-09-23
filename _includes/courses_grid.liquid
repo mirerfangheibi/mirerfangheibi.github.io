@@ -6,7 +6,15 @@
   {% assign courses = site.data.ml_resources_courses | sort: 'year' | reverse %}
   {% for course in courses %}
     <div class="res-course">
+      {% if course.video.thumbnail %}
+        {% comment %} course.video is added at build time by _plugins/youtube_oembed.rb {% endcomment %}
+        <a class="res-course-thumb" href="{{ course.lecture_videos | escape }}" target="_blank" rel="noopener noreferrer" title="{{ course.video.title | escape }}">
+          <img src="{{ course.video.thumbnail | escape }}" alt="{{ course.video.title | escape }}" loading="lazy">
+          <span aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </a>
+      {% endif %}
       <h5>{{ course.title }}</h5>
+      {% if course.video.channel %}<div class="res-course-channel">{{ course.video.channel }}</div>{% endif %}
       <ul>
         {% if course.instructor %}<li><b>Instructor(s):</b> {{ course.instructor }}</li>{% endif %}
         {% if course.year %}<li><b>Year:</b> {{ course.year }}</li>{% endif %}
