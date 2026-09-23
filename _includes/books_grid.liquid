@@ -1,507 +1,132 @@
-<style>
-  .res-books-search {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-  }
+{% comment %}
+  Book grid for /ml_resources/, rendered from _data/ml_resources_books.yml.
+  Styles live in _sass/_ml_resources.scss.
+{% endcomment %}
+{% assign filter_tags = 'Deep Learning,Machine Learning,Math,NLP,Computer Vision,Reinforcement Learning,Statistics' | split: ',' %}
 
-  .res-books-search-wrapper {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  .res-books-search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--global-text-color-light);
-    pointer-events: none;
-  }
-
-  .res-books-search-input {
-    width: 100%;
-    padding: 0.5rem 0.75rem 0.5rem 40px;
-    border-radius: 4px;
-    border: 1px solid var(--global-divider-color);
-    background: transparent;
-    color: var(--global-text-color);
-    font: inherit;
-    transition: all 0.2s ease;
-  }
-
-  .res-books-search-input:focus {
-    outline: none;
-    border-color: var(--global-theme-color);
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-  }
-
-  .res-filter-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .res-filter-tag {
-    border-radius: 4px;
-    padding: 0.25rem 0.8rem;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background-color: transparent;
-    border: 1px solid var(--global-divider-color);
-    color: var(--global-text-color-light);
-    user-select: none;
-    font-family: inherit;
-  }
-
-  .res-filter-tag:hover {
-    color: var(--global-text-color);
-    border-color: var(--global-text-color-light);
-  }
-
-  .res-filter-tag.active {
-    background-color: var(--global-text-color);
-    color: var(--global-bg-color);
-    border-color: var(--global-text-color);
-  }
-
-  .res-books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .res-book-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    background-color: transparent;
-    transition: transform 0.2s ease;
-  }
-
-  .res-book-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--global-divider-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  .res-book-cover-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    overflow: hidden;
-  }
-
-  .res-book-cover {
-    height: 220px;
-    max-width: 100%;
-    object-fit: contain;
-    filter: grayscale(10%);
-    transition: filter 0.3s ease;
-  }
-
-  .res-book-card:hover .res-book-cover {
-    filter: grayscale(0%);
-  }
-
-  .res-no-cover-text {
-    fill: var(--global-theme-color);
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-
-  .res-book-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 1rem;
-  }
-
-  .res-book-title {
-    font-weight: 600;
-    margin: 0 0 0.25rem;
-    font-size: 1rem;
-    line-height: 1.3;
-    color: var(--global-text-color);
-  }
-
-  .res-book-meta {
-    font-size: 0.8rem;
-    color: var(--global-text-color-light);
-    margin-bottom: 0.5rem;
-  }
-
-  .res-book-meta .res-book-year {
-    margin-right: 1rem;
-  }
-
-  .res-book-meta i {
-    margin-right: 0.25rem;
-  }
-
-  .res-book-author {
-    color: var(--global-theme-color);
-    font-weight: 500;
-  }
-
-  .res-book-tags {
-    margin: 0.5rem 0 0.75rem;
-    height: 24px;
-    overflow: hidden;
-  }
-
-  .res-book-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    padding: 0.15em 0.5em;
-    margin-right: 4px;
-    border-radius: 4px;
-    border: 1px solid var(--global-divider-color);
-    color: var(--global-text-color-light);
-  }
-
-  .res-book-actions {
-    margin-top: auto;
-  }
-
-  .res-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    height: 22px;
-    padding: 0 0.3rem;
-    margin: 0 2px 2px 0;
-    border-radius: 4px;
-    border: 1px solid var(--global-text-color);
-    background: transparent;
-    color: var(--global-text-color);
-    font-family: inherit;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
-  .res-btn:hover,
-  .res-btn.active {
-    color: var(--global-theme-color);
-    border-color: var(--global-theme-color);
-    text-decoration: none;
-  }
-
-  .res-materials {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--global-divider-color);
-  }
-
-  .res-materials small {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--global-text-color-light);
-  }
-
-  .res-materials ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .res-materials li {
-    margin-bottom: 0.25rem;
-  }
-
-  .res-materials a {
-    font-size: 0.85rem;
-    color: var(--global-theme-color);
-  }
-
-  .res-materials a i {
-    font-size: 0.7rem;
-    margin-right: 0.25rem;
-  }
-
-  .res-no-results {
-    text-align: center;
-    padding: 3rem 0;
-  }
-
-  .res-no-results h4 {
-    color: var(--global-text-color-light);
-  }
-
-  .res-description-dialog {
-    max-width: min(560px, calc(100vw - 2rem));
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    background-color: var(--global-bg-color);
-    color: var(--global-text-color);
-  }
-
-  .res-description-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  .res-description-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--global-divider-color);
-  }
-
-  .res-description-header h5 {
-    margin: 0;
-    font-weight: 600;
-  }
-
-  .res-description-close {
-    border: none;
-    background: transparent;
-    color: var(--global-text-color);
-    font-size: 1.5rem;
-    line-height: 1;
-    opacity: 0.5;
-    cursor: pointer;
-  }
-
-  .res-description-close:hover {
-    opacity: 0.8;
-  }
-
-  .res-description-body {
-    padding: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--global-text-color-light);
-  }
-</style>
-
-<div class="res-books">
-  <div class="res-books-search">
-    <div class="res-books-search-wrapper">
-      <i class="fa-solid fa-magnifying-glass res-books-search-icon"></i>
-      <input type="text" id="bookSearchInput" class="res-books-search-input" placeholder="Search books...">
-    </div>
-
-    <div class="res-filter-tags" id="filterTags">
-      <button type="button" class="res-filter-tag active" data-filter="all">All</button>
-      <button type="button" class="res-filter-tag" data-filter="Deep Learning">Deep Learning</button>
-      <button type="button" class="res-filter-tag" data-filter="Machine Learning">Machine Learning</button>
-      <button type="button" class="res-filter-tag" data-filter="Math">Math</button>
-      <button type="button" class="res-filter-tag" data-filter="NLP">NLP</button>
-      <button type="button" class="res-filter-tag" data-filter="Computer Vision">Computer Vision</button>
-      <button type="button" class="res-filter-tag" data-filter="Reinforcement Learning">Reinforcement Learning</button>
-      <button type="button" class="res-filter-tag" data-filter="Statistics">Statistics</button>
-    </div>
-  </div>
-
-  <div class="res-books-grid" id="booksGrid">
-    {% assign sbooks = site.data.ml_resources_books | sort: 'print_year' | reverse %}
-    {% for book in sbooks %}
-      <div
-        class="res-book-item"
-        data-title="{{ book.title | downcase | escape }}"
-        data-author="{{ book.book_author | downcase | escape }}"
-        data-tags="{{ book.tags | join: ',' | downcase | escape }}"
-      >
-        <div class="res-book-card">
-          <div class="res-book-cover-container">
-            {% if book.front_page %}
-              <img src="{{ book.front_page }}" class="res-book-cover" alt="{{ book.title | escape }}" loading="lazy">
-            {% else %}
-              <svg
-                class="res-book-cover"
-                width="100%"
-                height="220"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="No Cover"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect width="100%" height="100%" fill="transparent"></rect>
-                <text x="50%" y="50%" class="res-no-cover-text" dy=".3em" text-anchor="middle">No Cover</text>
-              </svg>
-            {% endif %}
-          </div>
-
-          <div class="res-book-body">
-            <h5 class="res-book-title">{{ book.title }}</h5>
-
-            {% if book.book_author %}
-              <div class="res-book-meta res-book-author">
-                <i class="fa-solid fa-user-pen"></i> {{ book.book_author }}
-              </div>
-            {% endif %}
-
-            <div class="res-book-meta">
-              {% if book.print_year %}
-                <span class="res-book-year"><i class="fa-regular fa-calendar"></i> {{ book.print_year }}</span>
-              {% endif %}
-              {% if book.publisher %}
-                <span><i class="fa-solid fa-building"></i> {{ book.publisher }}</span>
-              {% endif %}
-            </div>
-
-            <div class="res-book-tags">
-              {% for tag in book.tags limit: 3 %}
-                <span class="res-book-tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-
-            <div class="res-book-actions">
-              {% if book.description %}
-                <button
-                  type="button"
-                  class="res-btn"
-                  data-action="description"
-                  data-book-title="{{ book.title | escape }}"
-                  data-book-description="{{ book.description | escape }}"
-                >
-                  Desc.
-                </button>
-              {% endif %}
-
-              <a href="{{ book.book_url }}" class="res-btn" target="_blank" rel="noopener noreferrer">Website</a>
-
-              {% if book.supp_material %}
-                <button type="button" class="res-btn" data-action="materials">More</button>
-              {% endif %}
-            </div>
-
-            {% if book.supp_material %}
-              <div class="res-materials" hidden>
-                <small>Supplementary Materials:</small>
-                <ul>
-                  {% for material in book.supp_material %}
-                    <li>
-                      <a href="{{ material }}" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Material {{ forloop.index }}
-                      </a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endif %}
-          </div>
-        </div>
-      </div>
+<div class="res-books-search">
+  <input type="search" id="bookSearch" placeholder="Search books..." aria-label="Search books">
+  <div class="res-filter-tags" id="bookTags">
+    <button type="button" class="active" data-tag="">All</button>
+    {% for tag in filter_tags %}
+      <button type="button" data-tag="{{ tag | downcase }}">{{ tag }}</button>
     {% endfor %}
-  </div>
-
-  <div id="noResults" class="res-no-results" hidden>
-    <h4>No books found.</h4>
-    <button type="button" class="res-btn" data-action="reset">Clear Search</button>
   </div>
 </div>
 
-<dialog id="descriptionDialog" class="res-description-dialog" aria-labelledby="descriptionDialogTitle">
-  <div class="res-description-header">
-    <h5 id="descriptionDialogTitle">Book Description</h5>
-    <button type="button" class="res-description-close" aria-label="Close" data-action="close">&times;</button>
-  </div>
-  <div class="res-description-body" id="descriptionDialogBody"></div>
+<div class="res-grid" id="booksGrid">
+  {% assign books = site.data.ml_resources_books | sort: 'print_year' | reverse %}
+  {% for book in books %}
+    {% capture search_text %}{{ book.title }} {{ book.book_author }} {{ book.tags | join: ' ' }}{% endcapture %}
+    <div
+      class="res-book"
+      data-text="{{ search_text | downcase | escape }}"
+      data-tags="|{{ book.tags | join: '|' | downcase | escape }}|"
+    >
+      <div class="res-book-cover">
+        {% if book.front_page %}
+          <img src="{{ book.front_page }}" alt="{{ book.title | escape }}" loading="lazy" onerror="this.hidden = true; this.nextElementSibling.hidden = false">
+          <span hidden>No Cover</span>
+        {% else %}
+          <span>No Cover</span>
+        {% endif %}
+      </div>
+
+      <div class="res-book-body">
+        <h5>{{ book.title }}</h5>
+        {% if book.book_author %}
+          <div class="res-book-meta res-book-author"><i class="fa-solid fa-user-pen"></i> {{ book.book_author }}</div>
+        {% endif %}
+        <div class="res-book-meta">
+          {% if book.print_year %}<span><i class="fa-regular fa-calendar"></i> {{ book.print_year }}</span>{% endif %}
+          {% if book.publisher %}<span><i class="fa-solid fa-building"></i> {{ book.publisher }}</span>{% endif %}
+        </div>
+        <div class="res-book-tags">
+          {% for tag in book.tags limit: 3 %}<span>{{ tag }}</span>{% endfor %}
+        </div>
+
+        <div class="res-book-actions">
+          {% if book.description %}
+            <button type="button" class="res-btn" data-action="description" data-title="{{ book.title | escape }}" data-description="{{ book.description | escape }}">Desc.</button>
+          {% endif %}
+          <a href="{{ book.book_url }}" class="res-btn" target="_blank" rel="noopener noreferrer">Website</a>
+          {% if book.supp_material %}
+            <button type="button" class="res-btn" data-action="materials">More</button>
+          {% endif %}
+        </div>
+
+        {% if book.supp_material %}
+          <div class="res-materials" hidden>
+            Supplementary materials:
+            <ul>
+              {% for material in book.supp_material %}
+                <li><a href="{{ material }}" target="_blank" rel="noopener noreferrer">Material {{ forloop.index }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<p class="res-no-results" id="booksEmpty" hidden>No books found.</p>
+
+<dialog class="res-dialog" id="bookDialog" aria-labelledby="bookDialogTitle">
+  <header>
+    <h5 id="bookDialogTitle"></h5>
+    <button type="button" aria-label="Close" data-action="close">&times;</button>
+  </header>
+  <p id="bookDialogBody"></p>
 </dialog>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('bookSearchInput');
-    const filterTags = document.querySelectorAll('.res-filter-tag');
-    const bookItems = document.querySelectorAll('.res-book-item');
-    const noResults = document.getElementById('noResults');
-    const dialog = document.getElementById('descriptionDialog');
-    const dialogTitle = document.getElementById('descriptionDialogTitle');
-    const dialogBody = document.getElementById('descriptionDialogBody');
+  (() => {
+    const search = document.getElementById('bookSearch');
+    const tagButtons = document.querySelectorAll('#bookTags button');
+    const books = document.querySelectorAll('#booksGrid .res-book');
+    const empty = document.getElementById('booksEmpty');
+    const dialog = document.getElementById('bookDialog');
+    let activeTag = '';
 
-    let currentSearch = '';
-
-    function setActiveTag(tag) {
-      filterTags.forEach((t) => t.classList.remove('active'));
-      tag.classList.add('active');
-    }
-
+    // A book is shown if it has the selected tag (exact match) and contains the search text.
     function filterBooks() {
-      let visibleCount = 0;
-      bookItems.forEach((item) => {
-        const matches =
-          currentSearch === '' ||
-          item.dataset.title.includes(currentSearch) ||
-          item.dataset.author.includes(currentSearch) ||
-          item.dataset.tags.includes(currentSearch);
-        item.hidden = !matches;
-        if (matches) visibleCount++;
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      books.forEach((book) => {
+        const show = (!activeTag || book.dataset.tags.includes(`|${activeTag}|`)) && book.dataset.text.includes(query);
+        book.hidden = !show;
+        if (show) visible++;
       });
-      noResults.hidden = visibleCount !== 0;
+      empty.hidden = visible > 0;
     }
 
-    function resetSearch() {
-      searchInput.value = '';
-      currentSearch = '';
-      setActiveTag(filterTags[0]);
-      filterBooks();
-    }
+    search.addEventListener('input', filterBooks);
 
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.toLowerCase();
-      filterBooks();
-    });
-
-    filterTags.forEach((tag) => {
-      tag.addEventListener('click', () => {
-        const value = tag.dataset.filter;
-        if (value === 'all') {
-          resetSearch();
-          return;
-        }
-        setActiveTag(tag);
-        searchInput.value = value;
-        currentSearch = value.toLowerCase();
+    tagButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        tagButtons.forEach((b) => b.classList.toggle('active', b === button));
+        activeTag = button.dataset.tag;
         filterBooks();
-      });
-    });
+      })
+    );
 
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-action]');
-      if (!btn) return;
-      switch (btn.dataset.action) {
-        case 'description':
-          dialogTitle.textContent = btn.dataset.bookTitle;
-          dialogBody.textContent = btn.dataset.bookDescription;
-          dialog.showModal();
-          break;
-        case 'close':
-          dialog.close();
-          break;
-        case 'materials': {
-          const list = btn.closest('.res-book-body').querySelector('.res-materials');
-          list.hidden = !list.hidden;
-          btn.classList.toggle('active', !list.hidden);
-          break;
-        }
-        case 'reset':
-          resetSearch();
-          break;
+    document.getElementById('booksGrid').addEventListener('click', (e) => {
+      const button = e.target.closest('[data-action]');
+      if (button?.dataset.action === 'description') {
+        dialog.querySelector('#bookDialogTitle').textContent = button.dataset.title;
+        dialog.querySelector('#bookDialogBody').textContent = button.dataset.description;
+        dialog.showModal();
+      } else if (button?.dataset.action === 'materials') {
+        const materials = button.closest('.res-book-body').querySelector('.res-materials');
+        materials.hidden = !materials.hidden;
+        button.classList.toggle('active', !materials.hidden);
       }
     });
 
-    // Close the dialog when clicking on the backdrop.
+    // Close on the × button or a click on the backdrop.
     dialog.addEventListener('click', (e) => {
-      if (e.target === dialog) dialog.close();
+      if (e.target === dialog || e.target.closest('[data-action="close"]')) dialog.close();
     });
-  });
+  })();
 </script>

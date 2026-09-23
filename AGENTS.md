@@ -17,14 +17,14 @@ Most layouts, includes and styles come from gems (`al_folio_core` and the other 
 | Social links                             | `_data/socials.yml`                                                                                     |
 | Site settings, feature flags             | `_config.yml`                                                                                           |
 | CSS tweaks                               | `_sass/_custom.scss`                                                                                    |
-| Resources page markup/behavior           | `_layouts/resources.liquid`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`             |
+| Resources page markup/behavior/styles    | `_pages/resources.md`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`, `_sass/_ml_resources.scss` |
 
 Prefer content/config changes. Add a new local override of a gem file only when there is no config option, and keep it as small as possible.
 
 ## Local overrides (keep this list current)
 
 - `assets/css/main.scss`: copy of `al_folio_core`'s file with one added line, `@use "custom";`, which loads `_sass/_custom.scss`. It is registered in `.al-folio-overrides.yml`.
-- `_layouts/resources.liquid`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`: site-only files (no gem equivalent) for `/ml_resources/`. Their styles are inline `<style>` blocks using the theme's `--global-*` CSS variables. They use vanilla JS, native `<dialog>` and `<details>`.
+- `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`: site-only includes (no gem equivalent) used by `_pages/resources.md` for `/ml_resources/`. Styles are in `_sass/_ml_resources.scss` (loaded from `_sass/_custom.scss`) and use the theme's `--global-*` CSS variables, so dark mode works automatically. The book grid uses a small vanilla-JS filter (exact tag match + text search), a native `<dialog>` for descriptions, and an `onerror` fallback for broken cover URLs; the filter tag list is at the top of `books_grid.liquid`.
 
 If you add or change an override of a gem file, run `bundle exec al-folio upgrade overrides accept <path>` so theme updates to that file get flagged.
 

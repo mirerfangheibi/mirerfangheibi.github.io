@@ -2,6 +2,8 @@
  * Site-specific style overrides
  ******************************************************************************/
 
+@use "ml_resources";
+
 // vanilla-back-to-top sizes its 24px arrow for a 56px button (16px top margin),
 // but al-folio shrinks the button to 40px, which pushes the arrow down.
 // Re-center it: (40px - 24px) / 2 = 8px.

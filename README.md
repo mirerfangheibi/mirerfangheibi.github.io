@@ -18,7 +18,7 @@ Built with [Jekyll](https://jekyllrb.com/) on top of the [al-folio](https://gith
 
 ### Local overrides of the theme
 
-- `_layouts/resources.liquid`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid` are the study resources page.
+- `_includes/books_grid.liquid`, `_includes/courses_grid.liquid` (used by `_pages/resources.md`) and `_sass/_ml_resources.scss` are the study resources page.
 - `_sass/_custom.scss` holds site-specific CSS. It is loaded by a local copy of the theme's `assets/css/main.scss` (the only change there is the final `@use "custom";` line).
 
 The copy of `assets/css/main.scss` shadows a gem-owned file and is recorded in `.al-folio-overrides.yml`, so theme updates that change it get flagged (see below).
