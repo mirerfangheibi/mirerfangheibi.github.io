@@ -1,34 +1,18 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"ghazizadeh":
+  - firstname: ["Gashin", "G.", "G. G.", "Gashin Ghazizadeh"]
+    url: https://www.linkedin.com/in/gashin-ghazizadeh
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"matwin":
+  - firstname: ["Stan", "S.", "S. M.", "Stan Matwin"]
+    url: https://web.cs.dal.ca/~stan
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"reihanian":
+  - firstname: ["Ali", "A.", "A. R.", "Ali Reihanian"]
+    url: https://www.csauthors.net/ali-reihanian
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"feizi-derakhshi": 
+  - firstname: ["Ali-Reza", "A."]
+    url: https://scholar.google.com/citations?user=DzDWDb8AAAAJ&hl=en
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
-
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+  - firstname: ["Mohammad-Reza", "M."]
+    url: https://scholar.google.com/citations?user=9dAwr2EAAAAJ&hl=en

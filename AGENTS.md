@@ -1,91 +1,70 @@
-# Agent Guidelines for al-folio (v1.x)
+# Agent guide for mirerfangheibi.github.io
 
-**This file is the authoritative entry point for coding agents working in this repo.** Read it before making any change. It is intentionally short and tool-neutral; it links to the one place each longer-form fact lives.
+This is Mirerfan Gheibi's **personal website**, a Jekyll site built on the [al-folio](https://github.com/alshedivat/al-folio) v1.x starter. It is not the al-folio template repo. al-folio's contributor rules (for example "never add `_layouts/`, `_includes/` or `_sass/`") do not apply here: a site built on al-folio may keep local overrides, and this one does.
 
-`al-folio` v1.x is a **thin Jekyll starter, not a theme**. This repo owns starter wiring, example content, docs, and cross-plugin tests. All runtime — layouts, includes, Sass, Liquid tags, filters, feature JS — lives in versioned gems published under [`al-org-dev`](https://github.com/al-org-dev).
+Most layouts, includes and styles come from gems (`al_folio_core` and the other `al_*` gems, installed under `vendor/bundle/`). A file in this repo with the same path as a gem file overrides it.
 
-## Route your change
+## Where to make a change
 
-Find your change on the left; edit only what is on the right.
+| Change                                   | Edit                                                                                                    |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Bio, profile photo, home page sections   | `_pages/about.md` (front matter controls news, selected papers and socials), `assets/img/prof_pic.png`  |
+| News item                                | new file in `_news/`                                                                                    |
+| Publication                              | `_bibliography/papers.bib`; venue badge links in `_data/venues.yml`; co-author links in `_data/coauthors.yml` |
+| Teaching                                 | `_pages/teaching.md`                                                                                    |
+| Blog post                                | new file in `_posts/`; external posts come from `external_sources` in `_config.yml`                    |
+| ML study resources (books, courses)      | `_data/ml_resources_books.yml`, `_data/ml_resources_courses.yml`                                        |
+| Social links                             | `_data/socials.yml`                                                                                     |
+| Site settings, feature flags             | `_config.yml`                                                                                           |
+| CSS tweaks                               | `_sass/_custom.scss`                                                                                    |
+| Resources page markup/behavior           | `_layouts/resources.liquid`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`             |
 
-| Your change                                                                                                              | Goes in                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| Dependency pin, plugin activation, feature flag                                                                          | this repo: `Gemfile` **and** `_config.yml` (both — see below)                                                 |
-| Example/demo content, bibliography, data files                                                                           | this repo: `_pages`, `_posts`, `_projects`, `_news`, `_teachings`, `_books`, `_data`                          |
-| Documentation                                                                                                            | this repo: `docs/` (long-form) or this file (agent rules)                                                     |
-| Cross-plugin integration test, visual parity test                                                                        | this repo: `test/integration_*.sh`, `test/visual/`                                                            |
-| Plugin catalog metadata                                                                                                  | this repo: `_data/featured_plugins.yml`                                                                       |
-| A layout, include, or Sass partial                                                                                       | the owning gem — start with `al_folio_core`                                                                   |
-| A Liquid tag or filter, or what a tag renders                                                                            | the gem that registers it — see the [delegation table](docs/ARCHITECTURE.md#wrapper-to-tag-to-gem-delegation) |
-| Feature behavior (search, math, charts, comments, cookies, icons, CV, distill, analytics, images, newsletter, citations) | that feature's gem — see [`docs/BOUNDARIES.md`](docs/BOUNDARIES.md)                                           |
-| Component/unit test for gem-owned behavior                                                                               | the owning gem, not here                                                                                      |
-| A feature with no existing owner                                                                                         | open a plugin proposal issue first, then a standalone plugin repo                                             |
+Prefer content/config changes. Add a new local override of a gem file only when there is no config option, and keep it as small as possible.
 
-[`docs/BOUNDARIES.md`](docs/BOUNDARIES.md) is the authoritative area-to-gem table. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) explains how the pieces connect.
+## Local overrides (keep this list current)
 
-## Stop sign
+- `assets/css/main.scss`: copy of `al_folio_core`'s file with one added line, `@use "custom";`, which loads `_sass/_custom.scss`. It is registered in `.al-folio-overrides.yml`.
+- `_layouts/resources.liquid`, `_includes/books_grid.liquid`, `_includes/courses_grid.liquid`: site-only files (no gem equivalent) for `/ml_resources/`. Their styles are inline `<style>` blocks using the theme's `--global-*` CSS variables. They use vanilla JS, native `<dialog>` and `<details>`.
 
-**If your change would create any of these paths in this repo, it belongs in a gem instead:**
+If you add or change an override of a gem file, run `bundle exec al-folio upgrade overrides accept <path>` so theme updates to that file get flagged.
 
-```
-_layouts/   _includes/   _sass/   _scripts/   assets/tailwind/   tailwind.config.js   assets/webfonts/
-```
+## Commands
 
-`npm run lint:style-contract` fails CI when any of them exists here, and it also rejects `build:css` / `build:tailwind` npm scripts. Do not add a starter-local Tailwind or CSS build pipeline.
-
-This restriction applies to **this repo only**. A user's own site created from this template _may_ legally shadow gem-owned files — see [local overrides: your site vs. this repo](docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo).
-
-## Three failures that produce no error message
-
-Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#failure-modes-that-produce-no-error-message) for the full explanation. The short version:
-
-1. **Features fail silently.** A feature renders only when its gem is loaded _and_ its flag is on _and_ the page opts in. Otherwise the Liquid tag emits an empty string — no warning, no error.
-2. **`Gemfile` and `_config.yml` are two lists that must agree.** A plugin in only one of them is inert. Adding or removing a plugin means editing both. Repo dirs use hyphens (`al-folio-core`); gem/plugin ids use underscores (`al_folio_core`).
-3. **This repo's effective baseurl is `/al-folio`.** `_config.yml` already sets it, so a plain `bundle exec jekyll build` is correct — that is what `deploy.yml`, `broken-links-site.yml` and `axe.yml` run. Passing `--baseurl /al-folio` is redundant but harmless; blanking the baseurl out is what renders the site unstyled with broken links. Dev server is at `http://localhost:4000/al-folio/`.
-
-## Validated local command set
-
-Run from the repo root, in this order:
+Ruby 3.2+ is required (the macOS system Ruby is too old; this machine uses rbenv with 3.2.9, e.g. `RBENV_VERSION=3.2.9`).
 
 ```bash
 bundle install
-npm ci
-npm run lint:prettier
-npm run lint:style-contract
-bundle exec jekyll build --baseurl /al-folio
-bash test/integration_comments.sh
-bash test/integration_plugin_toggles.sh
-bash test/integration_distill.sh
-bash test/integration_bootstrap_compat.sh
-bash test/integration_upgrade_cli.sh
-bash test/integration_css_minify.sh
-bash test/integration_new_plugins.sh
-npx playwright install chromium webkit
-npm run test:visual
-bundle exec al-folio upgrade audit
-bundle exec al-folio upgrade overrides audit
-bundle exec al-folio upgrade report
-docker compose up -d
-curl -fsS http://127.0.0.1:8080/al-folio/ >/dev/null
-docker compose logs --tail=80
-docker compose down
+bundle exec jekyll serve --livereload                     # http://127.0.0.1:4000
+JEKYLL_ENV=production bundle exec jekyll build             # what CI runs
+bundle exec al-folio upgrade audit --no-fail              # must report 0 blocking
+bundle exec al-folio upgrade overrides audit              # checks overridden gem files
 ```
 
-All seven `test/integration_*.sh` scripts are gated by `unit-tests.yml`; run the ones your change touches. Docker note: v1 uses `/srv/jekyll/bin/entry_point.sh` and serves from container-local `/tmp/_site` to avoid host bind-mount write deadlocks.
+`_config.yml` changes are not hot-reloaded: restart `jekyll serve`. The audit writes `al-folio-upgrade-report.md`; don't commit it.
 
-## Before you open a PR
+Deploy: pushing to `master` runs `.github/workflows/deploy.yml` (production build, purgecss, then push to the `gh-pages` branch that GitHub Pages serves). It is the only workflow; don't add al-folio's maintainer workflows back.
 
-- Keep starter work here; route runtime behavior to the owning plugin repo.
-- Run `npm run lint:prettier` (Prettier with `@shopify/prettier-plugin-liquid`, `printWidth: 150`). `npx prettier . --write` fixes formatting.
-- Keep docs aligned with v1 ownership, and keep each fact in one place — link rather than restate.
-- If you create or keep local overrides of plugin-owned files, run `bundle exec al-folio upgrade overrides audit` and commit `.al-folio-overrides.yml` after review.
+## Gotchas
 
-## Further reading
+- **purgecss runs only in CI**, so `jekyll serve` shows CSS that production may delete. It drops rules for selectors not present in the built HTML/JS, which includes elements created at runtime by CDN scripts (e.g. `#back-to-top`). Add such selectors to the `safelist` in `purgecss.config.js`. Inline `<style>` blocks in pages are not affected.
 
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the starter and gems fit together, silent failure modes, the v1 config contract, local overrides.
-- [`docs/BOUNDARIES.md`](docs/BOUNDARIES.md) — authoritative area-to-gem ownership table and PR triage playbook.
-- [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) — contributor workflow and agent tooling.
-- [`docs/README.md`](docs/README.md) — index of all user and maintainer guides.
-- `.agents/skills/al-folio-bootstrap/SKILL.md` — new-site setup workflow.
-- `.agents/skills/al-folio-v1-migration/SKILL.md` — customized-fork migration and override drift auditing.
-- `.codex/skills` and `.claude/skills` are symlinks to `.agents/skills` for agent-specific discovery.
+- **Hide content with front matter, not HTML comments.** A file wrapped in `<!-- ... -->` has no front matter, so Jekyll publishes it as a raw file. Use `published: false` (see `_news/announcement_2.md`).
+- **`_data/coauthors.yml` keys must be lowercase** (e.g. `"ghazizadeh"`); the theme lowercases last names before looking them up.
+- **Publications** are grouped by year automatically (`scholar.group_by: year`); there is no list of years to maintain. `abbr={...}` in a bib entry picks the badge, linked through `_data/venues.yml`.
+- **X link** is a custom entry in `_data/socials.yml`, because the plugin's `x_username` still links to twitter.com.
+- **Bootstrap/jQuery are not loaded** (`al_folio.compat.bootstrap.enabled: false`). Don't use Bootstrap JS (`data-toggle`, `.modal()`), and don't rely on Bootstrap grid classes.
+- **Includes** use the `.liquid` names from the gems, e.g. `{% include figure.liquid path="..." %}`, not the old `figure.html`.
+- **Book entries** use `title, book_author, publisher, print_year, front_page (cover URL), book_url, tags, description, supp_material`. Course entries use `title, instructor, year, institute, description, personal_notes, course_url, lecture_videos, lecture_notes, supp_material`. A misspelled key (e.g. `author` instead of `book_author`) is silently ignored.
+- CV and projects pages are intentionally disabled (`al_folio.features.cv.enabled: false`, `_pages/projects.md` has `nav: false` and `_projects/` is empty).
+- No analytics script is used on purpose; search traffic is tracked with Google Search Console (`google_site_verification`). If visitor counts are wanted, prefer `analytics.cloudflare` (free, cookieless) over Google Analytics.
+
+## Updating from upstream al-folio
+
+```bash
+git fetch upstream && git merge upstream/main
+bundle update
+bundle exec al-folio upgrade audit
+bundle exec al-folio upgrade overrides audit
+```
+
+Upstream sample content, template docs and maintainer workflows were deleted on purpose. If a merge re-adds them or conflicts on them, keep them deleted. If `assets/css/main.scss` is flagged, re-copy the gem version, re-add `@use "custom";` at the end, and accept it again.

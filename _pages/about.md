@@ -2,33 +2,29 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+# description: Machine Learning Engineer at <a href="https://www.reeldata.ai">ReelData</a>.
+#  <br> Address. Contacts. Moto. Etc.
+subtitle: #Machine Learning Engineer at <a href="https://www.waveapps.com/">Wave HQ <img src="assets/ico/wave_logo.svg"></a>
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image: prof_pic.png
+  image_circular: true # crops the image to make it circular
+  # address: >
+  #   <p>555 your office number</p>
+  #   <p>123 your address street</p>
+  #   <p>Your City, State 12345</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: true  # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: 3 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am a Machine Learning Engineer at [Shopify](https://www.shopify.com), building recommender systems to make commerce better for everyone. My previous roles include developing financial ML solutions for small businesses at [Wave HQ](https://www.waveapps.com) and engineering machine learning systems for automated feeding in aquaculture at [ReelData AI](https://www.reeldata.ai). With a Master's in Computer Science from [Dalhousie University](https://www.dal.ca/faculty/computerscience.html) (where I was affiliated with [Vector Institute](https://vectorinstitute.ai) and [DeepSense](https://deepsense.ca/)), a Computer Engineering Master's from [Sharif University of Technology](http://www.en.sharif.edu/) focused on parallel computing, and a Computer Engineering B.Sc. from the [University of Tabriz](https://tabrizu.ac.ir/en), I've built a diverse foundation in both theoretical and applied machine learning.

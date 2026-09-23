@@ -1,115 +1,71 @@
 ---
 ---
-
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title     = {Relativity: the Special and General Theory},
-  author    = {Einstein, Albert},
-  year      = {1920},
-  publisher = {Methuen & Co Ltd},
-  html      = {relativity.html}
+@misc{gheibi2026targetdifferentbasinshard,
+abbr={EIML},
+title={Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions}, 
+author={Mirerfan Gheibi and Gashin Ghazizadeh},
+year={2026},
+eprint={2605.20642},
+archivePrefix={arXiv},
+primaryClass={cs.LG},
+url={https://arxiv.org/abs/2605.20642}, 
+selected={true},
+bibtex_show={true},
+abstract={When annotators disagree, that disagreement can reflect epistemic uncertainty rather than simple label noise. We study hard-label delivery as an alternative to the usual choices of collapsing votes to a single label or training directly on the empirical soft-label distribution. We focus on two primary hard-label methods: multipass, which cycles through observed votes while keeping the dataset size fixed, and stochastic label sampling (SLS), which samples one label per example at the start of each epoch. On CIFAR-10H, we find that when only a small number of annotations per example is available, hard-label delivery improves over soft-label training, with larger improvements where the sparse empirical target is farther from the full annotator distribution. When full annotator distributions are available, both hard-label methods match soft-label training. We use deterministic control as an ablation of multipass and shuffled SLS as a control that breaks the example-to-distribution match. We also show that SLS and soft-label cross-entropy optimize the same expected objective. Hard-label delivery also converges to flatter basins, with supporting descriptive evidence from OOD detection on SVHN and CIFAR-100. Overall, these results suggest that multipass is a strong practical default when raw vote counts are available, while SLS offers a lightweight alternative that remains competitive when only a few votes per example are available and matches soft-label training when full annotator distributions are available.},
+html={https://arxiv.org/abs/2605.20642}
 }
 
-@book{einstein1956investigations,
-  bibtex_show = {true},
-  title       = {Investigations on the Theory of the Brownian Movement},
-  author      = {Einstein, Albert},
-  year        = {1956},
-  publisher   = {Courier Corporation},
-  preview     = {brownian-motion.gif}
+
+@mastersthesis{gheibi2021AIITL,
+abbr={DAL},
+title={Helping Biologists Find Whales: AI-in-the-Loop Support for Environmental Dataset Creation},
+author={Gheibi, Mirerfan},
+year={2021},
+abstract={We develop a computer vision system to help biologists detect endangered whales. Given access to a limited dataset of aerial imagery (1544 images of mainly water), we implemented object detection and semantic segmentation models. For segmentation, we leverage the extreme data imbalance by introducing an elliptic annotation mechanism mitigating the need for tight annotations while still constrained by expert annotators' available time. Data scarcity made zero-false-negative rate infeasible, so we minimized false negatives while having few enough false positives that it could still help an expert annotator accelerate the annotation process itself. This would allow a bootstrapping dataset creation approach: collecting increasingly larger datasets in parallel with training increasingly accurate models. We evaluated performance for the downstream bootstrapping task with an AI-in-the-Loop experiment. Motivated by the expert user's workflow, this required developing a feature-based clustering visualization of the images. Our segmentation system admitted few false negatives and was more efficient than manually data collection alone. While the proposed approach cannot entirely solve the challenge of the extremely small dataset, it suggests that a slightly larger dataset (e.g. adding 100 whale images would double the relevant training set) may be sufficient to bootstrap the training and collection with effectively no false negatives.},
+selected={true},
+ bibtex_show={true},
+ html={http://hdl.handle.net/10222/81075},
+ school={Dalhousie University}
+ }
+
+
+@inproceedings{ghazizadeh2020cb,
+  abbr={CAIAC},
+  title={CB-DBSCAN: A Novel Clustering Algorithm for Adjacent Clusters with Different Densities.},
+  author={Ghazizadeh, Gashin and Gheibi, Mirerfan and Matwin, Stan},
+  booktitle={Canadian Conference on AI},
+  abstract={Density-based clustering is well-known for finding clusters that have different shapes and sizes, but they have unsatisfactory results on adjacent clusters with different densities. In this paper, we propose a novel algorithm that combines DBSCAN with centroid-based algorithms to address this issue. Our algorithm uses DBSCAN to form mini-clusters, which will be merged based on their density and center distances. We test the new algorithm on synthetic and real datasets to show the significant improvement in the results.},
+  pages={232--237},
+  year={2020},
+  selected={true},
+  bibtex_show={true},
+  slides={https://www.caiac.ca/sites/default/files/shared/canai-2020-presentations/slides-110.pdf},
+  html={https://link.springer.com/chapter/10.1007/978-3-030-47358-7_22}
 }
 
-@article{einstein1950meaning,
-  abbr        = {AJP},
-  bibtex_show = {true},
-  title       = {The meaning of relativity},
-  author      = {Einstein, Albert and Taub, AH},
-  journal     = {American Journal of Physics},
-  volume      = {18},
-  number      = {6},
-  pages       = {403--404},
-  year        = {1950},
-  publisher   = {American Association of Physics Teachers}
+@mastersthesis{gheibi2019GPUaccelCrypto,
+abbr={SUT},
+title={GPU-based Acceleration of Isogeny-based Cryptography},
+author={Gheibi, Mirerfan},
+year={2019},
+abstract={Post-quantum cryptography, as one of the newest groups of cryptographic algorithms, is thought to be secure against most sophisticated attacks by the groundbreaking quantum computers. Isogeny-based cryptography is an appealing contender among them due to its exceptional characteristics, especially the shortest public key in key encapsulation, encryption and decryption amid the other nominees of NIST post-quantum standard. However, its high computational complexity is a significant drawback. This research aims to increase the performance of isogeny-based cryptography in the most compute-intensive part, both in throughput and latency perspectives on GPUs and CPUs, which are the most widespread off-the-shelf processors. A considerable part of computation in the isogeny-based cryptography relates to the high-degree isogeny computation. In this thesis, there are several high-performance implementations of a parallel approach to isogeny evaluation. The GPU implementation is the first of its kind and reaches up to 44 improvement in terms of throughput in comparison to the fastest software implementation of isogeny-based cryptography},
+selected={true},
+ bibtex_show={true},
+ html={http://repository.sharif.edu/resource/472208/},
+ school={Sharif University of Technology}
+ }
+
+
+@inproceedings{COMCONF05_661,
+abbr={IEEEE_IR},
+author = {Ali Reihanian and Mohammad-Reza Feizi-Derakhshi and Ali-Reza Feizi-Derakhshi and Mirerfan Gheibi},
+title = {Proposing a tokenizer for {Farsi} words, by using regular expressions ({The} paper was originally written in {Persian})},
+booktitle = {5th International Conference on Electrical Engineering and Computer with emphasis on indigenous knowledge},
+publisher = {Moghaddas Ardabili University},
+abstract = {This abstract is translated from the original abstract of the paper, written in Persian: This paper presents a novel word tokenizer that utilizes regular expressions to split words in a given text. The tokenizer is built upon the concept of replaceability in regular expressions. The proposed method is capable of accurately recognizing and processing various elements such as Farsi and English words, symbols, and other unique expressions. The algorithm aims to effectively identify and isolate words while accounting for their respective frequencies. Consequently, the output of the system includes the processed text, a word count with repetition (Words), a distinct vocabulary count (Vocabulary), and a list that presents each word alongside its frequency of occurrence. This list is sorted alphabetically and by frequency to provide an efficient summary of the processed text. The tokenization process is crucial for natural language processing applications, and this novel tokenizer offers an effective and adaptable solution.},
+year = {2017},
+selected={true},
+url = {https://www.civilica.com/Paper-COMCONF05-COMCONF05_661.html},
+html={https://www.civilica.com/Paper-COMCONF05-COMCONF05_661.html}
 }
 
-@article{PhysRev.47.777,
-  abbr              = {PhysRev},
-  title             = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author            = {Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract          = {In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal           = {Phys. Rev.},
-  location          = {New Jersey},
-  volume            = {47},
-  issue             = {10},
-  pages             = {777--780},
-  numpages          = {0},
-  year              = {1935},
-  month             = {May},
-  publisher         = aps,
-  doi               = {10.1103/PhysRev.47.777},
-  url               = {https://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html              = {https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf               = {example_pdf.pdf},
-  altmetric         = {248277},
-  dimensions        = {true},
-  google_scholar_id = {qyhmnyLat1gC},
-  video             = {https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info   = {. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation        = {* Example use of superscripts<br>† Albert Einstein},
-  selected          = {true},
-  inspirehep_id     = {3255}
-}
-
-@article{einstein1905molekularkinetischen,
-  title     = {{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author    = {Einstein, A.},
-  journal   = {Annalen der physik},
-  volume    = {322},
-  number    = {8},
-  pages     = {549--560},
-  year      = {1905},
-  publisher = {Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr    = {Ann. Phys.},
-  title   = {Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author  = {Einstein, A.},
-  journal = {Ann. Phys.},
-  volume  = {17},
-  pages   = {549--560},
-  year    = {1905}
-}
-
-@article{einstein1905electrodynamics,
-  title  = {On the electrodynamics of moving bodies},
-  author = {Einstein, A.},
-  year   = {1905}
-}
-
-@article{einstein1905photoelectriceffect,
-  bibtex_show = {true},
-  abbr        = {Ann. Phys.},
-  title       = {{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}},
-  author      = {Albert Einstein},
-  abstract    = {This is the abstract text.},
-  journal     = {Ann. Phys.},
-  volume      = {322},
-  number      = {6},
-  pages       = {132--148},
-  year        = {1905},
-  doi         = {10.1002/andp.19053220607},
-  award       = {Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name  = {Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show = {true},
-  title       = {Letters on wave mechanics},
-  author      = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year        = {1967},
-  publisher   = {Vision},
-  preview     = {wave-mechanics.gif},
-  abbr        = {Vision}
-}

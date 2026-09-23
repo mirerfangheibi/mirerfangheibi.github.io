@@ -23,5 +23,9 @@ module.exports = {
     // and page chrome (scroll-progress bar, ToC) bleeds through a zoomed image.
     "medium-zoom-overlay",
     "medium-zoom-image--opened",
+    // vanilla-back-to-top creates #back-to-top at runtime; without this the
+    // theme's size/color rules and our position fix in _sass/_custom.scss are
+    // purged and the button falls back to the library defaults over the footer.
+    "back-to-top",
   ],
 };
