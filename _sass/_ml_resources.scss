@@ -94,7 +94,7 @@
 .res-book {
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
+  border: 1px solid var(--global-divider-color);
   border-radius: 4px;
   transition: transform 0.2s ease;
 
@@ -105,7 +105,6 @@
 
   &:hover {
     transform: translateY(-3px);
-    border-color: var(--global-divider-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 }
@@ -161,9 +160,14 @@
   }
 }
 
+// Tags + buttons, pinned to the bottom of the card so they line up across a row.
+.res-book-footer {
+  margin-top: auto;
+}
+
 .res-book-tags {
   height: 24px;
-  margin: 0.5rem 0 0.75rem;
+  margin: 0 0 0.5rem;
   overflow: hidden;
 
   span {
@@ -175,10 +179,6 @@
     color: var(--global-text-color-light);
     font-size: 0.65rem;
   }
-}
-
-.res-book-actions {
-  margin-top: auto;
 }
 
 .res-materials {

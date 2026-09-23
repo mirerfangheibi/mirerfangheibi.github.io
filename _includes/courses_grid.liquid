@@ -25,11 +25,11 @@
         </details>
       {% endif %}
       <div class="res-course-links">
-        {% if course.course_url %}<a class="res-btn" href="{{ course.course_url }}">Course Website</a>{% endif %}
-        {% if course.lecture_videos %}<a class="res-btn" href="{{ course.lecture_videos }}">Lecture Videos</a>{% endif %}
-        {% if course.lecture_notes %}<a class="res-btn" href="{{ course.lecture_notes }}">Lecture Notes</a>{% endif %}
+        {% if course.course_url %}<a class="res-btn" href="{{ course.course_url | escape }}">Course Website</a>{% endif %}
+        {% if course.lecture_videos %}<a class="res-btn" href="{{ course.lecture_videos | escape }}">Lecture Videos</a>{% endif %}
+        {% if course.lecture_notes %}<a class="res-btn" href="{{ course.lecture_notes | escape }}">Lecture Notes</a>{% endif %}
         {% for material in course.supp_material %}
-          <a class="res-btn" href="{{ material }}">Supp. Material {{ forloop.index }}</a>
+          <a class="res-btn" href="{{ material | escape }}">Supp. Material {{ forloop.index }}</a>
         {% endfor %}
       </div>
     </div>

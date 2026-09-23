@@ -25,7 +25,7 @@
     >
       <div class="res-book-cover">
         {% if book.front_page %}
-          <img src="{{ book.front_page }}" alt="{{ book.title | escape }}" loading="lazy" onerror="this.hidden = true; this.nextElementSibling.hidden = false">
+          <img src="{{ book.front_page | escape }}" alt="{{ book.title | escape }}" loading="lazy" onerror="this.hidden = true; this.nextElementSibling.hidden = false">
           <span hidden>No Cover</span>
         {% else %}
           <span>No Cover</span>
@@ -41,18 +41,19 @@
           {% if book.print_year %}<span><i class="fa-regular fa-calendar"></i> {{ book.print_year }}</span>{% endif %}
           {% if book.publisher %}<span><i class="fa-solid fa-building"></i> {{ book.publisher }}</span>{% endif %}
         </div>
-        <div class="res-book-tags">
-          {% for tag in book.tags limit: 3 %}<span>{{ tag }}</span>{% endfor %}
-        </div>
-
-        <div class="res-book-actions">
-          {% if book.description %}
-            <button type="button" class="res-btn" data-action="description" data-title="{{ book.title | escape }}" data-description="{{ book.description | escape }}">Desc.</button>
-          {% endif %}
-          <a href="{{ book.book_url }}" class="res-btn" target="_blank" rel="noopener noreferrer">Website</a>
-          {% if book.supp_material %}
-            <button type="button" class="res-btn" data-action="materials">More</button>
-          {% endif %}
+        <div class="res-book-footer">
+          <div class="res-book-tags">
+            {% for tag in book.tags limit: 3 %}<span>{{ tag }}</span>{% endfor %}
+          </div>
+          <div class="res-book-actions">
+            {% if book.description %}
+              <button type="button" class="res-btn" data-action="description" data-title="{{ book.title | escape }}" data-description="{{ book.description | escape }}">Desc.</button>
+            {% endif %}
+            <a href="{{ book.book_url | escape }}" class="res-btn" target="_blank" rel="noopener noreferrer">Website</a>
+            {% if book.supp_material %}
+              <button type="button" class="res-btn" data-action="materials">More</button>
+            {% endif %}
+          </div>
         </div>
 
         {% if book.supp_material %}
@@ -60,7 +61,7 @@
             Supplementary materials:
             <ul>
               {% for material in book.supp_material %}
-                <li><a href="{{ material }}" target="_blank" rel="noopener noreferrer">Material {{ forloop.index }}</a></li>
+                <li><a href="{{ material | escape }}" target="_blank" rel="noopener noreferrer">Material {{ forloop.index }}</a></li>
               {% endfor %}
             </ul>
           </div>

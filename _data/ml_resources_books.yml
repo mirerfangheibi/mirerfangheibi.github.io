@@ -170,7 +170,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: 2
   publisher: O'REILLY
   print_year: 2014
-  book_url: https://greenteapress.com/wp/think-stats-2e/"
+  book_url: https://greenteapress.com/wp/think-stats-2e/
   tags:
     - Statistics
     - Math
@@ -183,7 +183,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   publisher: null
   print_year: 2021
 
-  book_url: http://www.kareemalkaseer.com/books/ml/"
+  book_url: http://www.kareemalkaseer.com/books/ml/
 - title: Python Data Science Handbook
   front_page: https://github.com/jakevdp/PythonDataScienceHandbook/raw/master/notebooks/figures/PDSH-cover.png
   book_author: Jake VanderPlas
@@ -202,7 +202,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Determination Press
   print_year: 2015
-  book_url: http://neuralnetworksanddeeplearning.com/"
+  book_url: http://neuralnetworksanddeeplearning.com/
   tags:
     - Neural Networks
     - Deep Learning
@@ -212,7 +212,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: O'REILLY
   print_year: 2009
-  book_url: https://www.nltk.org/book/"
+  book_url: https://www.nltk.org/book/
   tags:
     - NLP
     - Python
@@ -222,7 +222,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: 4
   publisher: leanpub
   print_year: 2020
-  book_url: https://hefferon.net/linearalgebra/index.html"
+  book_url: https://hefferon.net/linearalgebra/index.html
   tags:
     - Math
     - Linear Algebra
@@ -242,7 +242,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Cambridge University Press
   print_year: 2009
-  book_url: https://stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+  book_url: https://stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
   tags:
     - Math
     - Optimization
@@ -252,7 +252,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Springer
   print_year: 2006
-  book_url: https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
+  book_url: https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf
   tags:
     - Machine Learning
     - Pattern Recognition
@@ -263,7 +263,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Cambridge University Press
   print_year: 2014
-  book_url: https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html"
+  book_url: https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html
   tags:
     - Machine Learning
     - Theory
@@ -274,7 +274,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: 2
   publisher: MIT Press
   print_year: 2018
-  book_url: https://cs.nyu.edu/~mohri/mlbook"
+  book_url: https://cs.nyu.edu/~mohri/mlbook
   tags:
     - Machine Learning
     - Theory
@@ -284,7 +284,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: null
   print_year: 2022
-  book_url: https://mbmlbook.com/"
+  book_url: https://mbmlbook.com/
   tags:
     - Machine Learning
     - Modeling
@@ -294,7 +294,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2006
-  book_url: http://www.gaussianprocess.org/gpml/"
+  book_url: http://www.gaussianprocess.org/gpml/
   tags:
     - Machine Learning
     - Gaussian Processes
@@ -305,7 +305,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: null
   print_year: 2014
-  book_url: http://people.csail.mit.edu/moitra/docs/bookex.pdf"
+  book_url: http://people.csail.mit.edu/moitra/docs/bookex.pdf
   tags:
     - Machine Learning
     - Algorithms
@@ -315,7 +315,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: null
   print_year: 2012
-  book_url: https://mit6874.github.io/assets/matrix-cookbook.pdf"
+  book_url: https://mit6874.github.io/assets/matrix-cookbook.pdf
   tags:
     - Math
     - Matrix
@@ -326,7 +326,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: null
   print_year: 2018
-  book_url: https://adversarial-ml-tutorial.org"
+  book_url: https://adversarial-ml-tutorial.org
   tags:
     - Machine Learning
     - Adversarial Robustness
@@ -337,7 +337,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2023
-  book_url: https://www.di.ens.fr/~fbach/ltfp_book.pdf"
+  book_url: https://www.di.ens.fr/~fbach/ltfp_book.pdf
   tags:
     - Machine Learning
     - Theory
@@ -347,7 +347,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: 2
   publisher: Routledge
   print_year: 2019
-  book_url: http://probabilitybook.net/"
+  book_url: http://probabilitybook.net/
   tags:
     - Math
     - Probability
@@ -358,7 +358,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Cambridge University Press
   print_year: 2020
-  book_url: http://www.cs.ucl.ac.uk/staff/d.barber/brml"
+  book_url: http://www.cs.ucl.ac.uk/staff/d.barber/brml
   tags:
     - Machine Learning
     - Bayesian
@@ -369,7 +369,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Michigan Publishing
   print_year: 2021
-  book_url: https://probability4datascience.com"
+  book_url: https://probability4datascience.com
   tags:
     - Data Science
     - Probability
@@ -380,7 +380,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Cambridge University Press
   print_year: 2022
-  book_url: https://www.probabilistic-numerics.org/textbooks/"
+  book_url: https://www.probabilistic-numerics.org/textbooks/
   tags:
     - Math
     - Probabilistic Numerics
@@ -392,7 +392,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: 0.2
   publisher: null
   print_year: 2021
-  book_url: https://physicsbaseddeeplearning.org"
+  book_url: https://physicsbaseddeeplearning.org
   tags:
     - Deep Learning
     - Physics
@@ -404,7 +404,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: O'REILLY
   print_year: 2022
-  book_url: https://handsondataviz.org"
+  book_url: https://handsondataviz.org
   tags:
     - Data Visualization
     - Data Science
@@ -415,7 +415,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2023
-  book_url: https://fairmlbook.org"
+  book_url: https://fairmlbook.org
   tags:
     - Machine Learning
     - Fairness
@@ -427,7 +427,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2023
-  book_url: https://www.distributional-rl.org/"
+  book_url: https://www.distributional-rl.org/
   tags:
     - Reinforcement Learning
     - Machine Learning
@@ -438,7 +438,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: Cambridge University Press
   print_year: 2022
-  book_url: https://deeplearningtheory.com"
+  book_url: https://deeplearningtheory.com
   tags:
     - Deep Learning
     - Theory
@@ -450,7 +450,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2022
-  book_url: https://algorithmsbook.com"
+  book_url: https://algorithmsbook.com
   tags:
     - Algorithms
     - Decision Making
@@ -593,7 +593,7 @@ Deep Learning can be used by undergraduate or graduate students planning careers
   edition: null
   publisher: MIT Press
   print_year: 2023
-  book_url: https://udlbook.github.io/udlbook/"
+  book_url: https://udlbook.github.io/udlbook/
   tags:
     - Deep Learning
     - Understanding
