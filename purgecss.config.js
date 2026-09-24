@@ -27,5 +27,7 @@ module.exports = {
     // theme's size/color rules and our position fix in _sass/_custom.scss are
     // purged and the button falls back to the library defaults over the footer.
     "back-to-top",
+    // The /ml_resources/ list view class is only added by JS (books_grid.liquid).
+    "res-list",
   ],
 };

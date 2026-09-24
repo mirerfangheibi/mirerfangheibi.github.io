@@ -1,0 +1,52 @@
+{% comment %}
+  Shared search + tag filter for /ml_resources/, placed above the tabs. It filters every
+  [data-res-list] container (Books and Courses): an item is shown if it has the selected
+  tag (exact match) and contains every search word. Matching counts go to [data-count]
+  and "nothing found" messages to [data-empty]. Styles live in _sass/_ml_resources.scss.
+{% endcomment %}
+{% assign filter_tags = 'Deep Learning,Machine Learning,Math,Statistics,NLP,Computer Vision,Reinforcement Learning' | split: ',' %}
+
+<div class="res-filter">
+  <input type="search" id="resSearch" placeholder="Search books and courses..." aria-label="Search books and courses">
+  <div class="res-filter-tags" id="resTags">
+    <button type="button" class="active" data-tag="">All</button>
+    {% for tag in filter_tags %}
+      <button type="button" data-tag="{{ tag | downcase }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const search = document.getElementById('resSearch');
+    const tagButtons = document.querySelectorAll('#resTags button');
+    const lists = document.querySelectorAll('[data-res-list]');
+    let activeTag = '';
+
+    function filter() {
+      const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+      lists.forEach((list) => {
+        let visible = 0;
+        list.querySelectorAll('[data-tags]').forEach((item) => {
+          const show =
+            (!activeTag || item.dataset.tags.includes(`|${activeTag}|`)) &&
+            words.every((word) => item.dataset.text.includes(word));
+          item.hidden = !show;
+          if (show) visible++;
+        });
+        const name = list.dataset.resList;
+        document.querySelectorAll(`[data-count="${name}"]`).forEach((el) => (el.textContent = visible));
+        document.querySelectorAll(`[data-empty="${name}"]`).forEach((el) => (el.hidden = visible > 0));
+      });
+    }
+
+    search.addEventListener('input', filter);
+    tagButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        tagButtons.forEach((b) => b.classList.toggle('active', b === button));
+        activeTag = button.dataset.tag;
+        filter();
+      })
+    );
+  });
+</script>

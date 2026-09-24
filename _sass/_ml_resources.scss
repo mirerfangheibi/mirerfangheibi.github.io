@@ -1,6 +1,6 @@
 /*******************************************************************************
  * ML study resources page (/ml_resources/)
- * Used by _includes/books_grid.liquid and _includes/courses_grid.liquid.
+ * Used by _includes/resources_tabs.liquid, books_grid.liquid and courses_grid.liquid.
  ******************************************************************************/
 
 // Shared outlined button (book actions, course links)
@@ -31,18 +31,53 @@
   }
 }
 
-.res-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+// --- Tabs ---------------------------------------------------------------------
+
+.res-tabs {
+  display: flex;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  button {
+    margin-bottom: -1px;
+    padding: 0.5rem 0.25rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--global-text-color-light);
+    font: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    i {
+      margin-right: 0.35rem;
+    }
+
+    &:hover {
+      color: var(--global-text-color);
+    }
+
+    &[aria-selected="true"] {
+      border-bottom-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+  }
 }
 
-// --- Books: search and filter -----------------------------------------------
+.res-panel-intro {
+  color: var(--global-text-color-light);
+}
 
-.res-books-search {
-  max-width: 800px;
-  margin: 0 auto 2rem;
+// Opening /ml_resources/#Courses scrolls to the panel; keep the tabs clear of the fixed navbar.
+.res-panel {
+  scroll-margin-top: 9rem;
+}
+
+// --- Shared search + tag filter (above the tabs) -------------------------------
+
+.res-filter {
+  margin: 1.5rem 0 0;
 
   input {
     width: 100%;
@@ -61,10 +96,10 @@
   }
 }
 
-.res-filter-tags {
+.res-filter-tags,
+.res-view-toggle {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
 
   button {
@@ -81,7 +116,8 @@
       color: var(--global-text-color);
     }
 
-    &.active {
+    &.active,
+    &[aria-pressed="true"] {
       background: var(--global-text-color);
       border-color: var(--global-text-color);
       color: var(--global-bg-color);
@@ -89,7 +125,44 @@
   }
 }
 
-// --- Books: cards -------------------------------------------------------------
+.res-filter-tags {
+  justify-content: center;
+}
+
+.res-view-toggle {
+  gap: 0;
+
+  button {
+    font-size: 0.75rem;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+.res-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+}
+
+// --- Books: cards (grid view) --------------------------------------------------
+
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
 .res-book {
   display: flex;
@@ -194,6 +267,65 @@
   }
 }
 
+// --- Books: list view (toggled by JS; `res-list` is safelisted in purgecss) ---
+
+.res-grid.res-list {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+
+  .res-book {
+    flex-direction: row;
+    align-items: flex-start;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--global-text-color-light);
+    }
+  }
+
+  .res-book-cover {
+    flex: 0 0 56px;
+    height: 80px;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+
+    img {
+      height: 80px;
+    }
+
+    span {
+      font-size: 0.6rem;
+      text-align: center;
+    }
+  }
+
+  .res-book-body {
+    padding: 0.5rem 0.75rem;
+
+    h5 {
+      font-size: 0.95rem;
+    }
+  }
+
+  .res-book-meta {
+    display: inline;
+    margin: 0 1rem 0 0;
+  }
+
+  .res-book-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .res-book-tags {
+    height: auto;
+    margin: 0;
+  }
+}
+
 .res-no-results {
   padding: 3rem 0;
   color: var(--global-text-color-light);
@@ -245,74 +377,91 @@
   }
 }
 
-// --- Courses ------------------------------------------------------------------
+// --- Courses: horizontal cards -------------------------------------------------
+
+.res-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 
 .res-course {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
+  padding: 0.75rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 4px;
-  background: var(--global-card-bg-color);
   font-size: 0.875rem;
-  text-align: center;
+
+  // `display: flex` would otherwise override the hidden attribute used by the filter.
+  &[hidden] {
+    display: none;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+
+// YouTube playlist thumbnail (see _plugins/youtube_oembed.rb), or a placeholder
+.res-course-thumb {
+  position: relative;
+  flex: 0 0 200px;
+  align-self: flex-start;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+
+  @media (max-width: 576px) {
+    flex-basis: auto;
+    align-self: stretch;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease;
+  }
+
+  &:hover span {
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.res-course-thumb-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+  font-size: 2rem;
+}
+
+.res-course-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
 
   h5 {
-    margin: 0;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  // YouTube playlist thumbnail (see _plugins/youtube_oembed.rb)
-  .res-course-thumb {
-    position: relative;
-    display: block;
-    border-radius: 3px 3px 0 0;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-
-    span {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.5rem;
-      background: rgba(0, 0, 0, 0.25);
-      opacity: 0.85;
-      transition: background 0.2s ease;
-    }
-
-    &:hover span {
-      background: rgba(0, 0, 0, 0.45);
-      opacity: 1;
-    }
-  }
-
-  .res-course-channel {
-    margin: -0.75rem 0 0.75rem;
-    color: var(--global-text-color-light);
-    font-size: 0.8rem;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li,
-  details,
-  .res-course-links {
-    padding: 0.5rem 1rem;
-    border-top: 1px solid var(--global-divider-color);
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
   }
 
   summary {
@@ -321,14 +470,24 @@
   }
 
   details p {
-    margin: 0.5rem 0 0;
-    text-align: justify;
+    margin: 0.25rem 0 0.5rem;
   }
+}
 
-  .res-course-links {
-    margin-top: auto;
-    padding-top: 1rem;
-  }
+.res-course-meta {
+  margin-bottom: 0.5rem;
+  color: var(--global-text-color-light);
+}
+
+// Same chips as the book cards, but allowed to wrap.
+.res-course-tags {
+  height: auto;
+  margin: 0 0 0.25rem;
+}
+
+.res-course-links {
+  margin-top: auto;
+  padding-top: 0.5rem;
 
   .res-btn {
     height: 26px;

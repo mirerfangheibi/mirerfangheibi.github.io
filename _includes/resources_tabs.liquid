@@ -1,0 +1,39 @@
+{% comment %}
+  Books | Courses tabs for /ml_resources/. Each tab shows the .res-panel whose id
+  matches its data-panel, so #Books / #Courses links open the right tab.
+  Without JS both panels stay visible. Styles live in _sass/_ml_resources.scss.
+{% endcomment %}
+<div class="res-tabs" role="tablist">
+  <button type="button" role="tab" id="tab-Books" aria-controls="Books" aria-selected="true" data-panel="Books">
+    <i class="fa-solid fa-book"></i> Books (<span data-count="Books">{{ site.data.ml_resources_books | size }}</span>)
+  </button>
+  <button type="button" role="tab" id="tab-Courses" aria-controls="Courses" aria-selected="false" data-panel="Courses">
+    <i class="fa-brands fa-youtube"></i> Courses (<span data-count="Courses">{{ site.data.ml_resources_courses | size }}</span>)
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.res-tabs [role="tab"]');
+    const ids = [...tabs].map((tab) => tab.dataset.panel);
+
+    function show(id) {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.panel === id;
+        tab.setAttribute('aria-selected', active);
+        document.getElementById(tab.dataset.panel).hidden = !active;
+      });
+    }
+
+    const fromHash = () => (ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : ids[0]);
+
+    tabs.forEach((tab) =>
+      tab.addEventListener('click', () => {
+        show(tab.dataset.panel);
+        history.replaceState(null, '', `#${tab.dataset.panel}`);
+      })
+    );
+    window.addEventListener('hashchange', () => show(fromHash()));
+    show(fromHash());
+  });
+</script>

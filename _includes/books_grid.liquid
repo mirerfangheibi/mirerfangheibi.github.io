@@ -1,20 +1,17 @@
 {% comment %}
   Book grid for /ml_resources/, rendered from _data/ml_resources_books.yml.
-  Styles live in _sass/_ml_resources.scss.
+  Search and tag filtering are done by resources_filter.liquid (data-res-list / data-text /
+  data-tags / data-count / data-empty). Styles live in _sass/_ml_resources.scss.
 {% endcomment %}
-{% assign filter_tags = 'Deep Learning,Machine Learning,Math,NLP,Computer Vision,Reinforcement Learning,Statistics' | split: ',' %}
-
-<div class="res-books-search">
-  <input type="search" id="bookSearch" placeholder="Search books..." aria-label="Search books">
-  <div class="res-filter-tags" id="bookTags">
-    <button type="button" class="active" data-tag="">All</button>
-    {% for tag in filter_tags %}
-      <button type="button" data-tag="{{ tag | downcase }}">{{ tag }}</button>
-    {% endfor %}
+<div class="res-toolbar">
+  <span>Showing <b data-count="Books">{{ site.data.ml_resources_books | size }}</b> of {{ site.data.ml_resources_books | size }}</span>
+  <div class="res-view-toggle" role="group" aria-label="Layout">
+    <button type="button" data-view="grid" aria-pressed="true" title="Grid"><i class="fa-solid fa-table-cells-large"></i> Grid</button>
+    <button type="button" data-view="list" aria-pressed="false" title="List"><i class="fa-solid fa-list"></i> List</button>
   </div>
 </div>
 
-<div class="res-grid" id="booksGrid">
+<div class="res-grid" id="booksGrid" data-res-list="Books">
   {% assign books = site.data.ml_resources_books | sort: 'print_year' | reverse %}
   {% for book in books %}
     {% capture search_text %}{{ book.title }} {{ book.book_author }} {{ book.tags | join: ' ' }} {{ book.description }}{% endcapture %}
@@ -71,7 +68,7 @@
   {% endfor %}
 </div>
 
-<p class="res-no-results" id="booksEmpty" hidden>No books found.</p>
+<p class="res-no-results" data-empty="Books" hidden>No books found.</p>
 
 <dialog class="res-dialog" id="bookDialog" aria-labelledby="bookDialogTitle">
   <header>
@@ -83,39 +80,24 @@
 
 <script>
   (() => {
-    const search = document.getElementById('bookSearch');
-    const tagButtons = document.querySelectorAll('#bookTags button');
-    const books = document.querySelectorAll('#booksGrid .res-book');
-    const empty = document.getElementById('booksEmpty');
+    const grid = document.getElementById('booksGrid');
     const dialog = document.getElementById('bookDialog');
-    let activeTag = '';
+    const viewButtons = document.querySelectorAll('.res-view-toggle button');
 
-    // A book is shown if it has the selected tag (exact match) and contains every search word
-    // (in title, author, tags or description).
-    function filterBooks() {
-      const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
-      let visible = 0;
-      books.forEach((book) => {
-        const show =
-          (!activeTag || book.dataset.tags.includes(`|${activeTag}|`)) &&
-          words.every((word) => book.dataset.text.includes(word));
-        book.hidden = !show;
-        if (show) visible++;
-      });
-      empty.hidden = visible > 0;
+    // Grid/list layout; the list view is the `res-list` class (safelisted in purgecss.config.js).
+    function setView(view) {
+      grid.classList.toggle('res-list', view === 'list');
+      viewButtons.forEach((b) => b.setAttribute('aria-pressed', b.dataset.view === view));
+      try {
+        localStorage.setItem('mlResourcesView', view);
+      } catch (e) {}
     }
+    viewButtons.forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
+    try {
+      if (localStorage.getItem('mlResourcesView') === 'list') setView('list');
+    } catch (e) {}
 
-    search.addEventListener('input', filterBooks);
-
-    tagButtons.forEach((button) =>
-      button.addEventListener('click', () => {
-        tagButtons.forEach((b) => b.classList.toggle('active', b === button));
-        activeTag = button.dataset.tag;
-        filterBooks();
-      })
-    );
-
-    document.getElementById('booksGrid').addEventListener('click', (e) => {
+    grid.addEventListener('click', (e) => {
       const button = e.target.closest('[data-action]');
       if (button?.dataset.action === 'description') {
         dialog.querySelector('#bookDialogTitle').textContent = button.dataset.title;
